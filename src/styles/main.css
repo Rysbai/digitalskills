@@ -1,0 +1,124 @@
+.mainphoto{
+	background-image: url('../assets/img/main.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+
+}
+.photo2{
+	 background: linear-gradient(rgba(0,0,0,0.5),
+         rgba(0,0,0,0.5)),
+         url('../assets/img/photo2.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	  background-color: rgba(0,0,0,0.5);  
+	  z-index: 1;
+}
+.footer{
+	background-color: #2D5199;
+	color:#FFFFFF;
+	padding-left: 10.33%;
+}
+.logopart{
+	padding-top: 167px;
+	padding-bottom: 36px;
+}
+.mainheader{
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 48px;
+	color: #FFFFFF;
+	width: 1035px;
+}
+.text2{
+	padding-top: 12px;
+	padding-bottom: 36px;
+	width: 600px;
+	font-family: Muller;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 24px;
+	color: #FFFFFF;
+	opacity: 0.8;
+}
+.mainbutton{
+	width: 210px;
+	height: 50px;
+	display: inline-block;
+	color: #fff;
+	background: rgba(255, 255, 255, 0);
+	border: 1px solid #fff;
+	text-align: center;
+	outline: none;
+	text-decoration: none;
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 27px;
+	margin-bottom: 178px;
+	  
+}
+.mainbutton:hover,
+.mainbutton:active {
+  background-color: #fff;
+  color: #000;
+}
+.blocktext{
+	width: 500px;
+	font-family: Lato-Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 170%;
+	color: #848484;
+
+}
+
+.headtext{
+padding-top: 107px;
+padding-bottom: 18px;
+font-family: Muller;
+font-style: bold;
+font-weight: bold;
+font-size: 36px;
+line-height: 30px;
+display: flex;
+color: #2D5199;
+}
+.blockphoto{
+	padding-top: 75px;
+}
+.banner2{
+	margin-top: 200px;
+	margin-bottom: 110px;
+	width: 1035px;
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 42px;
+	line-height: 42px;
+	color: #FFFFFF;
+	display: flex;
+	align-items: flex-end;
+	padding-top: 270px;
+	padding-bottom: 30px;
+	padding-left: 123px;
+
+}
+.lessons_button{
+	width: 200px;
+	height:50px;
+	background: #2D5199;
+	font-family: Muller;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 27px;
+	align-items: center;
+	text-align: center;
+	border:0px;
+	color: #FFFFFF;
+}
