@@ -86,7 +86,7 @@ class Main extends React.Component {
             <Link to ="/lessons"><button className ="lessons_button">Все новости</button></Link>
             </div>
             </Col>
-		        <Col md={15} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
+		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 	          <News_card/>
 			  <News_card/>
 	          <News_card/>
@@ -102,7 +102,7 @@ class Main extends React.Component {
           <p className={"h1 "}>Преподаватели</p>
 
             </Col>
-		        <Col md={15} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
+		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 	          <Teacher_card/>
 			  <Teacher_card/>
 	          

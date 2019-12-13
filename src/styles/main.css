@@ -122,3 +122,37 @@ color: #2D5199;
 	border:0px;
 	color: #FFFFFF;
 }
+.head-text{
+	margin-top:85px;
+	margin-bottom: 40px!important;
+
+
+}
+.text-about{
+	width: 600px;
+	font-family: Lato-Regular;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 170%;
+	color: #525252;
+
+}
+.karta{
+	margin-top: 150px;
+}
+.first{
+	margin-left: 285px;
+}
+.item{
+	font-family: Muller;
+	font-style: normal;
+	font-weight: 800;
+	font-size: 18px;
+	line-height: 27px;
+	color: #484848!important;
+	margin-right: 40px;
+}
+.header{
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}

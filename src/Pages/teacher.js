@@ -2,10 +2,14 @@ import React from 'react';
 import {Container,Row,Col} from 'reactstrap';
 import CardItem from '../Components/card';
 import teacher from '../assets/img/ns_8 1.png';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const TeacherPage = () => {
 
   return (
+    <div>
+    <Header/>
     <Container>
       <Row className={"mt-5"}>
         <Col md={4} className={"text-center"}>
@@ -24,6 +28,8 @@ const TeacherPage = () => {
         </Col>
       </Row>
     </Container>
+    <Footer/>
+      </div>
   )
 };
 

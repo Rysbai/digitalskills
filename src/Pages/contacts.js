@@ -4,6 +4,8 @@ import settingImage from '../assets/icon/image 42.png';
 import askImage from '../assets/icon/image 43.png';
 import lampImage from '../assets/icon/image 44.png';
 import phoneImage from '../assets/icon/image 45.png';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const ContactBodyItem = ({image,body,className}) => {
   return (
@@ -17,6 +19,8 @@ const ContactBodyItem = ({image,body,className}) => {
 const Contacts = () => {
 
   return (
+    <div>
+    <Header/>
     <Container>
       <Row>
         <Col md={12} className={"mt-5"}>
@@ -72,6 +76,8 @@ const Contacts = () => {
         </Col>
       </Row>
     </Container>
+    <Footer/>
+      </div>
   )
 };
 

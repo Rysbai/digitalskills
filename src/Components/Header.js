@@ -9,6 +9,7 @@ import {
   NavLink,
   Container
 } from 'reactstrap';
+import '../styles/main.css';
 import logo from '../assets/icon/image 54.png';
 
 const Example = (props) => {
@@ -17,27 +18,26 @@ const Example = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-      <Navbar  expand="md">
+       <Navbar className="header" light expand="md">
         <Container>
           <NavbarBrand href="/"><img src={logo} alt={logo}/></NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
 
-            <Nav className="w-50 mx-auto text-center" navbar>
-            <div class="d-flex justify-content-center">
-              <NavItem>
-                <NavLink href="/components/">О проекте</NavLink>
+            <Nav className="mr-auto" navbar>
+              <NavItem className="first item">
+                <NavLink href="/aboutproject">О проекте</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Уроки</NavLink>
+              <NavItem className = "item ">
+                <NavLink href="/lessons">Уроки</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Новости</NavLink>
+              <NavItem className = "item">
+                <NavLink href="/news">Новости</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">Контакты</NavLink>
+              <NavItem className = "item">
+                <NavLink href="/contacts">Контакты</NavLink>
               </NavItem>
-              </div>
+           
             </Nav>
           </Collapse>
         </Container>

@@ -5,7 +5,7 @@ import "../styles/components_style.css";
 const News_card = (props) => {
   return (
     <div>
-      <Card className={"border-0 shadow mb-1"} style={{maxWidth: '552px'}}>
+      <Card className={"border-0 shadow mb-2"} style={{maxWidth: '552px'}}>
       <Row>
       <Col>
         <CardImg width="100%" src={news}/>

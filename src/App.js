@@ -7,7 +7,7 @@ import './style.css';
 import News from "./Pages/news";
 import TeacherPage from "./Pages/teacher";
 import Contacts from "./Pages/contacts";
-
+import Aboutus from "./Pages/aboutus";
 function App() {
   return (
     <div className="App">
@@ -17,6 +17,7 @@ function App() {
         <Route exact path={"/news"} component={News}/>
         <Route exact path={"/teacher"} component={TeacherPage}/>
         <Route exact path={"/contacts"} component={Contacts}/>
+        <Route exact path={"/aboutproject"} component={Aboutus}/>
       </Switch>
     </div>
   );

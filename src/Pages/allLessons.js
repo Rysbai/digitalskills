@@ -1,4 +1,6 @@
 import React,{useState} from 'react';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 import {Container,Row,Col,UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Button} from 'reactstrap';
 import Card from '../Components/card';
 
@@ -7,6 +9,8 @@ const AllLessons = () => {
   const [choice,setChoice] = useState("Все");
 
   return (
+    <div>
+    <Header/>
     <Container>
       <Row>
         <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
@@ -45,6 +49,8 @@ const AllLessons = () => {
         </div>
       </Row>
     </Container>
+    <Footer/>
+    </div>
   );
 };
 

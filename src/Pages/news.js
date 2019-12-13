@@ -1,10 +1,14 @@
 import React from 'react';
 import {Container,Row,Col} from 'reactstrap';
 import img from '../assets/img/Full-of-ideas-Young-female-graphic-designer-Stock-Photo1 2.png';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 const News = () => {
 
   return (
+    <div>
+    <Header/>
     <Container>
       <Row className={"d-flex justify-content-center mt-5"}>
         <Col md={8}>
@@ -27,6 +31,8 @@ const News = () => {
         </Col>
       </Row>
     </Container>
+    <Footer/>
+      </div>
   )
 };
 
