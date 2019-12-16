@@ -1,11 +1,12 @@
 import React from 'react';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,Col
+  CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import img from '../assets/img/5d7b999576c7a 2.png';
+import {Link} from "react-router-dom";
 
-const CardItem = (props) => {
+const CardItem = () => {
   return (
       <Card className={"border-0 shadow mb-3"} style={{maxWidth: '360px'}}>
         <CardImg top width="100%" src={img} alt="Card image cap" />
@@ -26,10 +27,11 @@ const CardItem = (props) => {
             </span>
           </CardText>
           <p className={"w-100 d-flex justify-content-center"}>
-            <Button tag={'a'}
-                    href={"https://google.com"}
+            <Link to={'/teacher'} className={"w-50"}>
+            <Button tag={'span'}
                     color={"faded"}
-                    className={"w-50 shadow-none rounded-0 card_custom_button"}>Подробнее</Button>
+                    className={"w-100 shadow-none rounded-0 card_custom_button"}>Подробнее</Button>
+            </Link>
           </p>
         </CardBody>
       </Card>
