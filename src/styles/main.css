@@ -150,9 +150,13 @@ color: #2D5199;
 	font-weight: 800;
 	font-size: 18px;
 	line-height: 27px;
-	color: #484848!important;
 	margin-right: 40px;
 }
+
+.item a {
+	color: #484848!important;
+}
+
 .header{
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }

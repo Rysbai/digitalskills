@@ -21,34 +21,38 @@ const Example = () => {
   return (
        <Navbar className="header" light expand="md">
         <Container>
-          <NavbarBrand href="/"><img src={logo} alt={logo}/></NavbarBrand>
+          <NavbarBrand tag={"div"}>
+            <Link to="/">
+              <img src={logo} alt={logo}/>
+            </Link>
+          </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
 
             <Nav className="mr-auto" navbar>
               <NavItem className="first item">
-                <NavLink tag={"p"}>
+                <NavLink tag={"p"} className={"mb-0"}>
                   <Link to={"/aboutproject"}>
                     О проекте
                   </Link>
                 </NavLink>
               </NavItem>
               <NavItem className = "item ">
-                <NavLink tag={"p"}>
+                <NavLink tag={"p"} className={"mb-0"}>
                   <Link to="/lessons">
                     Уроки
                   </Link>
                 </NavLink>
               </NavItem>
               <NavItem className = "item">
-                <NavLink tag={"p"}>
+                <NavLink tag={"p"} className={"mb-0"}>
                   <Link to="/news">
                     Новости
                   </Link>
                 </NavLink>
               </NavItem>
               <NavItem className = "item">
-                <NavLink tag={"p"}>
+                <NavLink tag={"p"} className={"mb-0"}>
                   <Link to="/contacts">
                     Контакты
                   </Link>
