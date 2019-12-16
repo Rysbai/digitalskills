@@ -42,7 +42,7 @@ const Contacts = () => {
           <p className={"mt-4 mb-4"}><b>Digitalskills.kg@mail.ru</b></p>
         </Col>
         <Col md={7} className={"d-flex justify-content-center"}>
-          <Form className={"contacts-form contacts-form p-4"}>
+          <Form className={"contacts-form contacts-form p-4 mb-4"}>
             <FormGroup>
               <p className={"text-center w-75 mx-auto contacts-subtitle"}>МЫ ОТКРЫТЫ К ОБЩЕНИЮ И ГОТОВЫ ОТВЕТИТЬ НА ВСЕ ВАШИ ВОПРОСЫ</p>
             </FormGroup>

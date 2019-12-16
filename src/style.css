@@ -1,5 +1,5 @@
 body {
-    font-family: Muller ;
+    font-family: Muller !important;
 }
 
 .h1 {
@@ -40,4 +40,45 @@ body {
 .news_custom-link {
     font-family: MullerMedium;
     color: #2D5199;
+}
+.teacher {
+    font-family: MullerBold;
+    color: #2D5199;
+}
+
+.teacher-subtitle {
+    font-size: 20px;
+}
+
+.teacher-archive {
+    max-width: 450px;
+}
+
+.contacts-subtitle {
+    font-family: MullerBold;
+}
+
+.contacts-form {
+    background: #FCFCFE;
+    max-width: 500px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contacts-form__input {
+    background: transparent !important;
+}
+
+.contacts-form__textarea {
+    min-height: 100px;
+    max-height: 500px;
+}
+
+.contacts-form__button {
+    background: #2D5199 !important;
+}
+
+.dots-father:after {
+    content: "";
+    display: inline-block;
+    background: url("/assets/icon/dots.png") center center / cover;
 }
