@@ -46,7 +46,7 @@ const Example = () => {
               </NavItem>
               <NavItem className = "item">
                 <NavLink tag={"p"} className={"mb-0"}>
-                  <Link to="/news">
+                  <Link to="/all-news">
                     Новости
                   </Link>
                 </NavLink>

@@ -3,6 +3,7 @@ import {Container,Row,Col} from 'reactstrap';
 import img from '../assets/img/Full-of-ideas-Young-female-graphic-designer-Stock-Photo1 2.png';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import {Link} from "react-router-dom";
 
 const News = () => {
 
@@ -27,7 +28,7 @@ const News = () => {
           </p>
         </Col>
         <Col md={8}>
-          <a className={"news_custom-link mt-5 mb-5 d-inline-block"} href={"/"}>Вернуться назад</a>
+          <Link className={"news_custom-link mt-5 mb-5 d-inline-block"} to={"/"}>Вернуться назад</Link>
         </Col>
       </Row>
     </Container>

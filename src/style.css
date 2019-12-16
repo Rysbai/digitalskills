@@ -82,3 +82,7 @@ body {
     display: inline-block;
     background: url("/assets/icon/dots.png") center center / cover;
 }
+
+.all-news__body {
+    font-size: 18px;
+}
