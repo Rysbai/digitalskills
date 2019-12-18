@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Col, Row, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+import { Card, Col, Row, CardTitle, CardText, CardImg } from 'reactstrap';
 import news from "../assets/img/news.png";
 import "../styles/components_style.css";
-const News_card = (props) => {
+const News_card = ({title,views}) => {
   return (
     <div>
       <Card className={"border-0 shadow mb-2"} style={{maxWidth: '552px'}}>
@@ -11,9 +11,9 @@ const News_card = (props) => {
         <CardImg width="100%" src={news}/>
         </Col>
         <Col>
-          <CardTitle className = "news_title">15 декабря состоится онлайн митап по электронной коммерции</CardTitle>
+          <CardTitle className = "news_title">{title}</CardTitle>
           <CardText>
-            <small className="text-muted">100 просмотров</small>
+            <small className="text-muted">{views} просмотров</small>
           </CardText>
         </Col>
         </Row>

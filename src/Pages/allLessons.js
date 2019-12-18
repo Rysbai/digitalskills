@@ -1,12 +1,21 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import {Container,Row,Col,UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Button} from 'reactstrap';
 import Card from '../Components/card';
+import API from '../API';
 
 const AllLessons = () => {
 
   const [choice,setChoice] = useState("Все");
+  const [data,setData] = useState([]);
+
+  useEffect(() => {
+    API.getAllLessons('api/course/courses/?lang=ru')
+      .then(res => {
+        setData(res);
+      }).catch(e => console.error(e))
+  },[]);
 
   return (
     <div>
@@ -35,12 +44,9 @@ const AllLessons = () => {
           </div>
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
+          {data.data && data.data.length ? data.data.map((item,idx) => {
+            return <Card key={idx} {...item}/>
+          }) : <p>Тут пусто</p>}
         </Col>
         <div className={"w-50 mx-auto text-center mb-5"}>
           <Button className={"text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"} color={"faded"}>1</Button>
