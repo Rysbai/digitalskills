@@ -160,3 +160,11 @@ color: #2D5199;
 .header{
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
+.margin{
+	margin-top: 33px;
+	color: #fff!important;
+}
+.margin2{
+	margin-top: 33px;
+	text-align: center;
+}

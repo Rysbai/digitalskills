@@ -8,6 +8,7 @@ import TeacherPage from "./Pages/teacher";
 import Contacts from "./Pages/contacts";
 import Aboutus from "./Pages/aboutus";
 import AllNews from "./Pages/allNews";
+import Course from "./Pages/course";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route exact path={"/all-news"} component={AllNews}/>
         <Route exact path={"/teacher"} component={TeacherPage}/>
         <Route exact path={"/contacts"} component={Contacts}/>
-        <Route exact path={"/aboutproject"} component={Aboutus}/>
+        <Route exact path={"/about"} component={Aboutus}/>
+        <Route exact path={"/course"} component={Course}/>
       </Switch>
     </div>
   );

@@ -6,46 +6,44 @@ import '../styles/main.css';
 const Example = (props) => {
   return (
     <div className = "footer">
-      <Nav vertical>
+      <Nav vertical >
       <Row>
-        <Col xs="6" sm="4">
+        <Col xs="5" sm="3" className="margin">
         <NavItem>
-          <NavLink href="#">О нас</NavLink>
+          <p href="/about">О проекте</p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Новости</NavLink>
+          <p href="/news">Новости</p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Курсы</NavLink>
+          <p href="/courses">Курсы</p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Контакты</NavLink>
+          <p href="/contacts">Контакты</p>
         </NavItem></Col>
-        <Col xs="6" sm="4" className>
+        <Col xs="7" sm="5" className="margin2">
         <NavItem>
-          <NavLink href="#"><img src = {logo2}/></NavLink>
+          <p href="/"><img src = {logo2}/></p>
         </NavItem>
         <NavItem>
-          <NavLink href="#"></NavLink>
+          <p href="#"></p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Разработано Neobis 2019</NavLink>
+          <p href ="https://www.neobis.kg">Разработано Neobis 2019</p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Copyright © 2019</NavLink>
+          <p href="#">Copyright © 2019</p>
         </NavItem></Col>
-        <Col sm="4"><NavItem>
-          <NavLink href="#">О нас</NavLink>
+        <Col xs="5" sm="3" className="margin"><NavItem>
+          <p href="#">+996708453423 </p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Новости</NavLink>
+          <p href="#">+996510212345</p>
         </NavItem>
         <NavItem>
-          <NavLink href="#">Курсы</NavLink>
+          <p href="#">digitalskills.kg@mail.ru </p>
         </NavItem>
-        <NavItem>
-          <NavLink href="#">Контакты</NavLink>
-        </NavItem></Col>
+        </Col>
       </Row>
         
       </Nav>
