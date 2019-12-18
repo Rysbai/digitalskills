@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container,Row,Col,Media,Button, Form, FormGroup, Input, CardItem} from 'reactstrap';
 import img from '../assets/img/image1.png';
+import teacher from '../assets/img/ns_8 1.png';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import "../styles/course.css";
@@ -30,18 +31,35 @@ class Course extends React.Component {
 		        </Col>
 		      </Row>
 		      <Row>
-		      <Col className =".col-auto - variable width content">
+		      <Col className =".col-auto - variable width content ">
 		      <h5 className ="course-title">Описание курса</h5>
-		      <p>Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели. Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели.</p>
+		      <p className = "course-about">Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. 
+		      Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели. 
+		      Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. 
+		      Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели.</p>
 		      </Col>
 		      <Col className ="col-md-auto">
 		      <div className ="block">
-		      <p>Детали онлайн урока</p>
-		      <p >Язык: <b> кыргызский </b></p>
-		      <p >Категория: <b> Бизнес </b></p>
+		      <p className ="details-course">Детали онлайн урока</p>
+		      <p className = "DET">Дата: <span className ="date_course"> 10 декабря, 2019 </span></p>
+		      <p className = "DET">Время: <span className ="date_course"> 18:00 </span></p>
 		      </div>
 		      </Col>
 		      </Row>
+		      <Row className={"row justify-content-center teacher-info"}>
+
+	        <Col  className={" col-4"}>
+	          <img src={teacher} className={"img-fluid rounded-pill"} alt={"teacher"}/>
+	        </Col>
+	        <Col className={"col-4"}>
+	          <p className={"teacher"}> Преподаватель </p>
+	          <p className={"h2"}>Тимур Алхожоев</p>
+	          <p className={"teacher-subtitler "}>Руководитель проекта “DigiSkills”</p>
+	          <p className={"bio-teacher"}>Кесиби юрист. Ж.Баласагын атындагы Кыргыз улуттук университетинин юридикалык факультетинен билим алган. Азыркы учурда КР Өкмөтүнүн алдындагы Кыргыз мамлекеттик юридикалык академиясынын аспиранты. Телекоммуникация тармагында эмгектенип, массалык маалымат каражаттарына байланышкан маселелерге өзгөчө көңүл буруп келет. Байкоочу кеңешинин курамына жарандык коом тарабынан сунушталган</p>
+	          <p>Язык преподования: <b>кыргызский</b></p>
+	        </Col>
+       
+      </Row>
 		    </Container>
 			<Footer/>
 			</div>

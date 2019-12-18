@@ -1,6 +1,8 @@
 import React from 'react';
 import { Nav, NavItem, NavLink, Row, Col } from 'reactstrap';
+import {Link} from 'react-router-dom';
 import  logo2 from '../assets/icon/image 64.png';
+
 import '../styles/main.css';
 
 const Example = (props) => {
@@ -10,13 +12,13 @@ const Example = (props) => {
       <Row>
         <Col xs="5" sm="3" className="margin">
         <NavItem>
-          <p href="/about">О проекте</p>
+           <Link to ="/about"><p href>О проекте</p></Link>
         </NavItem>
         <NavItem>
-          <p href="/news">Новости</p>
+         <Link to ="/news"><p >Новости</p></Link>
         </NavItem>
         <NavItem>
-          <p href="/courses">Курсы</p>
+          <p><a href="/courses"/>Курсы</p>
         </NavItem>
         <NavItem>
           <p href="/contacts">Контакты</p>
