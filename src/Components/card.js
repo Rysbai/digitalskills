@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import {Link} from "react-router-dom";
 
-const CardItem = ({name,image,id}) => {
+const CardItem = ({name,image,id,language,category_name}) => {
   return (
       <Card className={"border-0 shadow mb-3"} style={{maxWidth: '360px'}}>
         <CardImg top width="100%" src={image} alt="Card image cap" />
@@ -17,8 +17,8 @@ const CardItem = ({name,image,id}) => {
           </CardSubtitle>
           <CardText className={"mt-2 mb-5"}>
             <span className={"w-100 d-flex justify-content-between card_custom_body-text"}>
-              <span>14:00 - 16:00</span>
-              <span>13 занятий</span>
+              <span>{category_name}</span>
+              <span>{language === "ru" ? "Русский" : "Кыргызский"}</span>
             </span>
           </CardText>
           <p className={"w-100 d-flex justify-content-center"}>

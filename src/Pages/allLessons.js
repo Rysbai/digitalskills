@@ -12,9 +12,8 @@ const AllLessons = () => {
 
   useEffect(() => {
     API.getAllLessons('api/course/courses/?lang=ru')
-      .then(res => {
-        setData(res);
-      }).catch(e => console.error(e))
+      .then(res => setData(res.data))
+      .catch(e => console.error(e))
   },[]);
 
   return (
@@ -44,7 +43,7 @@ const AllLessons = () => {
           </div>
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-          {data.data && data.data.length ? data.data.map((item,idx) => {
+          {data && data.length ? data.map((item,idx) => {
             return <Card key={idx} {...item}/>
           }) : <p>Тут пусто</p>}
         </Col>

@@ -25,8 +25,8 @@ const TeacherPage = props => {
           <img src={teacher} className={"img-fluid rounded-pill"} alt={"teacher"}/>
         </Col>
         <Col md={7} className={"ml-md-5 d-flex flex-column justify-content-center"}>
-          <p className={"h2 teacher"}>Тимур Алхожоев</p>
-          <p className={"teacher teacher-subtitle"}>Руководитель проекта “DigiSkills”</p>
+          <p className={"h2 teacher-page"}>Тимур Алхожоев</p>
+          <p className={"teacher-page teacher-subtitle"}>Руководитель проекта “DigiSkills”</p>
           <p className={"teacher-archive"}>Кесиби юрист. Ж.Баласагын атындагы Кыргыз улуттук университетинин юридикалык факультетинен билим алган. Азыркы учурда КР Өкмөтүнүн алдындагы Кыргыз мамлекеттик юридикалык академиясынын аспиранты. Телекоммуникация тармагында эмгектенип, массалык маалымат каражаттарына байланышкан маселелерге өзгөчө көңүл буруп келет. Байкоочу кеңешинин курамына жарандык коом тарабынан сунушталган</p>
           <p>Язык преподования: <b>кыргызский</b></p>
         </Col>
