@@ -4,11 +4,26 @@ import img from '../assets/img/image1.png';
 import teacher from '../assets/img/ns_8 1.png';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+import API from '../API';
 import "../styles/course.css";
 import '../styles/main.css';
 
 
 class Course extends React.Component {
+
+	state = {
+		lesson: {},
+	};
+
+	componentDidMount() {
+		API.getLesson(this.props.match.params.id)
+			.then(res => {
+				this.setState({
+					lesson: res.data
+				})
+			}).catch(e => console.error(e));
+	}
+
 	render(){
 		return(
 		<div>
@@ -31,20 +46,21 @@ class Course extends React.Component {
 		        </Col>
 		      </Row>
 		      <Row>
-		      <Col className =".col-auto - variable width content ">
-		      <h5 className ="course-title">Описание курса</h5>
-		      <p className = "course-about">Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. 
-		      Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели. 
-		      Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта. 
-		      Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели.</p>
-		      </Col>
-		      <Col className ="col-md-auto">
-		      <div className ="block">
-		      <p className ="details-course">Детали онлайн урока</p>
-		      <p className = "DET">Дата: <span className ="date_course"> 10 декабря, 2019 </span></p>
-		      <p className = "DET">Время: <span className ="date_course"> 18:00 </span></p>
-		      </div>
-		      </Col>
+						<Col className =".col-auto - variable width content ">
+							<h5 className ="course-title">Описание курса</h5>
+								<p className = "course-about">Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта.
+								Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели.
+								Узнаем основные тренды и тенденции продвижения в Instagram. Разберёмся с функционалом и настройками аккаунта.
+								Сформируем стратегию продвижения: проанализируем конкурентов, определим задачи и установим цели.
+								</p>
+						</Col>
+						<Col className ="col-md-auto">
+							<div className ="block">
+								<p className ="details-course">Детали онлайн урока</p>
+								<p className = "DET">Дата: <span className ="date_course"> 10 декабря, 2019 </span></p>
+								<p className = "DET">Время: <span className ="date_course"> 18:00 </span></p>
+							</div>
+						</Col>
 		      </Row>
 		      <Row className={"row justify-content-center teacher-info"}>
 
@@ -59,9 +75,9 @@ class Course extends React.Component {
 	          <p>Язык преподования: <b>кыргызский</b></p>
 	        </Col>
        
-      </Row>
-		    </Container>
-			<Footer/>
+				</Row>
+					</Container>
+				<Footer/>
 			</div>
 			)}
 		}export default Course;

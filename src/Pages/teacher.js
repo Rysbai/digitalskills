@@ -11,10 +11,12 @@ const TeacherPage = props => {
   const [data,setData] = useState([]);
 
   useEffect(() => {
-      API.getTeacherData(`api/course/courses/?teacher_id=${props.match.params.id}&lang=ru/`)
+      API.getTeacherData(props.match.params.id)
         .then(res => setData(res.data))
         .catch(e => console.error(e))
   },[]);
+
+  const {name,surname,position,about,image,language} = data;
 
   return (
     <div>
@@ -22,13 +24,13 @@ const TeacherPage = props => {
     <Container>
       <Row className={"mt-5"}>
         <Col md={4} className={"text-center"}>
-          <img src={teacher} className={"img-fluid rounded-pill"} alt={"teacher"}/>
+          <img src={image} className={"img-fluid rounded-pill"} alt={"teacher"}/>
         </Col>
         <Col md={7} className={"ml-md-5 d-flex flex-column justify-content-center"}>
-          <p className={"h2 teacher-page"}>Тимур Алхожоев</p>
-          <p className={"teacher-page teacher-subtitle"}>Руководитель проекта “DigiSkills”</p>
-          <p className={"teacher-archive"}>Кесиби юрист. Ж.Баласагын атындагы Кыргыз улуттук университетинин юридикалык факультетинен билим алган. Азыркы учурда КР Өкмөтүнүн алдындагы Кыргыз мамлекеттик юридикалык академиясынын аспиранты. Телекоммуникация тармагында эмгектенип, массалык маалымат каражаттарына байланышкан маселелерге өзгөчө көңүл буруп келет. Байкоочу кеңешинин курамына жарандык коом тарабынан сунушталган</p>
-          <p>Язык преподования: <b>кыргызский</b></p>
+          <p className={"h2 teacher-page"}>{name} {surname}</p>
+          <p className={"teacher-page teacher-subtitle"}>{position}</p>
+          <p className={"teacher-archive"}>{about}</p>
+          <p>Язык преподования: <b>{language === 'ru' ? "Русский" : "Кыргызский"}</b></p>
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mt-5 pt-5"}>
           {[1,1,1,1,1,1].map((item,idx) => {

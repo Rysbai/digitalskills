@@ -22,7 +22,7 @@ const CardItem = ({name,image,id,language,category_name}) => {
             </span>
           </CardText>
           <p className={"w-100 d-flex justify-content-center"}>
-            <Link to={`/teacher/${id}`} className={"w-50"}>
+            <Link to={`/course/${id}`} className={"w-50"}>
             <Button tag={'span'}
                     color={"faded"}
                     className={"w-100 shadow-none rounded-0 card_custom_button"}>Подробнее</Button>
