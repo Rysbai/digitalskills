@@ -31,7 +31,7 @@ const News = ({match}) => {
               </div>
             </Col>
             <Col md={8}>
-              <img src={img} className={"img-fluid"} alt={"a girl"}/>
+              <img src={data.image} className={"img-fluid"} alt={"a girl"}/>
             </Col>
             <Col md={8}>
               <p className={"mt-3"}>{data.description}</p>
