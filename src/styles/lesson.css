@@ -1,0 +1,62 @@
+.lesson-header-title {
+  font-family: Muller;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 48px;
+  color: #2d5199;
+}
+.lesson-sidebar {
+  width: 300px;
+  height: 60px;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.lesson-sidebar-active {
+  color: #fff;
+  background: #2d5199;
+}
+
+.lesson-sidebar-numbering {
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 33px;
+  font-family: Muller;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  color: #2d5199;
+}
+
+.lesson-sidebar-title {
+  font-family: Muller;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+.lesson-next-btn {
+  position: fixed;
+  right: 45px;
+  bottom: 30px;
+  height: 40px;
+  width: 130px;
+  border: none;
+
+  color: #fff;
+  background-color: #2d5199;
+}
+.lesson-prev-btn {
+  position: fixed;
+  left: 350px;
+  bottom: 30px;
+  height: 40px;
+  width: 130px;
+  border: 1.5px solid #2d5199;
+  font-weight: 600;
+  background: #fff;
+  color: #2d5199;
+}
