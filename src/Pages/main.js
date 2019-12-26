@@ -54,7 +54,7 @@ class Main extends React.Component {
 		};
 
 		return(
-			<div>
+			<div className={"w-100 overflow-hidden"}>
 			<Header/>
 			<div className = "mainphoto">
 			 <Row className = "logopart">
