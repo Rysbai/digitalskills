@@ -1,37 +1,37 @@
 import React from 'react';
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, CardSubtitle, Button,
+  Media
 } from 'reactstrap';
+import {Link} from 'react-router-dom';
 import teacher from '../assets/img/Sanira 1.png';
 
-const Teacher_card = (props) => {
+const TeacherCard = ({id,image,name,surname,position,language,about}) => {
   return (
     <div>
-      <Card className = {"border-0 shadow mb-3"} style={{maxWidth: '420px'}}>
-        <div class="container">
-          <div class="row justify-content-md-left">
-            <div class="p-2 bd-highlight">
-             <CardImg style={{maxWidth: '90px'}} src={teacher} alt="Card image cap" />
-            </div>
-            <div class="col-6">
-             <CardTitle>Санира Маджикова</CardTitle>
-             <CardSubtitle>Руководитель проекта “Neobis</CardSubtitle>
-            </div>
-            
-          </div>
-         
-        </div>
-        
+      <Card className = {"border-0 shadow mb-3"} style={{maxWidth: '420px', minWidth: '300px'}}>
+        <Media className={"d-flex align-items-center justify-content-center pr-3 pl-3 pt-3 pb-0"}>
+          <Media object src={image} className={"rounded-pill teacher-card-image"}  alt="Generic placeholder image" />
+          <Media body>
+            <Media heading className={"mb-1 pl-3 teacher-card-name"}>{name} {surname}</Media>
+            <p className={"text-muted mb-0 pl-3 teacher-card-who"}>{position}</p>
+          </Media>
+        </Media>
         <CardBody>
-          
-          
-          <CardText>Кесиби юрист. Ж.Баласагын атындагы Кыргыз улуттук университетинин юридикалык факультетинен билим алган. Азыркы учурда КР Өкмөтүнүн алдындагы Кыргыз мамлекеттик юридикалык академиясынын аспиранты. Телекоммуникация тармагында эмгектенип, массалык маалымат каражаттарына байланышкан маселелерге өзгөчө көңүл буруп келет. Байкоочу кеңешинин курамына жарандык коом тарабынан сунушталган</CardText>
-          <Button>Подробнее</Button>
+          <CardText className={"text-muted"}>{about}</CardText>
+          <p>Язык преподования: <b>{language === "ru" ? "Русский" : "Кыргызский"}</b></p>
+          <div className={"w-100 d-flex justify-content-center"}>
+            <Link to={`/teacher/${id}`} className={"w-50 mx-auto d-inline-block mb-3"}>
+              <Button color={"faded"} tag={"span"} className={"w-100 card_custom_button rounded-0 pl-5 pr-5"}>
+                <b>Подробнее</b>
+              </Button>
+            </Link>
+          </div>
         </CardBody>
       </Card>
     </div>
   );
 };
 
-export default Teacher_card;
+export default TeacherCard;

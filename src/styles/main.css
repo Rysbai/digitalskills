@@ -167,3 +167,16 @@ color: #2D5199;
 	margin-top: 33px;
 	text-align: center;
 }
+
+.teacher-card-name {
+	font-size: 18px;
+	font-family: MullerBold;
+}
+
+.teacher-card-who {
+	font-size: 14px;
+}
+
+.teacher-card-image {
+	width: 90px;
+}
