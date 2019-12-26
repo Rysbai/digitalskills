@@ -14,17 +14,25 @@ const Lesson = () => {
       .then(res => setData(res.data))
       .catch(error => console.log(error));
   }, []);
-
   useEffect(() => {
     const newData =
       data.length > 0
-        ? data.sort((a, b)=> {
+        ? data.sort((a, b) => {
             return a.number - b.number;
           })
         : "";
     setSortData(newData);
   }, [data]);
-
+  const scrollTop = () => {
+    window.scroll({
+      top: 0,
+      left: 0
+    });
+  };
+  const nextBtnClicked = () => {
+    setSelect(select + 1);
+    scrollTop();
+  };
   return (
     <div>
       <LessonHeader />
@@ -72,7 +80,7 @@ const Lesson = () => {
               {select < sortData.length - 1 ? (
                 <button
                   className=" lesson-next-btn"
-                  onClick={() => setSelect(select + 1)}
+                  onClick={() => nextBtnClicked()}
                 >
                   Вперед
                 </button>
@@ -90,5 +98,4 @@ const Lesson = () => {
     </div>
   );
 };
-
 export default Lesson;
