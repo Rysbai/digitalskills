@@ -4,6 +4,7 @@ import img from '../assets/img/Full-of-ideas-Young-female-graphic-designer-Stock
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import {Link} from "react-router-dom";
+import HtmlParser from 'react-html-parser';
 import API from '../API';
 
 const News = ({match}) => {
@@ -34,7 +35,7 @@ const News = ({match}) => {
               <img src={data.image} className={"img-fluid"} alt={"a girl"}/>
             </Col>
             <Col md={8}>
-              <p className={"mt-3"}>{data.description}</p>
+              <p className={"mt-3"}>{HtmlParser(data.description)}</p>
             </Col>
             <Col md={8}>
               <Link className={"news_custom-link mt-5 mb-5 d-inline-block"} to={"/"}>Вернуться назад</Link>

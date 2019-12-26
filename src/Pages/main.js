@@ -54,7 +54,7 @@ class Main extends React.Component {
 		};
 
 		return(
-			<div>
+			<div className={"w-100 overflow-hidden"}>
 			<Header/>
 			<div className = "mainphoto">
 			 <Row className = "logopart">
@@ -125,11 +125,7 @@ class Main extends React.Component {
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 							{this.state.news && this.state.news.length ? this.state.news.map((item,idx) => {
-								return (
-									<Link key={idx} to={`/news/${item.id}`}>
-										<NewsCard {...item}/>
-									</Link>
-								)
+								return <NewsCard key={idx} {...item}/>
 							}) : <p className={"text-center h4"}>Загрузка</p>}
         		</Col>
 		 
@@ -145,7 +141,7 @@ class Main extends React.Component {
 							<Slider {...settings}>
 									{
 										this.state.teachers.length ? this.state.teachers.map((item,idx) => {
-											return <div key={idx}><TeacherCard {...item}/></div>
+											return <div key={idx} style={{width: '500px'}}><TeacherCard {...item}/></div>
 										}) :  <p className={"text-center h4"}>Загрузка</p>
 									}
 							</Slider>
