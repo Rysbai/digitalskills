@@ -125,11 +125,7 @@ class Main extends React.Component {
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 							{this.state.news && this.state.news.length ? this.state.news.map((item,idx) => {
-								return (
-									<Link key={idx} to={`/news/${item.id}`}>
-										<NewsCard {...item}/>
-									</Link>
-								)
+								return <NewsCard key={idx} {...item}/>
 							}) : <p className={"text-center h4"}>Загрузка</p>}
         		</Col>
 		 
