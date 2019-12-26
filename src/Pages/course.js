@@ -20,7 +20,7 @@ class Course extends React.Component {
 	};
 
 	componentDidMount() {
-		API.getLesson(this.props.match.params.id)
+		API.getCourse(this.props.match.params.id)
 			.then(res => {
 				this.setState({
 					lesson: res.data
@@ -36,7 +36,7 @@ class Course extends React.Component {
 	}
 
 	render(){
-		const {name,category_name,language,description,start,image,registration_link} = this.state.lesson;
+		const {name,category_name,language,description,start,image,registration_link,id} = this.state.lesson;
 		console.log(this.state);
 		return(
 		<div>
@@ -60,7 +60,7 @@ class Course extends React.Component {
 							</p>
 		          <Row className="text-center text-md-left pr-md-5">
 		       <div className={"col-md px-1"}>
-						 <Link to={"/course-learn"}
+						 <Link to={`/lesson/${id}`}
 								className ="coursebutton d-flex align-items-center justify-content-center">
 							 Открыть курс
 						 </Link>

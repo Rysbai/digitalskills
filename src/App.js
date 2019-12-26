@@ -23,7 +23,7 @@ function App() {
         <Route exact path={"/contacts"} component={Contacts} />
         <Route exact path={"/about"} component={Aboutus} />
         <Route exact path={"/course/:id"} component={Course} />
-        <Route exact path={"/lesson"} component={Lesson} />
+        <Route exact path={"/lesson/:id"} component={Lesson} />
       </Switch>
     </div>
   );

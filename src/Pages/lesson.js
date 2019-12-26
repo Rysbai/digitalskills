@@ -4,13 +4,13 @@ import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
 import LessonHeader from "../Components/lesson_header";
 
-const Lesson = () => {
+const Lesson = ({match}) => {
   const [data, setData] = useState({});
   const [sortData, setSortData] = useState({});
   const [select, setSelect] = useState(0);
 
   useEffect(() => {
-    API.getLesson(2)
+    API.getLesson(match.params.id)
       .then(res => setData(res.data))
       .catch(error => console.log(error));
   }, []);
