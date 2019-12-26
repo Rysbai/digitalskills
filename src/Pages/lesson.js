@@ -3,8 +3,9 @@ import API from "../API";
 import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
 import LessonHeader from "../Components/lesson_header";
+import { Link } from "react-router-dom";
 
-const Lesson = ({match}) => {
+const Lesson = ({ match }) => {
   const [data, setData] = useState({});
   const [sortData, setSortData] = useState({});
   const [select, setSelect] = useState(0);
@@ -59,7 +60,7 @@ const Lesson = ({match}) => {
               : ""}
           </div>
         </div>
-        <div className="col-9 shadow text-center">
+        <div className="col-9 shadow text-center mb-5">
           {sortData.length > 0 ? (
             <div className="mt-4" key={sortData[select].id}>
               {ReactHtmlParser(sortData[select].content)}
@@ -87,9 +88,11 @@ const Lesson = ({match}) => {
                   Вперед
                 </button>
               ) : (
-                <button className=" lesson-next-btn bg-success">
-                  Завершить
-                </button>
+                <Link to="/lessons">
+                  <button className=" lesson-next-btn bg-success">
+                    Завершить
+                  </button>
+                </Link>
               )}
             </div>
           ) : (
