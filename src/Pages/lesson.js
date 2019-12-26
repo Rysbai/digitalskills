@@ -1,76 +1,65 @@
 import React, { useState, useEffect } from "react";
-import Axios from "axios";
+import API from "../API";
+import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
 import LessonHeader from "../Components/lesson_header";
 
 const Lesson = () => {
   const [data, setData] = useState({});
-  const [select, setSelect] = useState(1);
+  const [sortData, setSortData] = useState({});
+  const [select, setSelect] = useState(0);
 
   useEffect(() => {
-    Axios.get(`https://jsonplaceholder.typicode.com/users`)
+    API.getLesson(2)
       .then(res => setData(res.data))
       .catch(error => console.log(error));
   }, []);
+
+  useEffect(() => {
+    const newData =
+      data.length > 0
+        ? data.sort((a, b)=> {
+            return a.number - b.number;
+          })
+        : "";
+    setSortData(newData);
+  }, [data]);
 
   return (
     <div>
       <LessonHeader />
       <div className="col-12 row mt-5">
-        <div className="col-3 ">
-          {data.length > 0
-            ? data.map((data, index) =>
-                index < 7 ? (
-                  <LessonSidebar
-                    id={data.id}
-                    name={data.name}
-                    index={index}
-                    setSelect={setSelect}
-                    select={select}
-                  />
-                ) : (
-                  ""
+        <div className="col-3">
+          <div className="lesson-sidebar-wrapper">
+            {sortData.length > 0
+              ? sortData.map((data, index) =>
+                  index < 7 ? (
+                    <LessonSidebar
+                      id={data.id}
+                      title={data.title}
+                      number={data.number}
+                      setSelect={setSelect}
+                      select={select}
+                      index={index}
+                    />
+                  ) : (
+                    ""
+                  )
                 )
-              )
-            : ""}
+              : ""}
+          </div>
         </div>
         <div className="col-9 shadow text-center">
-          {data.length > 0 ? (
-            <div className="mt-4">
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
-              <p>{data[select].name}</p>
-              <p>{data[select].email}</p>
-              <p>{data[select].body}</p>
+          {sortData.length > 0 ? (
+            <div className="mt-4" key={sortData[select].id}>
+              {ReactHtmlParser(sortData[select].content)}
             </div>
           ) : (
             ""
           )}
-          {data.length > 0 ? (
+          {sortData.length > 0 ? (
             <div>
-              {select > 1 ? (
+              {select > 0 ? (
                 <button
                   className="lesson-prev-btn"
                   onClick={() => setSelect(select - 1)}
@@ -80,7 +69,7 @@ const Lesson = () => {
               ) : (
                 ""
               )}
-              {select < data.length - 3 ? (
+              {select < sortData.length - 1 ? (
                 <button
                   className=" lesson-next-btn"
                   onClick={() => setSelect(select + 1)}
@@ -101,4 +90,5 @@ const Lesson = () => {
     </div>
   );
 };
+
 export default Lesson;
