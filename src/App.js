@@ -12,6 +12,9 @@ import Course from "./Pages/course";
 import Lesson from './Pages/lesson';
 
 function App() {
+
+  localStorage.setItem("language", "ru");
+
   return (
     <div className="App">
       <Switch>

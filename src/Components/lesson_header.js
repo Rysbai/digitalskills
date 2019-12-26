@@ -10,7 +10,7 @@ import "../styles/lesson.css"
 import closeIcon from "../assets/icon/x.png"
 import {Link} from 'react-router-dom'
 
-const LessonHeader = () => {
+const LessonHeader = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -23,7 +23,7 @@ const LessonHeader = () => {
         </div>
    </Link>
         <NavbarBrand tag={"div"}>
-          <div className="lesson-header-title">Курс по СММ маркетингу</div>
+          <div className="lesson-header-title">{props.title}</div>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar></Collapse>

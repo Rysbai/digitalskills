@@ -38,7 +38,7 @@ const Lesson = ({ match }) => {
   };
   return (
     <div>
-      <LessonHeader />
+      <LessonHeader title={data.length > 0 ? data[0].title:""} />
       <div className="col-12 row mt-5">
         <div className="col-3">
           <div className="lesson-sidebar-wrapper">
