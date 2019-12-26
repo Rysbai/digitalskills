@@ -145,7 +145,7 @@ class Main extends React.Component {
 							<Slider {...settings}>
 									{
 										this.state.teachers.length ? this.state.teachers.map((item,idx) => {
-											return <div key={idx}><TeacherCard {...item}/></div>
+											return <div key={idx} style={{width: '500px'}}><TeacherCard {...item}/></div>
 										}) :  <p className={"text-center h4"}>Загрузка</p>
 									}
 							</Slider>
