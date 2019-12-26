@@ -120,7 +120,7 @@ class Main extends React.Component {
           <p className={"h1 "}>Новости</p>
 
           <div className={"d-inline-block"} style={{minWidth: '220px'}}>
-            <Link to ="/lessons"><button className ="lessons_button">Все новости</button></Link>
+									<Link to="/all-news"><button className ="lessons_button">Все новости</button></Link>
             </div>
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>

@@ -5,6 +5,7 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import NewsCard from "../Components/news_card";
 import API from '../API';
+import Spiner from '../Components/spiner';
 
 const AllNews = () => {
 
@@ -48,7 +49,7 @@ const AllNews = () => {
                 </Link>
               </Col>
             )
-          }) : <p>Тут пусто</p>}
+          }) : <Spiner/>}
           <div className={"w-100 mx-auto text-center mb-5"}>
             <Button className={"text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"} color={"faded"}>1</Button>
             <Button className={"shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"} color={"faded"}>2</Button>

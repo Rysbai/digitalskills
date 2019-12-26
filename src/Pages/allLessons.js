@@ -4,6 +4,7 @@ import Footer from '../Components/Footer';
 import {Container,Row,Col,UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem,Button} from 'reactstrap';
 import Card from '../Components/card';
 import API from '../API';
+import Spiner from '../Components/spiner';
 
 const AllLessons = () => {
 
@@ -45,7 +46,7 @@ const AllLessons = () => {
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
           {data && data.length ? data.map((item,idx) => {
             return <Card key={idx} {...item}/>
-          }) : <p>Тут пусто</p>}
+          }) : <Spiner/>}
         </Col>
         <div className={"w-50 mx-auto text-center mb-5"}>
           <Button className={"text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"} color={"faded"}>1</Button>

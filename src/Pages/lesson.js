@@ -4,7 +4,7 @@ import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
 import LessonHeader from "../Components/lesson_header";
 import { Link } from "react-router-dom";
-
+import Spiner from "../Components/spiner"
 const Lesson = ({ match }) => {
   const [data, setData] = useState({});
   const [sortData, setSortData] = useState({});
@@ -39,11 +39,12 @@ const Lesson = ({ match }) => {
   return (
     <div>
       <LessonHeader title={data.length > 0 ? data[0].title:""} />
-      <div className="col-12 row mt-5">
-        <div className="col-3">
-          <div className="lesson-sidebar-wrapper">
-            {sortData.length > 0
-              ? sortData.map((data, index) =>
+      {data.length>0?
+        <div className="col-12 row mt-5">
+          <div className="col-3">
+            <div className="lesson-sidebar-wrapper">
+              {sortData.length > 0
+                ? sortData.map((data, index) =>
                   index < 7 ? (
                     <LessonSidebar
                       id={data.id}
@@ -54,52 +55,52 @@ const Lesson = ({ match }) => {
                       index={index}
                     />
                   ) : (
-                    ""
-                  )
+                      ""
+                    )
                 )
-              : ""}
-          </div>
-        </div>
-        <div className="col-9 shadow text-center mb-5">
-          {sortData.length > 0 ? (
-            <div className="mt-4" key={sortData[select].id}>
-              {ReactHtmlParser(sortData[select].content)}
+                : ""}
             </div>
-          ) : (
-            ""
-          )}
-          {sortData.length > 0 ? (
-            <div>
-              {select > 0 ? (
-                <button
-                  className="lesson-prev-btn"
-                  onClick={() => setSelect(select - 1)}
-                >
-                  Назад
-                </button>
-              ) : (
+          </div>
+          <div className="col-9 shadow text-center mb-5">
+            {sortData.length > 0 ? (
+              <div className="mt-4" key={sortData[select].id}>
+                {ReactHtmlParser(sortData[select].content)}
+              </div>
+            ) : (
                 ""
               )}
-              {select < sortData.length - 1 ? (
-                <button
-                  className=" lesson-next-btn"
-                  onClick={() => nextBtnClicked()}
-                >
-                  Вперед
+            {sortData.length > 0 ? (
+              <div>
+                {select > 0 ? (
+                  <button
+                    className="lesson-prev-btn"
+                    onClick={() => setSelect(select - 1)}
+                  >
+                    Назад
                 </button>
-              ) : (
-                <Link to="/lessons">
-                  <button className=" lesson-next-btn bg-success">
-                    Завершить
+                ) : (
+                    ""
+                  )}
+                {select < sortData.length - 1 ? (
+                  <button
+                    className=" lesson-next-btn"
+                    onClick={() => nextBtnClicked()}
+                  >
+                    Вперед
+                </button>
+                ) : (
+                    <Link to="/lessons">
+                      <button className=" lesson-next-btn bg-success">
+                        Завершить
                   </button>
-                </Link>
+                    </Link>
+                  )}
+              </div>
+            ) : (
+                ""
               )}
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
-      </div>
+          </div>
+        </div>:<Spiner/> }
     </div>
   );
 };
