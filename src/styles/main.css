@@ -181,3 +181,21 @@ color: #2D5199;
 .teacher-card-image {
 	width: 90px;
 }
+
+.main-page-slider-button {
+	width: 50px;
+	height: 50px;
+}
+
+.main-page-slider-button__img-right {
+	right: 4px;
+}
+
+.main-page-slider-button__img-left {
+	transform: rotate(180deg);
+}
+
+.main-page-slider-button {
+	position: relative;
+	top:-30px;
+}

@@ -4,15 +4,32 @@ import Slider from "react-slick";
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../styles/main.css';
-import {Container,Row,Col} from 'reactstrap';
+import {Container,Row,Col,Button} from 'reactstrap';
 import logo2 from '../assets/icon/image 64.png';
 import blockphoto from '../assets/img/block-photo.png';
 import blockphoto2 from '../assets/img/block-photo2.png';
+import arrow from '../assets/img/arrow.png';
 import Card from '../Components/card';
 import NewsCard from '../Components/news_card';
 import TeacherCard from '../Components/teacher_card';
 import API from '../API';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
+
+const LeftButton = ({onClick}) => {
+	return (
+		<Button className={"rounded-pill main-page-slider-button"} onClick={onClick} color={"primary"}>
+			<img className={"position-relative main-page-slider-button__img-left"} src={arrow} alt={"arrow"}/>
+		</Button>
+)};
+
+const RightButton = ({onClick}) => {
+	return (
+		<Button className={"rounded-pill main-page-slider-button"} onClick={onClick} color={"primary"}>
+			<img className={"position-relative main-page-slider-button__img-right"} src={arrow} alt={"arrow"}/>
+		</Button>
+)};
 
 
 class Main extends React.Component {
@@ -46,11 +63,14 @@ class Main extends React.Component {
 	render(){
 
 		const settings = {
-			dots: true,
+			dots: false,
 			infinite: true,
 			speed: 500,
-			slidesToShow: 3,
-			slidesToScroll: 1
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			arrows: true,
+			nextArrow: <RightButton/>,
+			prevArrow: <LeftButton/>,
 		};
 
 		return(
@@ -128,7 +148,6 @@ class Main extends React.Component {
 								return <NewsCard key={idx} {...item}/>
 							}) : <p className={"text-center h4"}>Загрузка</p>}
         		</Col>
-		 
 		     </Row> 
 			</Container>
 			<Container>
@@ -137,15 +156,17 @@ class Main extends React.Component {
           <p className={"h1"}>Преподаватели</p>
 
             </Col>
-		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-							<Slider {...settings}>
-									{
-										this.state.teachers.length ? this.state.teachers.map((item,idx) => {
-											return <div key={idx} style={{width: '500px'}}><TeacherCard {...item}/></div>
-										}) :  <p className={"text-center h4"}>Загрузка</p>
-									}
-							</Slider>
-        		</Col>
+		        {/*<Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
+						<div className={"w-100 mb-5"}>
+		        	<Slider {...settings}>
+								{
+									this.state.teachers.length ? this.state.teachers.map((item,idx) => {
+										return <div key={idx} className={"w-100"}><TeacherCard {...item}/></div>
+									}) :  <p className={"text-center h4"}>Загрузка</p>
+								}
+		        	</Slider>
+						</div>
+        		{/*</Col>*/}
 		 
 		     </Row> 
 			</Container>
