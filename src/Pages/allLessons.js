@@ -11,7 +11,7 @@ const AllLessons = () => {
   const [data,setData] = useState([]);
 
   useEffect(() => {
-    API.getAllLessons('api/course/courses/?lang=ru')
+    API.getAllLessons()
       .then(res => setData(res.data))
       .catch(e => console.error(e))
   },[]);

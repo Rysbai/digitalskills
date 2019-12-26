@@ -1,26 +1,47 @@
-import React, {Component} from "react";
-import {Link, withRouter} from "react-router-dom";
+import React from "react";
+import {Link} from "react-router-dom";
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import '../styles/main.css';
-import {Button,Container,Row,Col} from 'reactstrap';
+import {Container,Row,Col} from 'reactstrap';
 import logo2 from '../assets/icon/image 64.png';
 import blockphoto from '../assets/img/block-photo.png';
 import blockphoto2 from '../assets/img/block-photo2.png';
 import Card from '../Components/card';
-import News_card from '../Components/news_card';
+import NewsCard from '../Components/news_card';
 import Teacher_card from '../Components/teacher_card';
+import API from '../API';
 
 
 
 class Main extends React.Component {
+
+	state = {
+		lessons: {},
+		news: {},
+	};
+
+	componentDidMount() {
+		API.getAllLessons()
+			.then(res => this.setState({
+				lessons: res.data
+			}))
+			.catch(e => console.error(e));
+
+		API.getAllNews()
+			.then(res => this.setState({
+				news: res.data
+			}))
+			.catch(e => console.error(e));
+	};
+
 	render(){
 		return(
 			<div>
 			<Header/>
 			<div className = "mainphoto">
 			 <Row className = "logopart">
-		        <Col sm={{ size: 'auto', offset: 1 }}><img src={logo2}/></Col>
+		        <Col sm={{ size: 'auto', offset: 1 }}><img src={logo2} alt={"logo"}/></Col>
 		      </Row>
 		      <Row>
 		        <Col sm={{ size: 'auto', offset: 1 }}><h1 className="mainheader">ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН 
@@ -36,20 +57,20 @@ class Main extends React.Component {
 		      </div>
 		      <Row>
 		      <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-					    <div class="col-4">
+					    <div className="col-4">
 					      <h2 className='headtext '>Наша миссия</h2><p className="blocktext">Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. аким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
 					    </div>
-					    <div class="col-4">
-					     <img className = "blockphoto" src={blockphoto}></img>
+					    <div className="col-4">
+					     <img className = "blockphoto" src={blockphoto} alt={"image"}/>
 					    </div>
 					    </Col>
 					    </Row>
 					    <Row>
 		      <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-					    <div class="col-4">
-					      <img className = "blockphoto" src={blockphoto2}></img>
+					    <div className="col-4">
+					      <img className = "blockphoto" src={blockphoto2} alt={"image"}/>
 					    </div>
-					    <div class="col-4">
+					    <div className="col-4">
 					     <h2 className='headtext'>Повседневная практика</h2><p className="blocktext " >Таким образом реализация 
 					     	намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.
 					      Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
@@ -69,11 +90,10 @@ class Main extends React.Component {
             </div>
             </Col>
 		        <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-          <Card/>
-          <Card/>
-          <Card/>
-          
-        </Col>
+							{this.state.lessons && this.state.lessons.length ? this.state.lessons.map((item,idx) => {
+								return <Card key={idx} {...item}/>
+							}) : <p className={"text-center h4"}>Загрузка</p>}
+        		</Col>
 		 
 		     </Row> 
 			</Container>
@@ -87,12 +107,14 @@ class Main extends React.Component {
             </div>
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-	          <News_card/>
-			  <News_card/>
-	          <News_card/>
-	          <News_card/>
-          
-        </Col>
+							{this.state.news && this.state.news.length ? this.state.news.map((item,idx) => {
+								return (
+									<Link to={`/news/${item.id}`}>
+										<NewsCard key={idx} {...item}/>
+									</Link>
+								)
+							}) : <p className={"text-center h4"}>Загрузка</p>}
+        		</Col>
 		 
 		     </Row> 
 			</Container>
@@ -104,7 +126,7 @@ class Main extends React.Component {
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 	          <Teacher_card/>
-			  <Teacher_card/>
+			  		<Teacher_card/>
 	          
           
         </Col>

@@ -32,7 +32,7 @@ const Example = () => {
             <Nav className="mr-auto" navbar>
               <NavItem className="first item">
                 <NavLink tag={"p"} className={"mb-0"}>
-                  <Link to={"/aboutproject"}>
+                  <Link to={"/about"}>
                     О проекте
                   </Link>
                 </NavLink>

@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React,{useState} from 'react';
 import {Container,Row,Col} from 'reactstrap';
 import CardItem from '../Components/card';
 import teacher from '../assets/img/ns_8 1.png';
@@ -6,15 +6,11 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import API from '../API';
 
-const TeacherPage = props => {
+const TeacherPage = () => {
 
   const [data,setData] = useState([]);
 
-  useEffect(() => {
-      API.getTeacherData(props.match.params.id)
-        .then(res => setData(res.data))
-        .catch(e => console.error(e))
-  },[]);
+   
 
   const {name,surname,position,about,image,language} = data;
 

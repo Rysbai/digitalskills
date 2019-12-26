@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Row, CardTitle, CardText, CardImg } from 'reactstrap';
 import news from "../assets/img/news.png";
 import "../styles/components_style.css";
+
 const News_card = ({title,views}) => {
   return (
     <div>
