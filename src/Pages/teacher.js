@@ -26,8 +26,8 @@ const TeacherPage = ({match}) => {
   return (
     <div>
     <Header/>
-  
-         <Container>
+  {
+        data && data.name ? <Container>
           <Row className={"mt-5"}>
             <Col md={4} className={"text-center"}>
               <img src={image} className={"img-fluid rounded-pill"} alt={"teacher"} />
@@ -44,8 +44,8 @@ const TeacherPage = ({match}) => {
               }) : ""}
             </Col>
           </Row>
-        </Container>
-  
+        </Container>:<Spiner/>
+  }
     <Footer/>
       </div>
   )

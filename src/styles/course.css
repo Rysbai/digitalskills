@@ -11,6 +11,9 @@
 	width: 650px;
 	height: 340px;
 }
+.courses-blue-color{
+	color: #2D5199;
+}
 .coursebutton{
 	width: 210px;
 	height: 50px;
@@ -104,4 +107,16 @@
 .bio-teacher{
 	width: 500px;
 	text-align: justify;
+}
+.teacher-page-btn{
+height: 50px;
+width: 300px;
+background-color: #2D5199;
+border:none;
+font-family: Muller;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 27px;
+color: #fff;
 }

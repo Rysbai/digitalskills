@@ -44,20 +44,23 @@ class Course extends React.Component {
 		return (
       <div>
         <Header />
-      
+
+        {this.state.lesson && this.state.lesson.name ? (
           <Container>
             <Row className={"mt-5"}>
               <Col md={6} className={"md-5 d-flex flex-column "}>
                 <p className={"header-course"}>{name}</p>
-                <p className={"teacher-archive"}>
-                  <span className={"text-muted"}>Язык: </span>
-                  <b>{language === "ru" ? "Русский" : "Кыргызский"}</b>
+                <p className={"teacher-archive mt-4"}>
+                  <span className={"text-muted "}>Язык: </span>
+                  <b className="courses-blue-color">
+                    {language === "ru" ? "Русский" : "Кыргызский"}
+                  </b>
                 </p>
                 <p className={"teacher-archive"}>
                   <span className={"text-muted"}>Категория: </span>
-                  <b>{category_name}</b>
+                  <b className="courses-blue-color">{category_name}</b>
                 </p>
-                <Row className="text-center text-md-left pr-md-5">
+                <Row className="text-center text-md-left pr-md-5 mt-4">
                   <div className={"col-md px-1"}>
                     <Link
                       to={`/lesson/${id}`}
@@ -118,7 +121,7 @@ class Course extends React.Component {
                 <p className={"h2"}>
                   {this.state.teacher.name} {this.state.teacher.surname}
                 </p>
-                <p className={"teacher-subtitler "}>
+                <p className={"teacher-subtitler"}>
                   {this.state.teacher.position}
                 </p>
                 <p className={"bio-teacher"}>{this.state.teacher.about}</p>
@@ -132,8 +135,18 @@ class Course extends React.Component {
                 </p>
               </Col>
             </Row>
+            <Col className={"col-12"}>
+              <Link to={`/lesson/${id}`}>
+                <button className=" offset-4 my-5 teacher-page-btn">
+                  открыть курс
+                </button>
+              </Link>
+            </Col>
           </Container>
-        ) 
+        ) : (
+          <Spiner />
+        )}
+
         <Footer />
       </div>
     );}

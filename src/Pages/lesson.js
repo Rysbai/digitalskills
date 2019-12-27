@@ -38,9 +38,10 @@ const Lesson = ({ match }) => {
   };
   return (
     <div>
-      <LessonHeader title={data.length > 0 ? data[0].title : ""} 
-       
-        />
+      <LessonHeader
+        MatchParamsId={match.params.id}
+        title={data.length > 0 ? data[0].title : ""}
+      />
       {data.length > 0 ? (
         <div className="col-12 row mt-5">
           <div className="col-3 ml-2 lesson-sidebar-wrapper">
@@ -63,7 +64,7 @@ const Lesson = ({ match }) => {
                 : ""}
             </div>
           </div>
-          <div className=" col-8 mx-5 px-5 shadow mb-5">
+          <div className="lesson-content-block col-8 mx-5 px-5 shadow pb-5 mb-5">
             {sortData.length > 0 ? (
               <div className="mt-4" key={sortData[select].id}>
                 {ReactHtmlParser(sortData[select].content)}
