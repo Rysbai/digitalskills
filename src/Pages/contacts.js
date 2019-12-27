@@ -16,7 +16,7 @@ import lampImage from "../assets/icon/image 44.png";
 import phoneImage from "../assets/icon/image 45.png";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-const Swal = require("sweetalert2");
+import Swal from 'sweetalert2';
 
 const ContactBodyItem = ({ image, body, className }) => {
   return (
