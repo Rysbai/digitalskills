@@ -1,52 +1,56 @@
-import React from 'react';
-import {Container,Row,Col} from 'reactstrap';
-import {Link} from 'react-router-dom';
-import img from '../assets/img/image1.png';
-import teacher from '../assets/img/ns_8 1.png';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
+import img from "../assets/img/image1.png";
+import teacher from "../assets/img/ns_8 1.png";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import moment from "moment";
 import "moment/locale/ru";
-import API from '../API';
+import API from "../API";
 import "../styles/course.css";
-import '../styles/main.css';
-import Spiner from '../Components/spiner';
-
+import "../styles/main.css";
+import Spiner from "../Components/spiner";
 
 class Course extends React.Component {
+  state = {
+    lesson: {},
 
-	state = {
-		lesson: {},
-	
-		teacher: {},
-	};
+    teacher: {}
+  };
 
+  componentDidMount() {
+    API.getCourse(this.props.match.params.id)
+      .then(res => {
+        this.setState({
+          lesson: res.data
+        });
+        API.getTeacherData(this.state.lesson.teacher_id)
+          .then(res => {
+            this.setState({
+              teacher: res.data
+            });
+          })
+          .catch(e => console.error(e));
+      })
+      .catch(e => console.error(e));
+  }
 
-
-
-	componentDidMount() {
-		API.getCourse(this.props.match.params.id)
-			.then(res => {
-				this.setState({
-					lesson: res.data,
-				
-				});
-				API.getTeacherData(this.state.lesson.teacher_id)
-					.then(res => {
-						this.setState({
-							teacher: res.data
-						})
-					})
-					.catch(e => console.error(e))
-			}).catch(e => console.error(e));
-	}
-
-	render(){
+  render() {
     console.log(this.state.lessons);
 
-		const {name,category_name,language,description,start,image,registration_link,id} = this.state.lesson;
-		console.log(this.state);
-		return (
+    const {
+      name,
+      category_name,
+      language,
+      description,
+      start,
+      image,
+      registration_link,
+      id
+    } = this.state.lesson;
+    console.log(this.state);
+    return (
       <div>
         <Header />
 
@@ -122,18 +126,22 @@ class Course extends React.Component {
                 ""
               )}
             </Row>
-
-            <Row className={"row justify-content-left teacher-info"}>
-              <Col md={4} className={""}>
-                <p className={"teacher col-12 bm-5"}> Преподаватель </p>
-
+            <div className="mt-5">
+              <p className={"teacher text-left bm-5"}> Преподаватель </p>
+            </div>
+            <Row
+              className={
+                "row justify-content-left align-items-center teacher-info"
+              }
+            >
+              <Col md={3} className={""}>
                 <img
                   src={this.state.teacher.image}
                   className={"img-fluid rounded-pill"}
                   alt={"teacher"}
                 />
               </Col>
-              <Col className={"col-6"}>
+              <Col className={"col-7"}>
                 <p className={"h2"}>
                   {this.state.teacher.name} {this.state.teacher.surname}
                 </p>
@@ -167,5 +175,7 @@ class Course extends React.Component {
 
         <Footer />
       </div>
-    );}
-		}export default Course;
+    );
+  }
+}
+export default Course;
