@@ -23,5 +23,6 @@ export default {
         "language"
       )}`
     ),
-  getLesson: id => http.get(`api/course/programs/?course_id=${id}`)
+  getLesson: id => http.get(`api/course/programs/?course_id=${id}`),
+  getDataAboutUs: () => http.get(`https://digiskills.kg/api/aboutus/?lang=${localStorage.getItem("language")}`),
 };
