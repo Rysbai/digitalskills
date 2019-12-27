@@ -204,3 +204,18 @@ color: #2D5199;
 	position: relative;
 	top:-30px;
 }
+
+.main-card-button-pos {
+	position: absolute;
+	left: 0;
+	bottom: 20px;
+}
+
+.teacher-card-about-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 21px;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+}

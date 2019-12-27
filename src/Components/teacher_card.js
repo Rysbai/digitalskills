@@ -1,16 +1,15 @@
 import React from 'react';
 import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button,
+  Card, CardText, CardBody,
+  Button,
   Media
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
-import teacher from '../assets/img/Sanira 1.png';
 
 const TeacherCard = ({id,image,name,surname,position,language,about}) => {
   return (
     <div>
-      <Card className = {"border-0 shadow mb-3"} style={{maxWidth: '420px', minWidth: '300px'}}>
+      <Card className = {"border-0 shadow mb-3"} style={{maxWidth: '400px', minWidth: '300px', height: '500px'}}>
         <Media className={"d-flex align-items-center justify-content-center pr-3 pl-3 pt-3 pb-0"}>
           <Media object src={image} className={"rounded-pill teacher-card-image"}  alt="Generic placeholder image" />
           <Media body>
@@ -19,11 +18,11 @@ const TeacherCard = ({id,image,name,surname,position,language,about}) => {
           </Media>
         </Media>
         <CardBody>
-          <CardText className={"text-muted"}>{about}</CardText>
+          <CardText className={"text-muted teacher-card-about-text"}>{about}</CardText>
           <p>Язык преподования: <b>{language === "ru" ? "Русский" : "Кыргызский"}</b></p>
-          <div className={"w-100 d-flex justify-content-center"}>
+          <div className={"w-100 d-flex justify-content-center main-card-button-pos"}>
             <Link to={`/teacher/${id}`} className={"w-50 mx-auto d-inline-block mb-3"}>
-              <Button color={"faded"} tag={"span"} className={"w-100 card_custom_button rounded-0 pl-5 pr-5"}>
+              <Button color={"faded"} tag={"span"} className={"card_custom_button rounded-0 pl-5 pr-5 pt-3 pb-3"}>
                 <b>Подробнее</b>
               </Button>
             </Link>

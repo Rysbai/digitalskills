@@ -18,14 +18,14 @@ import "slick-carousel/slick/slick-theme.css";
 import Spiner from "../Components/spiner";
 
 
-const LeftButton = ({onClick,className}) => {
+const LeftButton = ({onClick}) => {
 	return (
 		<Button className={"rounded-pill main-page-slider-button slick-arrow slick-prev"} onClick={onClick} color={"primary"}>
 			<img className={"position-relative main-page-slider-button__img-left"} src={arrow} alt={"arrow"}/>
 		</Button>
 )};
 
-const RightButton = ({onClick,className}) => {
+const RightButton = ({onClick}) => {
 	return (
 		<Button className={"rounded-pill main-page-slider-button slick-arrow slick-next"} onClick={onClick} color={"primary"}>
 			<img className={"position-relative main-page-slider-button__img-right"} src={arrow} alt={"arrow"}/>
@@ -73,6 +73,7 @@ class Main extends React.Component {
 			nextArrow: <RightButton/>,
 			prevArrow: <LeftButton/>,
 			adaptiveHeight: true,
+			slidesPerView: true,
 			responsive: [
 				{
 					breakpoint: 1024,
@@ -127,7 +128,10 @@ class Main extends React.Component {
 		      <Row>
 		      <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
 					    <div className="col-4">
-					      <h2 className='headtext '>Наша миссия</h2><p className="blocktext">Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. аким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
+					      <h2 className='headtext '>Наша миссия</h2>
+								<p className="blocktext">
+									Предоставить возможность каждому кыргызстанцу приобрести минимальные цифровые навыки, а также определиться с профессиональной ориентацией в области информационных технологий.
+								</p>
 					    </div>
 					    <div className="col-4">
 					     <img className = "blockphoto" src={blockphoto} alt={"image"}/>
@@ -140,9 +144,9 @@ class Main extends React.Component {
 					      <img className = "blockphoto" src={blockphoto2} alt={"image"}/>
 					    </div>
 					    <div className="col-4">
-					     <h2 className='headtext'>Повседневная практика</h2><p className="blocktext " >Таким образом реализация 
-					     	намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.
-					      Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
+					     <h2 className='headtext'>Цель</h2><p className="blocktext " >
+								Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
+							</p>
 					    </div>
 					    </Col>
 					    </Row>
@@ -158,7 +162,7 @@ class Main extends React.Component {
             <Link to ="/lessons"><button className ="lessons_button">Все уроки</button></Link>
             </div>
             </Col>
-		        <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
+		        <Col md={12} className={"d-flex justify-content-between mt-3 flex-wrap mb-5"}>
 							{this.state.lessons && this.state.lessons.data ? this.state.lessons.data.map((item,idx) => {
 								return <Card key={idx} {...item}/>
 							}) : <Spiner/>}
@@ -166,22 +170,22 @@ class Main extends React.Component {
 		 
 		     </Row> 
 			</Container>
-			<Container>
-		        <Row>
-        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-          <p className={"h1 "}>Новости</p>
+			{/*<Container>*/}
+		  {/*      <Row>*/}
+      {/*  <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
+      {/*    <p className={"h1 "}>Новости</p>*/}
 
-          <div className={"d-inline-block"} style={{minWidth: '220px'}}>
-									<Link to="/all-news"><button className ="lessons_button">Все новости</button></Link>
-            </div>
-            </Col>
-		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-							{this.state.news && this.state.news.data ? this.state.news.data.map((item,idx) => {
-								return <NewsCard key={idx} {...item}/>
-							}) : <Spiner />}
-        		</Col>
-		     </Row> 
-			</Container>
+      {/*    <div className={"d-inline-block"} style={{minWidth: '220px'}}>*/}
+			{/*						<Link to="/all-news"><button className ="lessons_button">Все новости</button></Link>*/}
+      {/*      </div>*/}
+      {/*      </Col>*/}
+		  {/*      <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
+			{/*				{this.state.news && this.state.news.data ? this.state.news.data.map((item,idx) => {*/}
+			{/*					return <NewsCard key={idx} {...item}/>*/}
+			{/*				}) : <p className={"text-center h4"}>Загрузка</p>}*/}
+      {/*  		</Col>*/}
+		  {/*   </Row> */}
+			{/*</Container>*/}
 			<Container>
 		        <Row>
         <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
@@ -194,7 +198,7 @@ class Main extends React.Component {
 								{
 									this.state.teachers.length ? this.state.teachers.map((item,idx) => {
 										return <div key={idx} className={"w-100"}><TeacherCard {...item}/></div>
-									}) : <Spiner />
+									}) :  <p className={"text-center h4"}>Загрузка</p>
 								}
 		        	</Slider>
 						</div>
