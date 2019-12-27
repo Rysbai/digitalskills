@@ -142,11 +142,11 @@ class Main extends React.Component {
 					    <div className="col-4">
 					      <img className = "blockphoto" src={blockphoto2} alt={"image"}/>
 					    </div>
-					    <div className="col-4">
-					     <h2 className='headtext'>Цель</h2><p className="blocktext " >
-								Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
-							</p>
-					    </div>
+								<div className="col-4">
+								 <h2 className='headtext'>Цель</h2><p className="blocktext " >
+									Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
+									</p>
+								</div>
 					    </Col>
 					    </Row>
 					    <div className="photo2"><h1 className="banner2">ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН 
@@ -155,7 +155,7 @@ class Main extends React.Component {
 		        <Container>
 		        <Row>
         <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-          <p className={"h1 "}>Наши уроки</p>
+          <p className={"h1"}>Наши уроки</p>
 
           <div className={"d-inline-block"} style={{minWidth: '220px'}}>
             <Link to ="/lessons"><button className ="lessons_button">Все уроки</button></Link>
