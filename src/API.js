@@ -7,6 +7,7 @@ const http = Axios.create({
 export default {
   getAllLessons: () => http.get(`api/course/courses/?lang=${localStorage.getItem("language")}`),
   getTeacherData: id => http.get(`api/course/teachers/${id}/?lang=${localStorage.getItem("language")}`),
+  getLessonsOfTeacher: id => http.get(`api/course/courses/?teacher_id=${id}`),
   getAllNews: () => http.get(`api/news/?lang=${localStorage.getItem("language")}`),
   getOneNews: (id) => http.get(`api/news/${id}?lang=${localStorage.getItem("language")}`),
   getCourse: id => http.get(`api/course/courses/${id}`),

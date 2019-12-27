@@ -44,7 +44,7 @@ const AllLessons = () => {
           </div>
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-          {data && data.length ? data.map((item,idx) => {
+          {data && data.data ? data.data.map((item,idx) => {
             return <Card key={idx} {...item}/>
           }) : <Spiner/>}
         </Col>

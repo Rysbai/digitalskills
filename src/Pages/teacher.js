@@ -9,10 +9,14 @@ import API from '../API';
 const TeacherPage = ({match}) => {
 
   const [data,setData] = useState([]);
+  const [lessons,setLessons] = useState([]);
 
   useEffect(() => {
     API.getTeacherData(match.params.id)
       .then(res => setData(res.data))
+      .catch(e => console.error(e));
+    API.getLessonsOfTeacher(match.params.id)
+      .then(res => setLessons(res.data))
       .catch(e => console.error(e));
   },[]);
 
@@ -33,9 +37,9 @@ const TeacherPage = ({match}) => {
           <p>Язык преподования: <b>{language === 'ru' ? "Русский" : "Кыргызский"}</b></p>
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mt-5 pt-5"}>
-          {[1,1,1,1,1,1].map((item,idx) => {
-            return <CardItem key={idx}/>
-          })}
+          {lessons.data && lessons.data.length ? lessons.data.map((item,idx) => {
+            return <CardItem {...item} key={idx}/>
+          }) : <p className={"h4"}>Загрузка</p>}
         </Col>
       </Row>
     </Container>

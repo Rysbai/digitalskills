@@ -89,7 +89,11 @@ class Main extends React.Component {
 		         навыках для всех регионов страны совершенно бесплатно</p></Col>
 		      </Row>
 		      <Row>
-		        <Col sm={{ size: 'auto', offset: 1 }}><button className ="mainbutton">Смотреть все</button></Col>
+		        <Col sm={{ size: 'auto', offset: 1 }}>
+							<Link to={"/lessons"} className ="mainbutton d-flex justify-content-center align-items-center">
+								Смотреть все
+							</Link>
+		        </Col>
 		      </Row>
 		      </div>
 		      <Row>
@@ -127,7 +131,7 @@ class Main extends React.Component {
             </div>
             </Col>
 		        <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
-							{this.state.lessons && this.state.lessons.length ? this.state.lessons.map((item,idx) => {
+							{this.state.lessons && this.state.lessons.data ? this.state.lessons.data.map((item,idx) => {
 								return <Card key={idx} {...item}/>
 							}) : <p className={"text-center h4"}>Загрузка</p>}
         		</Col>
@@ -144,7 +148,7 @@ class Main extends React.Component {
             </div>
             </Col>
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
-							{this.state.news && this.state.news.length ? this.state.news.map((item,idx) => {
+							{this.state.news && this.state.news.data ? this.state.news.data.map((item,idx) => {
 								return <NewsCard key={idx} {...item}/>
 							}) : <p className={"text-center h4"}>Загрузка</p>}
         		</Col>

@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-import {Link} from 'react-router-dom';
 import {Container, Row, Col, Button} from 'reactstrap';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
@@ -16,6 +15,8 @@ const AllNews = () => {
       .then(res => setData(res.data))
       .catch(e => console.error(e))
   },[]);
+
+  console.log(data.data);
 
   return (
     <>
@@ -41,12 +42,10 @@ const AllNews = () => {
           {/*    </div>*/}
           {/*  </Col>*/}
           {/*</div>*/}
-          {data && data.length ? data.map((item,idx) => {
+          {data && data.data && data.data.length ? data.data.map((item,idx) => {
             return (
               <Col key={idx} md={6} className={"mb-4"}>
-                <Link to={`/news/${item.id}`}>
-                  <NewsCard {...item}/>
-                </Link>
+                <NewsCard {...item}/>
               </Col>
             )
           }) : <Spiner/>}
