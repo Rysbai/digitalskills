@@ -73,7 +73,7 @@
   color: #2d5199;
 }
 .lesson-content-block {
-padding: 50px 100px !important;
+padding: 0px 100px 50px 100px !important;
 text-align: left !important;
 font-family: Muller !important;
   font-size: 16px ! important ;
