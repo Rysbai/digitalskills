@@ -1,3 +1,6 @@
+
+  
+
 .lesson-header{
   min-height: 70px;
 }
@@ -69,8 +72,19 @@
   background: #fff;
   color: #2d5199;
 }
-.lesson-content-block{
-  overflow: hidden;
+.lesson-content-block {
+padding: 50px 100px !important;
+text-align: left !important;
+font-family: Muller !important;
+  font-size: 16px ! important ;
+
+}
+.lesson-content-block div p {
+
+font-family: Muller !important;
+  font-size: 16px ! important ;
+  
+
 }
 @media only screen and (max-width: 800px) {
   .lesson-sidebar-wrapper {
