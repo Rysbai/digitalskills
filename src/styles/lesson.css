@@ -6,7 +6,7 @@
   line-height: 48px;
   color: #2d5199;
 }
-.lesson-sidebar-wrapper{
+.lesson-sidebar-block {
   position: sticky;
   top: 20px;
 }
@@ -42,10 +42,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  text-align:left;
- 
-  
-
+  text-align: left;
 }
 .lesson-next-btn {
   position: fixed;
@@ -68,4 +65,18 @@
   font-weight: 600;
   background: #fff;
   color: #2d5199;
+}
+
+@media only screen and (max-width: 800px) {
+  .lesson-sidebar-wrapper {
+    display: none;
+  }
+  .lesson-prev-btn {
+    left: 25px;
+    bottom: 10px;
+  }
+  .lesson-next-btn {
+    bottom: 10px;
+    right: 25px;
+  }
 }

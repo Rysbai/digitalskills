@@ -4,7 +4,6 @@ import {
   Navbar,
   NavbarToggler,
   NavbarBrand,
-  Container
 } from "reactstrap";
 import "../styles/lesson.css"
 import closeIcon from "../assets/icon/x.png"
@@ -26,7 +25,9 @@ const LessonHeader = (props) => {
           <div className="lesson-header-title">{props.title}</div>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar></Collapse>
+        <Collapse isOpen={isOpen} navbar>
+     
+        </Collapse>
     </Navbar>
   );
 };

@@ -38,37 +38,39 @@ const Lesson = ({ match }) => {
   };
   return (
     <div>
-      <LessonHeader title={data.length > 0 ? data[0].title:""} />
-      {data.length>0?
+      <LessonHeader title={data.length > 0 ? data[0].title : ""} 
+       
+        />
+      {data.length > 0 ? (
         <div className="col-12 row mt-5">
-          <div className="col-3">
-            <div className="lesson-sidebar-wrapper">
+          <div className="col-3 ml-2 lesson-sidebar-wrapper">
+            <div className="lesson-sidebar-block">
               {sortData.length > 0
                 ? sortData.map((data, index) =>
-                  index < 7 ? (
-                    <LessonSidebar
-                      id={data.id}
-                      title={data.title}
-                      number={data.number}
-                      setSelect={setSelect}
-                      select={select}
-                      index={index}
-                    />
-                  ) : (
+                    index < 7 ? (
+                      <LessonSidebar
+                        id={data.id}
+                        title={data.title}
+                        number={data.number}
+                        setSelect={setSelect}
+                        select={select}
+                        index={index}
+                      />
+                    ) : (
                       ""
                     )
-                )
+                  )
                 : ""}
             </div>
           </div>
-          <div className="col-9 shadow text-center mb-5">
+          <div className=" col-8 mx-5 px-5 shadow mb-5">
             {sortData.length > 0 ? (
               <div className="mt-4" key={sortData[select].id}>
                 {ReactHtmlParser(sortData[select].content)}
               </div>
             ) : (
-                ""
-              )}
+              ""
+            )}
             {sortData.length > 0 ? (
               <div>
                 {select > 0 ? (
@@ -77,30 +79,33 @@ const Lesson = ({ match }) => {
                     onClick={() => setSelect(select - 1)}
                   >
                     Назад
-                </button>
+                  </button>
                 ) : (
-                    ""
-                  )}
+                  ""
+                )}
                 {select < sortData.length - 1 ? (
                   <button
                     className=" lesson-next-btn"
                     onClick={() => nextBtnClicked()}
                   >
                     Вперед
-                </button>
-                ) : (
-                    <Link to="/lessons">
-                      <button className=" lesson-next-btn bg-success">
-                        Завершить
                   </button>
-                    </Link>
-                  )}
+                ) : (
+                  <Link to="/lessons">
+                    <button className=" lesson-next-btn bg-success">
+                      Завершить
+                    </button>
+                  </Link>
+                )}
               </div>
             ) : (
-                ""
-              )}
+              ""
+            )}
           </div>
-        </div>:<Spiner/> }
+        </div>
+      ) : (
+        <Spiner />
+      )}
     </div>
   );
 };
