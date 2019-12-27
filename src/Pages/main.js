@@ -10,7 +10,6 @@ import blockphoto from '../assets/img/block-photo.png';
 import blockphoto2 from '../assets/img/block-photo2.png';
 import arrow from '../assets/img/arrow.png';
 import Card from '../Components/card';
-import NewsCard from '../Components/news_card';
 import TeacherCard from '../Components/teacher_card';
 import API from '../API';
 import "slick-carousel/slick/slick.css";
@@ -67,7 +66,7 @@ class Main extends React.Component {
 			dots: false,
 			infinite: true,
 			speed: 500,
-			slidesToShow: 2,
+			slidesToShow: 2.4,
 			slidesToScroll: 1,
 			arrows: true,
 			nextArrow: <RightButton/>,
