@@ -15,6 +15,7 @@ import TeacherCard from '../Components/teacher_card';
 import API from '../API';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Spiner from "../Components/spiner";
 
 
 const LeftButton = ({onClick}) => {
@@ -133,7 +134,7 @@ class Main extends React.Component {
 		        <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
 							{this.state.lessons && this.state.lessons.data ? this.state.lessons.data.map((item,idx) => {
 								return <Card key={idx} {...item}/>
-							}) : <p className={"text-center h4"}>Загрузка</p>}
+							}) : <Spiner/>}
         		</Col>
 		 
 		     </Row> 
@@ -150,7 +151,7 @@ class Main extends React.Component {
 		        <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
 							{this.state.news && this.state.news.data ? this.state.news.data.map((item,idx) => {
 								return <NewsCard key={idx} {...item}/>
-							}) : <p className={"text-center h4"}>Загрузка</p>}
+							}) : <Spiner />}
         		</Col>
 		     </Row> 
 			</Container>
@@ -166,7 +167,7 @@ class Main extends React.Component {
 								{
 									this.state.teachers.length ? this.state.teachers.map((item,idx) => {
 										return <div key={idx} className={"w-100"}><TeacherCard {...item}/></div>
-									}) :  <p className={"text-center h4"}>Загрузка</p>
+									}) : <Spiner />
 								}
 		        	</Slider>
 						</div>

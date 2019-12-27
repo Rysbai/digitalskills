@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const http = Axios.create({
-  baseURL: 'https://cors-anywhere.herokuapp.com/https://digiskills.kg/',
+  baseURL: 'https://digiskills.kg/',
 });
 
 export default {
