@@ -130,13 +130,18 @@ color: #2D5199;
 }
 .text-about{
 	width: 600px;
-	font-family: Lato-Regular;
+	font-family: Lato-Regular !important;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 170%;
 	color: #525252;
-
+}
+p[style] {
+	font-family: Lato-Regular !important;
+	font-size: 18px !important;
+	text-align: left !important;
+	line-height: 28px !important;
 }
 .karta{
 	margin-top: 150px;
