@@ -17,16 +17,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-const LeftButton = ({onClick}) => {
+const LeftButton = ({onClick,className}) => {
 	return (
-		<Button className={"rounded-pill main-page-slider-button"} onClick={onClick} color={"primary"}>
+		<Button className={"rounded-pill main-page-slider-button slick-arrow slick-prev"} onClick={onClick} color={"primary"}>
 			<img className={"position-relative main-page-slider-button__img-left"} src={arrow} alt={"arrow"}/>
 		</Button>
 )};
 
-const RightButton = ({onClick}) => {
+const RightButton = ({onClick,className}) => {
 	return (
-		<Button className={"rounded-pill main-page-slider-button"} onClick={onClick} color={"primary"}>
+		<Button className={"rounded-pill main-page-slider-button slick-arrow slick-next"} onClick={onClick} color={"primary"}>
 			<img className={"position-relative main-page-slider-button__img-right"} src={arrow} alt={"arrow"}/>
 		</Button>
 )};
@@ -71,6 +71,33 @@ class Main extends React.Component {
 			arrows: true,
 			nextArrow: <RightButton/>,
 			prevArrow: <LeftButton/>,
+			adaptiveHeight: true,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						initialSlide: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
 		};
 
 		return(
@@ -161,7 +188,7 @@ class Main extends React.Component {
 
             </Col>
 		        {/*<Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
-						<div className={"w-100 mb-5"}>
+						<div className={"w-100 mb-5 position-relative"}>
 		        	<Slider {...settings}>
 								{
 									this.state.teachers.length ? this.state.teachers.map((item,idx) => {
