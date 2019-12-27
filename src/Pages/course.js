@@ -21,6 +21,9 @@ class Course extends React.Component {
 		teacher: {},
 	};
 
+
+
+
 	componentDidMount() {
 		API.getCourse(this.props.match.params.id)
 			.then(res => {
@@ -39,6 +42,8 @@ class Course extends React.Component {
 	}
 
 	render(){
+    console.log(this.state.lessons);
+
 		const {name,category_name,language,description,start,image,registration_link,id} = this.state.lesson;
 		console.log(this.state);
 		return (
@@ -69,62 +74,75 @@ class Course extends React.Component {
                       Открыть курс
                     </Link>
                   </div>
-                  <div className={"col-md px-1"}>
-                    <a
-                      href={registration_link}
-                      target={"_blank"}
-                      className="coursebutton2 d-flex align-items-center justify-content-center text-light"
-                    >
-                      Регистрация
-                    </a>
-                  </div>
+                  {this.state.lesson.isOnline == true ? (
+                    <div className={"col-md px-1"}>
+                      <a
+                        href={registration_link}
+                        target={"_blank"}
+                        className="coursebutton2 d-flex align-items-center justify-content-center text-light"
+                      >
+                        Регистрация
+                      </a>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </Row>
               </Col>
               <Col md={5}>
                 <img className="img-course" src={image} alt={"image"} />
               </Col>
             </Row>
+
             <Row>
-              <Col className=".col-auto - variable width content ">
+              <Col className="col-7">
                 <h5 className="course-title">Описание курса</h5>
-                <p className="course-about">{description}</p>
+                <p className="course-about mt-4 text-left">{description}</p>
               </Col>
-              <Col className="col-md-auto">
-                <div className="block">
-                  <p className="details-course">Детали онлайн урока</p>
-                  <p className="DET">
-                    Дата:
-                    <span className="date_course">
-                      {moment(start).format("Do MMMM YYYY")}
-                    </span>
-                  </p>
-                  <p className="DET">
-                    Время:{" "}
-                    <span className="date_course">
-                      {" "}
-                      {moment(start).format("LT")}{" "}
-                    </span>
-                  </p>
-                </div>
-              </Col>
+              {this.state.lesson.isOnline == true ? (
+                <Col className="col-md-auto">
+                  <div className="block">
+                    <p className="details-course">Детали онлайн урока</p>
+                    <p className="DET">
+                      Дата:
+                      <span className="date_course">
+                        {moment(start).format("Do MMMM YYYY")}
+                      </span>
+                    </p>
+                    <p className="DET">
+                      Время:{" "}
+                      <span className="date_course">
+                        {" "}
+                        {moment(start).format("LT")}{" "}
+                      </span>
+                    </p>
+                  </div>
+                </Col>
+              ) : (
+                ""
+              )}
             </Row>
-            <Row className={"row justify-content-center teacher-info"}>
-              <Col md={4} className={"d-flex align-items-center"}>
+
+            <Row className={"row justify-content-left teacher-info"}>
+              <Col md={4} className={""}>
+                <p className={"teacher col-12 bm-5"}> Преподаватель </p>
+
                 <img
                   src={this.state.teacher.image}
                   className={"img-fluid rounded-pill"}
                   alt={"teacher"}
                 />
               </Col>
-              <Col className={"col-4"}>
-                <p className={"teacher"}> Преподаватель </p>
+              <Col className={"col-6"}>
                 <p className={"h2"}>
                   {this.state.teacher.name} {this.state.teacher.surname}
                 </p>
                 <p className={"teacher-subtitler"}>
                   {this.state.teacher.position}
                 </p>
-                <p className={"bio-teacher"}>{this.state.teacher.about}</p>
+                <p className={"course-about text-left"}>
+                  {this.state.teacher.about}
+                </p>
                 <p>
                   Язык преподования:{" "}
                   <b>
