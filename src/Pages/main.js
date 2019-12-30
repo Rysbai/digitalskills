@@ -66,13 +66,15 @@ class Main extends React.Component {
 			dots: false,
 			infinite: true,
 			speed: 500,
-			slidesToShow: 2.4,
+			slidesToShow: 2,
 			slidesToScroll: 1,
 			arrows: true,
 			nextArrow: <RightButton/>,
 			prevArrow: <LeftButton/>,
 			adaptiveHeight: true,
 			slidesPerView: true,
+			centerMode: true,
+			centerPadding: '40px',
 			responsive: [
 				{
 					breakpoint: 1024,
@@ -80,7 +82,6 @@ class Main extends React.Component {
 						slidesToShow: 3,
 						slidesToScroll: 3,
 						infinite: true,
-						dots: true
 					}
 				},
 				{
@@ -95,7 +96,8 @@ class Main extends React.Component {
 					breakpoint: 480,
 					settings: {
 						slidesToShow: 1,
-						slidesToScroll: 1
+						slidesToScroll: 1,
+						arrows: false,
 					}
 				}
 			]

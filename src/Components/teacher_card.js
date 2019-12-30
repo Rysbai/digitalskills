@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom';
 const TeacherCard = ({id,image,name,surname,position,language,about}) => {
   return (
     <div>
-      <Card className = {"border-0 shadow mb-3"} style={{maxWidth: '400px', minWidth: '300px', height: '500px'}}>
+      <Card className = {"border-0 shadow mb-3"}
+            style={{maxWidth: '400px', minWidth: '300px', height: '500px',}}>
         <Media className={"d-flex align-items-center justify-content-center pr-3 pl-3 pt-3 pb-0"}>
           <Media object src={image} className={"rounded-pill teacher-card-image"}  alt="Generic placeholder image" />
           <Media body>

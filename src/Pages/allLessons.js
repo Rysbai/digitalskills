@@ -25,23 +25,23 @@ const AllLessons = () => {
         <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>
           <p className={"h1 text-uppercase"}>Все уроки</p>
 
-          <div className={"d-inline-block"} style={{minWidth: '220px'}}>
-            <UncontrolledDropdown>
-              <DropdownToggle className={"w-100 shadow-none rounded-0 border-dark d-flex justify-content-between align-items-center"}
-                              color={"fade"} caret>
-                {choice}
-              </DropdownToggle>
-              <DropdownMenu className={"border-0 rounded-0 shadow w-100"}>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Программирование</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Дизайн</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Бизнес</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Интернет</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Электронная коммерция</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Компьютерная грамотность</DropdownItem>
-                <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Аналитика данных</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </div>
+          {/*<div className={"d-inline-block"} style={{minWidth: '220px'}}>*/}
+          {/*  <UncontrolledDropdown>*/}
+          {/*    <DropdownToggle className={"w-100 shadow-none rounded-0 border-dark d-flex justify-content-between align-items-center"}*/}
+          {/*                    color={"fade"} caret>*/}
+          {/*      {choice}*/}
+          {/*    </DropdownToggle>*/}
+          {/*    <DropdownMenu className={"border-0 rounded-0 shadow w-100"}>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Программирование</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Дизайн</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Бизнес</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Интернет</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Электронная коммерция</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Компьютерная грамотность</DropdownItem>*/}
+          {/*      <DropdownItem onClick={e => setChoice(e.target.innerText)} className={"dropdown-item-custom"}>Аналитика данных</DropdownItem>*/}
+          {/*    </DropdownMenu>*/}
+          {/*  </UncontrolledDropdown>*/}
+          {/*</div>*/}
         </Col>
         <Col md={12} className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}>
           {data && data.data ? data.data.map((item,idx) => {
