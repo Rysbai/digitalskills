@@ -41,14 +41,17 @@ const Lesson = ({ match }) => {
       <LessonHeader
         MatchParamsId={match.params.id}
         title={data.length > 0 ? data[0].title : ""}
+        sortData={sortData}
+        setSelect={setSelect}
+        select={select}
       />
       {data.length > 0 ? (
-        <div className="col-12 row mt-5">
+        <div className="col-12 row mx-1 mt-2 mt-lg-5 ">
           <div className="col-3 ml-2 lesson-sidebar-wrapper">
             <div className="lesson-sidebar-block">
               {sortData.length > 0
-                ? sortData.map((data, index) =>
-                    index < 7 ? (
+                ? sortData.map((data, index) =>(
+                    
                       <LessonSidebar
                         id={data.id}
                         title={data.title}
@@ -57,14 +60,12 @@ const Lesson = ({ match }) => {
                         select={select}
                         index={index}
                       />
-                    ) : (
-                      ""
-                    )
-                  )
+                   
+                  ))
                 : ""}
             </div>
           </div>
-          <div className="lesson-content-block col-8 mx-4  shadow  mb-5">
+          <div className="lesson-content-block col-md-12 col-lg-8 mx-lg-4  shadow  mb-5">
             {sortData.length > 0 ? (
               <div className="mt-4" key={sortData[select].id}>
                 {ReactHtmlParser(sortData[select].content)}

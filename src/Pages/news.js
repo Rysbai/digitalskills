@@ -6,6 +6,7 @@ import Footer from '../Components/Footer';
 import {Link} from "react-router-dom";
 import HtmlParser from 'react-html-parser';
 import API from '../API';
+import Spiner from '../Components/spiner';
 
 const News = ({match}) => {
 
@@ -40,8 +41,7 @@ const News = ({match}) => {
             <Col md={8}>
               <Link className={"news_custom-link mt-5 mb-5 d-inline-block"} to={"/"}>Вернуться назад</Link>
             </Col>
-          </> :
-          <p>Тут пусто</p>
+          </> :<Spiner/>
           }
       </Row>
     </Container>

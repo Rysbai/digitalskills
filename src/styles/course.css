@@ -101,6 +101,22 @@
 	color: #2D5199;
 	margin-bottom: 50px;
 }
+.teacher-title{
+	font-family: Muller;
+font-weight: bold;
+font-size: 36px;
+line-height: 30px;
+color: #000000;
+}
+.teacher-subtitler{
+	font-family: Muller;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+
+color: #848484;
+}
 .teacher-info{
 	color: #000;
 }

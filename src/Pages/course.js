@@ -70,7 +70,7 @@ class Course extends React.Component {
                   <b className="courses-blue-color">{category_name}</b>
                 </p>
                 <Row className="text-center text-md-left pr-md-5 mt-4">
-                  <div className={"col-md px-1"}>
+                  <div className={"col-md "}>
                     <Link
                       to={`/lesson/${id}`}
                       className="coursebutton d-flex align-items-center justify-content-center"
@@ -131,7 +131,7 @@ class Course extends React.Component {
             </div>
             <Row
               className={
-                "row justify-content-left align-items-center teacher-info"
+                "row justify-content-around align-items-center teacher-info"
               }
             >
               <Col md={3} className={""}>
@@ -142,7 +142,7 @@ class Course extends React.Component {
                 />
               </Col>
               <Col className={"col-7"}>
-                <p className={"h2"}>
+                <p className={"h2 teacher-title"}>
                   {this.state.teacher.name} {this.state.teacher.surname}
                 </p>
                 <p className={"teacher-subtitler"}>
@@ -151,7 +151,7 @@ class Course extends React.Component {
                 <p className={"course-about text-left"}>
                   {this.state.teacher.about}
                 </p>
-                <p>
+                <p className="course-about">
                   Язык преподования:{" "}
                   <b>
                     {this.state.teacher.language === "ru"

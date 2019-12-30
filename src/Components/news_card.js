@@ -23,7 +23,7 @@ const News_card = ({title,views,pub_date,id}) => {
         <CardImg width="100%" src={news}/>
         </Col>
         <Col className={"d-flex pl-0 justify-content-around flex-column"}>
-          <Link to={`/news/${id}`} className={"text-dark"}>
+            <Link to={`/news/${id}`} className={"text-decoration-none"}>
             <CardTitle className = "news_title mb-0">{filterTitle}</CardTitle>
           </Link>
           <CardText className={"d-flex justify-content-between"}>
