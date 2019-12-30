@@ -1,8 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-import img from "../assets/img/image1.png";
-import teacher from "../assets/img/ns_8 1.png";
+
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import moment from "moment";
@@ -15,7 +14,6 @@ import Spiner from "../Components/spiner";
 class Course extends React.Component {
   state = {
     lesson: {},
-
     teacher: {}
   };
 
@@ -73,7 +71,7 @@ class Course extends React.Component {
                   <div className={"col-md "}>
                     <Link
                       to={`/lesson/${id}`}
-                      className="coursebutton d-flex align-items-center justify-content-center"
+                      className="coursebutton d-flex align-items-center justify-content-center text-decoration-none"
                     >
                       Открыть курс
                     </Link>

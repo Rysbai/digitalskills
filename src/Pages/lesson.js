@@ -36,6 +36,10 @@ const Lesson = ({ match }) => {
     setSelect(select + 1);
     scrollTop();
   };
+  const prevBtnClicked=()=>{
+    setSelect(select - 1);
+    scrollTop();
+  }
   return (
     <div>
       <LessonHeader
@@ -78,7 +82,7 @@ const Lesson = ({ match }) => {
                 {select > 0 ? (
                   <button
                     className="lesson-prev-btn"
-                    onClick={() => setSelect(select - 1)}
+                    onClick={() => prevBtnClicked()}
                   >
                     Назад
                   </button>

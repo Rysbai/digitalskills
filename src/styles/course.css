@@ -30,6 +30,12 @@
 	font-size: 18px;
 	line-height: 27px;	  
 }
+.coursebutton:hover{
+
+	color: #fff;
+	background: #2D5199;
+  transition: 0.5s;	  
+}
 .coursebutton2{
 	width: 210px;
 	height: 50px;
@@ -136,3 +142,10 @@ font-size: 20px;
 line-height: 27px;
 color: #fff;
 }
+.teacher-page-btn:hover{
+color: #2D5199;
+background: rgba(255, 255, 255, 0);
+border: 2px solid #2D5199;
+transition: 0.5s;
+}
+ 
