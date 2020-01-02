@@ -6,14 +6,17 @@ body {
     font-family: MullerBold;
     color: #2D5199;
 }
+
 .card_custom_title {
     color: #484848;
     font-family: MullerBold;
 }
+
 .card_custom_subtitle-text {
     font-size: 14px;
 }
-.card_custom_body-text span{
+
+.card_custom_body-text span {
     color: #2D5199;
     font-family: MullerMedium;
 }
@@ -24,12 +27,14 @@ body {
     font-family: MullerMedium !important;
     width: 190px !important;
 }
+
 .card_custom_button:hover {
     border: 2px solid #2D5199 !important;
     background: #2D5199;
     color: #fff !important;
     transition: 0.5s;
 }
+
 .dropdown-item-custom {
     white-space: inherit !important;
     font-size: 14px !important;
@@ -47,6 +52,7 @@ body {
     font-family: MullerMedium;
     color: #2D5199;
 }
+
 .teacher-page {
     font-family: MullerBold;
     color: #2D5199;
@@ -95,4 +101,14 @@ body {
 
 .slick-slide {
     width: 100px;
+}
+
+.wrapper {
+    min-height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
 }

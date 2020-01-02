@@ -46,7 +46,7 @@ const AllLessons = () => {
   }
   console.log(result);
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <Container>
         <Row>
