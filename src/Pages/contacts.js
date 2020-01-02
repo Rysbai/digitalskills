@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { baseURL } from "./../API";
 import {
   Container,
   Row,
