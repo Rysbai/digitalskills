@@ -41,7 +41,7 @@ const Lesson = ({ match }) => {
     scrollTop();
   };
   return (
-    <div>
+    <div className="wrapper">
       <LessonHeader
         MatchParamsId={match.params.id}
         title={data.length > 0 ? data[0].title : ""}

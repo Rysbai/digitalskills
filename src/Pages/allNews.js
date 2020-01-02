@@ -19,7 +19,7 @@ const AllNews = () => {
   console.log(data.data);
 
   return (
-    <>
+    <div className="wrapper">
       <Header />
       <Container>
         <Row>
@@ -57,7 +57,7 @@ const AllNews = () => {
         </Row>
       </Container>
       <Footer />
-    </>
+    </div>
   )
 };
 

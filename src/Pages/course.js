@@ -49,7 +49,7 @@ class Course extends React.Component {
     } = this.state.lesson;
     console.log(this.state);
     return (
-      <div>
+      <div className="wrapper">
         <Header />
 
         {this.state.lesson && this.state.lesson.name ? (
