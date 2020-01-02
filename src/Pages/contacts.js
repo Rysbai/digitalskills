@@ -16,7 +16,8 @@ import lampImage from "../assets/icon/image 44.png";
 import phoneImage from "../assets/icon/image 45.png";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import API from "./../API";
 
 const ContactBodyItem = ({ image, body, className }) => {
   return (
@@ -44,29 +45,20 @@ const Contacts = () => {
     phone: phoneNumber,
     text: textQuestion
   };
-  // data = JSON.stringify(data);
-  console.log(data);
 
   const postData = e => {
     e.preventDefault();
     let target = e.target;
-    console.log(JSON.stringify(data));
-
-    fetch(`${baseURL}api/comments/`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(data)
-    })
+    API.postData("api/comments/", data)
       .then(response => {
         if (response.status === 201 || response.status === 200) {
           Swal.fire({
-            text: "Ваша заявка успешно отправлена!",
             width: 500,
             height: 500,
             showConfirmButton: true,
+            icon: "success",
+            title: "Ваша заявка успешно отправлена!",
+            timer: 2000,
             confirmButtonColor: "#32B482"
           });
           target.reset();
@@ -79,12 +71,12 @@ const Contacts = () => {
             confirmButtonColor: "#32B482"
           });
         }
-        console.log(response);
       })
       .catch(error => {
         console.log("Request failed: ", error);
       });
   };
+
   return (
     <div>
       <Header />

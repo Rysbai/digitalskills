@@ -4,7 +4,7 @@ import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
 import LessonHeader from "../Components/lesson_header";
 import { Link } from "react-router-dom";
-import Spiner from "../Components/spiner"
+import Spiner from "../Components/spiner";
 const Lesson = ({ match }) => {
   const [data, setData] = useState({});
   const [sortData, setSortData] = useState({});
@@ -36,10 +36,10 @@ const Lesson = ({ match }) => {
     setSelect(select + 1);
     scrollTop();
   };
-  const prevBtnClicked=()=>{
+  const prevBtnClicked = () => {
     setSelect(select - 1);
     scrollTop();
-  }
+  };
   return (
     <div>
       <LessonHeader
@@ -54,17 +54,15 @@ const Lesson = ({ match }) => {
           <div className="col-3 ml-2 lesson-sidebar-wrapper">
             <div className="lesson-sidebar-block">
               {sortData.length > 0
-                ? sortData.map((data, index) =>(
-                    
-                      <LessonSidebar
-                        id={data.id}
-                        title={data.title}
-                        number={data.number}
-                        setSelect={setSelect}
-                        select={select}
-                        index={index}
-                      />
-                   
+                ? sortData.map((data, index) => (
+                    <LessonSidebar
+                      id={data.id}
+                      title={data.title}
+                      number={data.number}
+                      setSelect={setSelect}
+                      select={select}
+                      index={index}
+                    />
                   ))
                 : ""}
             </div>
