@@ -55,7 +55,10 @@ class Course extends React.Component {
         {this.state.lesson && this.state.lesson.name ? (
           <Container>
             <Row className={"mt-5"}>
-              <Col md={6} className={"md-5 d-flex flex-column "}>
+              <Col
+                md={6}
+                className={"text-md-left text-center d-flex flex-column "}
+              >
                 <p className={"header-course"}>{name}</p>
                 <p className={"teacher-archive mt-4"}>
                   <span className={"text-muted "}>Язык: </span>
@@ -67,8 +70,8 @@ class Course extends React.Component {
                   <span className={"text-muted"}>Категория: </span>
                   <b className="courses-blue-color">{category_name}</b>
                 </p>
-                <Row className="text-center text-md-left pr-md-5 mt-4">
-                  <div className={"col-md "}>
+                <Row className="text-center  text-md-left pr-md-5 mt-4">
+                  <div className={"col-md my-2"}>
                     <Link
                       to={`/lesson/${id}`}
                       className="coursebutton d-flex align-items-center justify-content-center text-decoration-none"
@@ -77,11 +80,11 @@ class Course extends React.Component {
                     </Link>
                   </div>
                   {this.state.lesson.isOnline == true ? (
-                    <div className={"col-md px-1"}>
+                    <div className={"col-md  my-2"}>
                       <a
                         href={registration_link}
                         target={"_blank"}
-                        className="coursebutton2 d-flex align-items-center justify-content-center text-light"
+                        className="coursebutton2 d-flex align-items-center justify-content-center"
                       >
                         Регистрация
                       </a>
@@ -91,18 +94,22 @@ class Course extends React.Component {
                   )}
                 </Row>
               </Col>
-              <Col md={5}>
-                <img className="img-course" src={image} alt={"image"} />
+              <Col className="my-2" md={6}>
+                <img className="img-fluid" src={image} alt={"image"} />
               </Col>
             </Row>
 
             <Row>
-              <Col className="col-7">
-                <h5 className="course-title">Описание курса</h5>
-                <p className="course-about mt-4 text-left">{description}</p>
+              <Col className="col-12 col-md-7 ">
+                <h5 className="course-title  text-lg-left text-center">
+                  Описание курса
+                </h5>
+                <p className="course-about mt-4 text-lg-left text-center ">
+                  {description}
+                </p>
               </Col>
               {this.state.lesson.isOnline == true ? (
-                <Col className="col-md-auto">
+                <Col className="col-md-auto col-4 mx-2 mt-5 mx-lg-5">
                   <div className="block">
                     <p className="details-course">Детали онлайн урока</p>
                     <p className="DET">
@@ -125,7 +132,10 @@ class Course extends React.Component {
               )}
             </Row>
             <div className="mt-5">
-              <p className={"teacher text-left"}> Преподаватель </p>
+              <p className={"teacher text-lg-left text-center"}>
+                {" "}
+                Преподаватель{" "}
+              </p>
             </div>
             <Row
               className={
@@ -139,17 +149,17 @@ class Course extends React.Component {
                   alt={"teacher"}
                 />
               </Col>
-              <Col className={"col-7"}>
-                <p className={"h2 teacher-title"}>
+              <Col className={"col-12 mt-2 col-lg-7 text-lg-left text-center"}>
+                <p className={"h2 teacher-title "}>
                   {this.state.teacher.name} {this.state.teacher.surname}
                 </p>
-                <p className={"teacher-subtitler"}>
+                <p className={"teacher-subtitler "}>
                   {this.state.teacher.position}
                 </p>
-                <p className={"course-about text-left"}>
+                <p className={"course-about text-lg-left text-center"}>
                   {this.state.teacher.about}
                 </p>
-                <p className="course-about">
+                <p className="course-about text-lg-left text-center">
                   Язык преподования:{" "}
                   <b>
                     {this.state.teacher.language === "ru"
@@ -159,9 +169,9 @@ class Course extends React.Component {
                 </p>
               </Col>
             </Row>
-            <Col className={"col-12"}>
-              <Link to={`/lesson/${id}`}>
-                <button className=" offset-4 my-5 teacher-page-btn">
+            <Col className={"col-12 my-5"}>
+              <Link className="text-decoration-none" to={`/lesson/${id}`}>
+                <button className="d-flex justify-content-center align-center m-auto teacher-page-btn">
                   открыть курс
                 </button>
               </Link>

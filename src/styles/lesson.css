@@ -1,6 +1,4 @@
 
-  
-
 .lesson-header{
   min-height: 70px;
 }
@@ -17,8 +15,9 @@
   top: 20px;
 }
 .lesson-sidebar {
+  min-width: 280px;
   width: 100%;
-  min-width: 300px;
+
 
   height: 70px;
   background: #f7f7f7;
@@ -85,6 +84,12 @@ font-family: Muller !important;
 font-family: Muller !important;
   font-size: 16px ! important ;
   padding: 0 !important;
+  
+
+}
+.lesson-content-block div img {
+
+
   
 
 }

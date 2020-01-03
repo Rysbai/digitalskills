@@ -53,7 +53,7 @@ const AllLessons = () => {
           <Col
             md={12}
             className={
-              "d-flex justify-content-between align-items-center mt-5 flex-wrap"
+              "d-flex justify-content-lg-between align-items-center mt-5 flex-wrap justify-content-center"
             }
           >
             <p className={"h1 text-uppercase"}>Все уроки</p>

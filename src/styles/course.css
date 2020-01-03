@@ -148,4 +148,19 @@ background: rgba(255, 255, 255, 0);
 border: 2px solid #2D5199;
 transition: 0.5s;
 }
+.coursebutton2:hover{
+	text-decoration: none;
+color: #2D5199 !important;
+background: #fff;
+border: 2px solid #2D5199;
+transition: 0.5s;
+}
  
+@media only screen and (max-width:770px){
+	.header-course{
+font-size: 30px;
+}
+	.coursebutton ,.coursebutton2{
+		margin: 0 auto;
+	}
+}

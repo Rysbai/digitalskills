@@ -2,10 +2,10 @@ import React from "react";
 import "../styles/lesson.css";
 const LessonSidebar = props => {
   const lessonSidebarClass = [
-    "lesson-sidebar row mb-3 d-flex align-items-center "
+    "lesson-sidebar row mb-3 d-flex align-items-center mx-1 "
   ];
   const lessonSidebarActiveClass = [
-    "lesson-sidebar row  lesson-sidebar-active mb-3   d-flex align-items-center "
+    "lesson-sidebar row  lesson-sidebar-active mb-3 mx-1  d-flex align-items-center "
   ];
 
   return (
