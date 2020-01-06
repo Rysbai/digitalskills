@@ -35,7 +35,6 @@ class Course extends React.Component {
   }
 
   render() {
-    console.log(this.state.lessons);
 
     const {
       name,
@@ -47,7 +46,6 @@ class Course extends React.Component {
       registration_link,
       id
     } = this.state.lesson;
-    console.log(this.state);
     return (
       <div className="wrapper">
         <Header />
@@ -104,7 +102,7 @@ class Course extends React.Component {
                 <h5 className="course-title  text-lg-left text-center">
                   Описание курса
                 </h5>
-                <p className="course-about mt-4 text-lg-left text-center ">
+                <p className="course-about mt-4 text-left  ">
                   {description}
                 </p>
               </Col>

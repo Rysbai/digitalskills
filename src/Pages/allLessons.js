@@ -26,7 +26,6 @@ const AllLessons = () => {
     API.getCategoryLessons(choiceID)
       .then(res => setCategoryData(res.data))
       .catch(e => console.error(e));
-    console.log(choiceID);
   }, [choiceID]);
 
   useEffect(() => {
@@ -44,7 +43,6 @@ const AllLessons = () => {
   } else {
     result = categoryData;
   }
-  console.log(result);
   return (
     <div className="wrapper">
       <Header />

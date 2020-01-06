@@ -1,19 +1,14 @@
-import React, { useState,useEffect } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-} from "reactstrap";
-import "../styles/lesson.css"
-import closeIcon from "../assets/icon/x.png"
-import {Link} from 'react-router-dom'
-import API from "../API"
+import React, { useState, useEffect } from "react";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand } from "reactstrap";
+import "../styles/lesson.css";
+import closeIcon from "../assets/icon/x.png";
+import { Link } from "react-router-dom";
+import API from "../API";
 import LessonSidebar from "./lesson_sidebar";
-import '../styles/lesson.css'
-const LessonHeader = (props) => {
+import "../styles/lesson.css";
+const LessonHeader = props => {
   const [isOpen, setIsOpen] = useState(false);
-  const [data,setData]=useState([])
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     API.getCourse(props.MatchParamsId)
@@ -29,31 +24,30 @@ const LessonHeader = (props) => {
         <div className="ml-4 mr-5">
           <img src={closeIcon} alt="close icon" />
         </div>
-   </Link>
-        <NavbarBrand tag={"div"}>
-          <div className="lesson-header-title">{data&&data.name?data.name:""}</div>
-        </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-      
-        <Collapse isOpen={isOpen} className="mx-4 my-4 " navbar>
+      </Link>
+      <NavbarBrand tag={"div"}>
+        <div className="lesson-header-title">
+          {data && data.name ? data.name : ""}
+        </div>
+      </NavbarBrand>
+      <NavbarToggler onClick={toggle} />
+
+      <Collapse isOpen={isOpen} className="mx-4 my-4 " navbar>
         <div className="lesson-header-collapse">
           {props.sortData.length > 0
             ? props.sortData.map((data, index) => (
-              <LessonSidebar
-                id={data.id}
-                title={data.title}
-                number={data.number}
-                setSelect={props.setSelect}
-                select={props.select}
-                index={index}
-              />
-
-            ))
+                <LessonSidebar
+                  id={data.id}
+                  title={data.title}
+                  number={data.number}
+                  setSelect={props.setSelect}
+                  select={props.select}
+                  index={index}
+                />
+              ))
             : ""}
         </div>
-       
-
-        </Collapse>
+      </Collapse>
     </Navbar>
   );
 };
