@@ -2,15 +2,16 @@ import React from 'react';
 import {
   Card, CardText, CardBody,
   Button,
-  Media
+  Media,
+  Col
 } from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 const TeacherCard = ({id,image,name,surname,position,language,about}) => {
   return (
-    <div>
+    <Col md={4}>
       <Card className = {"border-0 shadow mb-3"}
-            style={{maxWidth: '400px', minWidth: '300px', height: '500px',}}>
+            style={{height: '500px'}}>
         <Media className={"d-flex align-items-center justify-content-center pr-3 pl-3 pt-3 pb-0"}>
           <Media object src={image} className={"rounded-pill teacher-card-image"}  alt="Generic placeholder image" />
           <Media body>
@@ -23,14 +24,14 @@ const TeacherCard = ({id,image,name,surname,position,language,about}) => {
           <p>Язык преподования: <b>{language === "ru" ? "Русский" : "Кыргызский"}</b></p>
           <div className={"w-100 d-flex justify-content-center main-card-button-pos"}>
             <Link to={`/teacher/${id}`} className={"mx-auto d-inline-block mb-3"}>
-              <Button color={"faded"} tag={"span"} className={"card_custom_button rounded-0 pl-5 pr-5 pt-3 pb-3"}>
+              <Button color={"faded"} tag={"span"} className={"card_custom_button rounded-0 pl-md-5 pr-md-5 pt-md-3 pb-md-3"}>
                 <b>Подробнее</b>
               </Button>
             </Link>
           </div>
         </CardBody>
       </Card>
-    </div>
+    </Col>
   );
 };
 

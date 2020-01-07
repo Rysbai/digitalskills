@@ -14,7 +14,7 @@ const CardItem = ({ name, image, id, language, category_name }) => {
   return (
     <Card
       className={"border-0 shadow mb-3 position-relative"}
-      style={{ maxWidth: "330px", height: "450px" }}
+      style={{ height: "450px" }}
     >
       <CardImg top width="100%" src={image} alt="Card image cap" />
       <CardBody>
@@ -38,11 +38,11 @@ const CardItem = ({ name, image, id, language, category_name }) => {
         <p
           className={"w-100 d-flex justify-content-center main-card-button-pos"}
         >
-          <Link to={`/course/${id}`} className={"w-50"}>
+          <Link to={`/course/${id}`} className={"mx-auto d-inline-block"}>
             <Button
               tag={"span"}
               color={"faded"}
-              className={"w-100 shadow-none rounded-0 card_custom_button"}
+              className={"card_custom_button rounded-0 pl-md-5 pr-md-5 pt-md-3 pb-md-3"}
             >
               Подробнее
             </Button>

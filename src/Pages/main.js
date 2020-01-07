@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../styles/main.css";
@@ -16,37 +15,37 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Spiner from "../Components/spiner";
 
-const LeftButton = ({ onClick }) => {
-  return (
-    <Button
-      className={"rounded-pill main-page-slider-button slick-arrow slick-prev"}
-      onClick={onClick}
-      color={"primary"}
-    >
-      <img
-        className={"position-relative main-page-slider-button__img-left"}
-        src={arrow}
-        alt={"arrow"}
-      />
-    </Button>
-  );
-};
-
-const RightButton = ({ onClick }) => {
-  return (
-    <Button
-      className={"rounded-pill main-page-slider-button slick-arrow slick-next"}
-      onClick={onClick}
-      color={"primary"}
-    >
-      <img
-        className={"position-relative main-page-slider-button__img-right"}
-        src={arrow}
-        alt={"arrow"}
-      />
-    </Button>
-  );
-};
+// const LeftButton = ({ onClick }) => {
+//   return (
+//     <Button
+//       className={"rounded-pill main-page-slider-button slick-arrow slick-prev"}
+//       onClick={onClick}
+//       color={"primary"}
+//     >
+//       <img
+//         className={"position-relative main-page-slider-button__img-left"}
+//         src={arrow}
+//         alt={"arrow"}
+//       />
+//     </Button>
+//   );
+// };
+//
+// const RightButton = ({ onClick }) => {
+//   return (
+//     <Button
+//       className={"rounded-pill main-page-slider-button slick-arrow slick-next"}
+//       onClick={onClick}
+//       color={"primary"}
+//     >
+//       <img
+//         className={"position-relative main-page-slider-button__img-right"}
+//         src={arrow}
+//         alt={"arrow"}
+//       />
+//     </Button>
+//   );
+// };
 
 class Main extends React.Component {
   state = {
@@ -82,46 +81,46 @@ class Main extends React.Component {
   }
 
   render() {
-    const settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 2,
-      slidesToScroll: 1,
-      arrows: true,
-      nextArrow: <RightButton />,
-      prevArrow: <LeftButton />,
-      adaptiveHeight: true,
-      slidesPerView: true,
-      centerMode: true,
-      centerPadding: "40px",
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-            infinite: true
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: false
-          }
-        }
-      ]
-    };
+    // const settings = {
+    //   dots: false,
+    //   infinite: true,
+    //   speed: 500,
+    //   slidesToShow: 2,
+    //   slidesToScroll: 1,
+    //   arrows: true,
+    //   nextArrow: <RightButton />,
+    //   prevArrow: <LeftButton />,
+    //   adaptiveHeight: true,
+    //   slidesPerView: true,
+    //   centerMode: true,
+    //   centerPadding: "40px",
+    //   responsive: [
+    //     {
+    //       breakpoint: 1024,
+    //       settings: {
+    //         slidesToShow: 3,
+    //         slidesToScroll: 3,
+    //         infinite: true
+    //       }
+    //     },
+    //     {
+    //       breakpoint: 600,
+    //       settings: {
+    //         slidesToShow: 2,
+    //         slidesToScroll: 2,
+    //         initialSlide: 2
+    //       }
+    //     },
+    //     {
+    //       breakpoint: 480,
+    //       settings: {
+    //         slidesToShow: 1,
+    //         slidesToScroll: 1,
+    //         arrows: false
+    //       }
+    //     }
+    //   ]
+    // };
 
     return (
       <div className={"w-100 overflow-hidden"}>
@@ -158,50 +157,82 @@ class Main extends React.Component {
             </Col>
           </Row>
         </div>
-        <Row>
-          <Col
-            md={12}
-            className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}
-          >
-            <div className="col-4">
-              <h2 className="headtext ">Наша миссия</h2>
-              <p className="blocktext">
-                Предоставить возможность каждому кыргызстанцу приобрести
-                минимальные цифровые навыки, а также определиться с
-                профессиональной ориентацией в области информационных
-                технологий.
-              </p>
-            </div>
-            <div className="col-4">
-              <img className="blockphoto" src={blockphoto} alt={"image"} />
-            </div>
-          </Col>
-        </Row>
-        <Row>
-          <Col
-            md={12}
-            className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}
-          >
-            <div className="col-4">
-              <img className="blockphoto" src={blockphoto2} alt={"image"} />
-            </div>
-            <div className="col-4">
-              <h2 className="headtext">Цель</h2>
-              <p className="blocktext ">
-                Объединить все имеющиеся разработки государственного и частного
-                сектора, а также донорских проектов по направлению «Цифровые
-                навыки и компетенции» для удобства пользования гражданами.
-                Граждане в свою очередь по технологии «единого окна» смогут на
-                единой площадке получить требуемую информацию по интересующей
-                теме в области информационных технологий.
-              </p>
-            </div>
-          </Col>
-        </Row>
-        <div className="photo2">
-          <h1 className="banner2">
-            ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН СТАНЬ ЦИФРОВЫМ!
-          </h1>
+        <Container>
+          <Row className={"mb-5"}>
+
+            <Col md={6} className={"mb-5 d-flex justify-content-center flex-column order-2 order-sm-1 pl-0"}>
+              <Col md={10} className={"d-flex justify-content-center flex-column"}>
+                <p className={"h2 main-page-heading-text"}>Наша миссия</p>
+                <p className={"text-muted main-page-text"}>
+                  Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. аким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.
+                </p>
+              </Col>
+            </Col>
+
+            <Col md={6} className={"mb-5 pl-0 order-sm-2 order-1 d-flex justify-content-end"}>
+              <Col md={10}>
+                <img src={blockphoto} className={"img-fluid"} alt=""/>
+              </Col>
+            </Col>
+
+            <Col md={6} className={'pl-0 mt-5 order-sm-3 order-3'}>
+              <Col md={10}>
+                <img src={blockphoto2} className={"img-fluid"} alt=""/>
+              </Col>
+            </Col>
+
+            <Col md={6} className={"d-flex justify-content-center flex-column align-items-end mt-5 order-4 order-sm-4"}>
+              <Col md={10} className={"d-flex justify-content-center flex-column"}>
+                <p className={"h2 main-page-heading-text"}>Повседневная практика</p>
+                <p className={"text-muted main-page-text"}>Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
+              </Col>
+            </Col>
+          </Row>
+        </Container>
+          {/*<Col*/}
+          {/*  md={12}*/}
+          {/*  className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}*/}
+          {/*>*/}
+          {/*  <div className="col-4">*/}
+          {/*    <h2 className="headtext ">Наша миссия</h2>*/}
+          {/*    <p className="blocktext">*/}
+          {/*      Предоставить возможность каждому кыргызстанцу приобрести*/}
+          {/*      минимальные цифровые навыки, а также определиться с*/}
+          {/*      профессиональной ориентацией в области информационных*/}
+          {/*      технологий.*/}
+          {/*    </p>*/}
+          {/*  </div>*/}
+          {/*  <div className="col-4">*/}
+          {/*    <img className="blockphoto" src={blockphoto} alt={"image"} />*/}
+          {/*  </div>*/}
+          {/*</Col>*/}
+          {/*<Col*/}
+          {/*  md={12}*/}
+          {/*  className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}*/}
+          {/*>*/}
+          {/*  <div className="col-4">*/}
+          {/*    <img className="blockphoto" src={blockphoto2} alt={"image"} />*/}
+          {/*  </div>*/}
+          {/*  <div className="col-4">*/}
+          {/*    <h2 className="headtext">Цель</h2>*/}
+          {/*    <p className="blocktext ">*/}
+          {/*      Объединить все имеющиеся разработки государственного и частного*/}
+          {/*      сектора, а также донорских проектов по направлению «Цифровые*/}
+          {/*      навыки и компетенции» для удобства пользования гражданами.*/}
+          {/*      Граждане в свою очередь по технологии «единого окна» смогут на*/}
+          {/*      единой площадке получить требуемую информацию по интересующей*/}
+          {/*      теме в области информационных технологий.*/}
+          {/*    </p>*/}
+          {/*  </div>*/}
+          {/*</Col>*/}
+        <div className="photo2 d-flex align-items-end mt-5">
+          <Container>
+            <p className={"h1 text-light mb-3 mb-sm-5 banner2"}>
+              ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН
+              <br/>
+              СТАНЬ ЦИФРОВЫМ!
+            </p>
+          </Container>
         </div>
         <div>
           <Container>
@@ -220,18 +251,18 @@ class Main extends React.Component {
                   </Link>
                 </div>
               </Col>
-              <Col
-                md={12}
-                className={"d-flex justify-content-between mt-3 flex-wrap mb-5"}
-              >
+              {/*<Col*/}
+              {/*  md={12}*/}
+              {/*  className={"d-flex justify-content-between mt-3 flex-wrap mb-5"}*/}
+              {/*>*/}
                 {this.state.lessons && this.state.lessons.data ? (
                   this.state.lessons.data.map((item, idx) => {
-                    return <Card key={idx} {...item} />;
+                    return <Col className={"mt-3"} sm={12} md={4}><Card key={idx} {...item} /></Col>;
                   })
                 ) : (
                   <Spiner />
                 )}
-              </Col>
+              {/*</Col>*/}
             </Row>
           </Container>
           {/*<Container>*/}
@@ -261,21 +292,15 @@ class Main extends React.Component {
                 <p className={"h1"}>Преподаватели</p>
               </Col>
               {/*<Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
-              <div className={"w-100 mb-5 position-relative"}>
-                <Slider {...settings}>
-                  {this.state.teachers.length ? (
-                    this.state.teachers.map((item, idx) => {
-                      return (
-                        <div key={idx} className={"w-100"}>
-                          <TeacherCard {...item} />
-                        </div>
-                      );
-                    })
-                  ) : (
-                    <p className={"text-center h4"}>Загрузка</p>
-                  )}
-                </Slider>
-              </div>
+                {this.state.teachers.length ? (
+                  this.state.teachers.map((item, idx) => {
+                    return (
+                      <TeacherCard {...item} key={idx}/>
+                    );
+                  })
+                ) : (
+                  <p className={"text-center h4"}>Загрузка</p>
+                )}
               {/*</Col>*/}
             </Row>
           </Container>

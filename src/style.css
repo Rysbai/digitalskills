@@ -112,3 +112,12 @@ body {
 .footer {
     margin-top: auto;
 }
+
+@media (max-width: 768px) {
+    .card_custom_title {
+        font-size: 14px;
+    }
+    .card_custom_body-text {
+        font-size: 14px;
+    }
+}
