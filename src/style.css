@@ -113,6 +113,11 @@ body {
     margin-top: auto;
 }
 
+.main-page-heading-subtitle {
+    font-size: 24px;
+    opacity: .8;
+}
+
 @media (max-width: 768px) {
     .card_custom_title {
         font-size: 14px;
@@ -122,8 +127,19 @@ body {
     }
 }
 
+
+
 @media (max-width: 576px) {
     .main-page-heading-text {
         font-size: 20px !important;
+    }
+    .main-page-heading-title {
+        font-size: 15px !important;
+    }
+    .main-page-heading-img-logo {
+        width: 40px !important;
+    }
+    .main-page-heading-subtitle {
+        font-size: 11px !important;
     }
 }
