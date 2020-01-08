@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import CardItem from "../Components/card";
-import teacher from "../assets/img/ns_8 1.png";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import API from "../API";
@@ -57,7 +56,12 @@ const TeacherPage = ({ match }) => {
             >
               {lessons.data && lessons.data.length
                 ? lessons.data.map((item, idx) => {
-                    return <CardItem {...item} key={idx} />;
+                    return(
+                      <Col md={4}>
+
+                       <CardItem {...item} key={idx} />;
+                       </Col>
+                    )
                   })
                 : ""}
             </Col>
