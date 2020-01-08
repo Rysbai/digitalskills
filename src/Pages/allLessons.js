@@ -101,7 +101,11 @@ const AllLessons = () => {
             {result && result.data ? (
               result.data.length > 0 ? (
                 result.data.map((item, idx) => {
-                  return <Card key={idx} {...item} />;
+                  return (
+                    <Col md={4}>
+                      <Card key={idx} {...item} />
+                    </Col>
+                  )
                 })
               ) : (
                 "Нету курсов"
