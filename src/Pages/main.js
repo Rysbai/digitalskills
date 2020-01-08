@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../styles/main.css";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import logo2 from "../assets/icon/image 64.png";
 import blockphoto from "../assets/img/block-photo.png";
 import blockphoto2 from "../assets/img/block-photo2.png";
-import arrow from "../assets/img/arrow.png";
 import Card from "../Components/card";
 import TeacherCard from "../Components/teacher_card";
 import API from "../API";
@@ -133,16 +132,16 @@ class Main extends React.Component {
     return (
       <div className={"w-100 overflow-hidden"}>
         <Header />
-        <div className="mainphoto pb-5 pt-md-5 mb-md-5">
+        <div className="mainphoto mb-5 pb-md-5 pt-md-5">
           <Container>
             <Row>
-              <Col md={12} className={"pt-md-5 pb-md-5"}>
-                <img src={logo2} alt={"logo"} className={"mb-2"}/>
-                <p className={"text-light h5 h1-dm"}>
-                  ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН <br/>
+              <Col md={12} className={"pt-4 pb-4 pb-md-5 pt-md-5"}>
+                <img src={logo2} alt={"logo"} className={"mb-2 mb-md-5 main-page-heading-img-logo"}/>
+                <p className={"text-light h1 main-page-heading-title"}>
+                  ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН <br className={"d-none d-sm-inline-block"}/>
                   СТАНЬ ЦИФРОВЫМ!
                 </p>
-                <p className={"text-light mb-4"} style={{fontSize: '24px !important',opacity: '0.8'}}>
+                <p className={"text-light mb-2 mb-md-4 main-page-heading-subtitle"}>
                   Digi Skills - это платформа для получения цифровых <br/>
                   навыках для всех регионов страны совершенно <br/>
                   бесплатно

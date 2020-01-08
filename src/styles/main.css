@@ -1,8 +1,8 @@
 
 .mainphoto{
-	background-image: url('../assets/img/main.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
+	background: url('../assets/img/main.png') center center;
+	/*background-size: cover;*/
+	background-repeat: no-repeat !important;
 
 }
 .photo2{
@@ -217,6 +217,11 @@ p[style] {
 @media (max-width: 425px) {
 	.banner2{
 		font-size: 17px !important;
+	}
+	.mainbutton {
+		height: 40px;
+		font-size: 15px;
+		width: 160px;
 	}
 }
 
