@@ -1,8 +1,8 @@
 
 .mainphoto{
-	background-image: url('../assets/img/main.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
+	background: url('../assets/img/main.png') center center;
+	/*background-size: cover;*/
+	background-repeat: no-repeat !important;
 
 }
 .photo2{
@@ -214,6 +214,10 @@ p[style] {
 	-webkit-box-orient: vertical;
 }
 
+
+
+
+
 @media (max-width: 425px) {
 	.banner2{
 		font-size: 17px !important;
@@ -225,6 +229,13 @@ p[style] {
 	word-break: break-all;
 
 }
+
+	.mainbutton {
+		height: 40px;
+		font-size: 15px;
+		width: 160px;
+	}
+
 }
 
 @media (max-width: 320px) {

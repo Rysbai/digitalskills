@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "../styles/main.css";
-import { Container, Row, Col, Button } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import logo2 from "../assets/icon/image 64.png";
 import blockphoto from "../assets/img/block-photo.png";
 import blockphoto2 from "../assets/img/block-photo2.png";
-import arrow from "../assets/img/arrow.png";
 import Card from "../Components/card";
 import TeacherCard from "../Components/teacher_card";
 import API from "../API";
@@ -15,37 +14,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Spiner from "../Components/spiner";
 
-// const LeftButton = ({ onClick }) => {
-//   return (
-//     <Button
-//       className={"rounded-pill main-page-slider-button slick-arrow slick-prev"}
-//       onClick={onClick}
-//       color={"primary"}
-//     >
-//       <img
-//         className={"position-relative main-page-slider-button__img-left"}
-//         src={arrow}
-//         alt={"arrow"}
-//       />
-//     </Button>
-//   );
-// };
-//
-// const RightButton = ({ onClick }) => {
-//   return (
-//     <Button
-//       className={"rounded-pill main-page-slider-button slick-arrow slick-next"}
-//       onClick={onClick}
-//       color={"primary"}
-//     >
-//       <img
-//         className={"position-relative main-page-slider-button__img-right"}
-//         src={arrow}
-//         alt={"arrow"}
-//       />
-//     </Button>
-//   );
-// };
 
 class Main extends React.Component {
   state = {
@@ -81,68 +49,21 @@ class Main extends React.Component {
   }
 
   render() {
-    // const settings = {
-    //   dots: false,
-    //   infinite: true,
-    //   speed: 500,
-    //   slidesToShow: 2,
-    //   slidesToScroll: 1,
-    //   arrows: true,
-    //   nextArrow: <RightButton />,
-    //   prevArrow: <LeftButton />,
-    //   adaptiveHeight: true,
-    //   slidesPerView: true,
-    //   centerMode: true,
-    //   centerPadding: "40px",
-    //   responsive: [
-    //     {
-    //       breakpoint: 1024,
-    //       settings: {
-    //         slidesToShow: 3,
-    //         slidesToScroll: 3,
-    //         infinite: true
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 600,
-    //       settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2,
-    //         initialSlide: 2
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 480,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         arrows: false
-    //       }
-    //     }
-    //   ]
-    // };
 
-    //
-
-    // <Link
-    //   to={"/lessons"}
-    //   className="mainbutton d-flex justify-content-center align-items-center">
-    //   Смотреть все
-    // </Link>
 
     return (
       <div className={"w-100 overflow-hidden"}>
         <Header />
-        <div className="mainphoto pb-5 pt-md-5 mb-md-5">
+        <div className="mainphoto mb-5 pb-md-5 pt-md-5">
           <Container>
             <Row>
-              <Col md={12} className={"pt-md-5 pb-md-5"}>
-                <img src={logo2} alt={"logo"} className={"mb-2"}/>
-                <p className={"text-light h5 h1-dm"}>
-                  ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН <br/>
+              <Col md={12} className={"pt-4 pb-4 pb-md-5 pt-md-5"}>
+                <img src={logo2} alt={"logo"} className={"mb-2 mb-md-5 main-page-heading-img-logo"}/>
+                <p className={"text-light h1 main-page-heading-title"}>
+                  ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН <br className={"d-none d-sm-inline-block"}/>
                   СТАНЬ ЦИФРОВЫМ!
                 </p>
-                <p className={"text-light mb-4"} style={{fontSize: '24px !important',opacity: '0.8'}}>
+                <p className={"text-light mb-2 mb-md-4 main-page-heading-subtitle"}>
                   Digi Skills - это платформа для получения цифровых <br/>
                   навыках для всех регионов страны совершенно <br/>
                   бесплатно
@@ -242,7 +163,7 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-between align-items-center mt-5 flex-wrap"
+                  "d-flex justify-content-center justify-content-lg-between align-items-center mt-5 flex-wrap"
                 }
               >
                 <p className={"h1"}>Наши уроки</p>
