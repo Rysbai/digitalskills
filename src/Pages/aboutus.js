@@ -1,25 +1,18 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
 import {
-  Card,
   Col,
   Row,
-  CardBody,
   Container,
-  Button,
-  CardTitle,
-  CardText,
-  CardImg
 } from "reactstrap";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import API from "../API";
 import HtmlParser from "react-html-parser";
 import "../styles/main.css";
-import karta from "../assets/img/kg-07 1.png";
+import map from "../assets/img/kg-07 1.png";
 import Spiner from "./../Components/spiner";
 
-class Aboutus extends React.Component {
+class Aboutus extends Component {
   state = {
     data: {}
   };
@@ -36,9 +29,15 @@ class Aboutus extends React.Component {
         <Header />
         <Container>
           <Row>
-            <Col>
-              <p className={"h1 text-uppercase head-text"}>О ПРОЕКТЕ</p>
-              <p className={"text-about"}>
+            <Col className="col-lg-6 col-12 ">
+              <p
+                className={
+                  "h1 text-uppercase head-text text-lg-left text-center mt-5"
+                }
+              >
+                О ПРОЕКТЕ
+              </p>
+              <p className={"text-about px-4 px-lg-0 mb-lg-5 mb-1"}>
                 {this.state.data && this.state.data.payload ? (
                   HtmlParser(this.state.data.payload)
                 ) : (
@@ -46,8 +45,8 @@ class Aboutus extends React.Component {
                 )}
               </p>
             </Col>
-            <Col className="karta">
-              <img src={karta} />
+            <Col className="map col-lg-6 col-12">
+              <img className="img-fluid" src={map} />
             </Col>
           </Row>
         </Container>

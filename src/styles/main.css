@@ -103,13 +103,12 @@ color: #2D5199;
 	color: #FFFFFF;
 }
 .head-text{
-	margin-top:85px;
 	margin-bottom: 40px!important;
 
 
 }
 .text-about{
-	width: 600px;
+	width: 100%;
 	font-family: Lato-Regular !important;
 	font-style: normal;
 	font-weight: normal;
@@ -122,8 +121,9 @@ p[style] {
 	font-size: 18px !important;
 	text-align: left !important;
 	line-height: 28px !important;
+	width: 100% !important;
 }
-.karta{
+.map{
 	margin-top: 150px;
 }
 .first{
@@ -218,6 +218,13 @@ p[style] {
 	.banner2{
 		font-size: 17px !important;
 	}
+	.map{
+	margin-top: 25px;
+}
+.text-about{
+	word-break: break-all;
+
+}
 }
 
 @media (max-width: 320px) {

@@ -35,7 +35,9 @@ const News = ({ match }) => {
                 <img src={data.image} className={"img-fluid"} alt={"a girl"} />
               </Col>
               <Col md={8}>
-                <p className={"mt-3"}>{HtmlParser(data.description)}</p>
+                <p className={"mt-3 news-content"}>
+                  {HtmlParser(data.description)}
+                </p>
               </Col>
               <Col md={8}>
                 <Link
