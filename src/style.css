@@ -121,3 +121,9 @@ body {
         font-size: 14px;
     }
 }
+
+@media (max-width: 576px) {
+    .main-page-heading-text {
+        font-size: 20px !important;
+    }
+}

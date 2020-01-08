@@ -122,68 +122,70 @@ class Main extends React.Component {
     //   ]
     // };
 
+    //
+
+    // <Link
+    //   to={"/lessons"}
+    //   className="mainbutton d-flex justify-content-center align-items-center">
+    //   Смотреть все
+    // </Link>
+
     return (
       <div className={"w-100 overflow-hidden"}>
         <Header />
-        <div className="mainphoto">
-          <Row className="logopart">
-            <Col sm={{ size: "auto", offset: 1 }}>
-              <img src={logo2} alt={"logo"} />
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={{ size: "auto", offset: 1 }}>
-              <h1 className="mainheader">
-                ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН СТАНЬ ЦИФРОВЫМ!
-              </h1>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={{ size: "auto", offset: 1 }}>
-              <p className="text2">
-                Digi Skills - это платформа для получения цифровых навыках для
-                всех регионов страны совершенно бесплатно
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={{ size: "auto", offset: 1 }}>
-              <Link
-                to={"/lessons"}
-                className="mainbutton d-flex justify-content-center align-items-center"
-              >
-                Смотреть все
-              </Link>
-            </Col>
-          </Row>
+        <div className="mainphoto pb-5 pt-md-5 mb-md-5">
+          <Container>
+            <Row>
+              <Col md={12} className={"pt-md-5 pb-md-5"}>
+                <img src={logo2} alt={"logo"} className={"mb-2"}/>
+                <p className={"text-light h5 h1-dm"}>
+                  ЦИФРОВОЙ Я - ЦИФРОВОЙ КЫРГЫЗСТАН <br/>
+                  СТАНЬ ЦИФРОВЫМ!
+                </p>
+                <p className={"text-light mb-4"} style={{fontSize: '24px !important',opacity: '0.8'}}>
+                  Digi Skills - это платформа для получения цифровых <br/>
+                  навыках для всех регионов страны совершенно <br/>
+                  бесплатно
+                </p>
+                <Link
+                  to={"/lessons"}
+                  className="mainbutton d-flex justify-content-center align-items-center">
+                  Смотреть все
+                </Link>
+              </Col>
+            </Row>
+          </Container>
         </div>
         <Container>
+
           <Row className={"mb-5"}>
 
-            <Col md={6} className={"mb-5 d-flex justify-content-center flex-column order-2 order-sm-1 pl-0"}>
+            <Col md={6} className={"mb-5 d-flex justify-content-center flex-column order-2 order-sm-1 pl-0 pr-0 pr-sm-2"}>
               <Col md={10} className={"d-flex justify-content-center flex-column"}>
-                <p className={"h2 main-page-heading-text"}>Наша миссия</p>
+                <p className={"h2 main-page-heading-text d-none d-sm-block"}>Наша миссия</p>
                 <p className={"text-muted main-page-text"}>
                   Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. аким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.
                 </p>
               </Col>
             </Col>
 
-            <Col md={6} className={"mb-5 pl-0 order-sm-2 order-1 d-flex justify-content-end"}>
+            <Col md={6} className={"mb-5 pl-0 order-sm-2 order-1 d-flex justify-content-end pr-0 pr-sm-2"}>
               <Col md={10}>
+                <p className={"h2 main-page-heading-text d-sm-none"}>Наша миссия</p>
                 <img src={blockphoto} className={"img-fluid"} alt=""/>
               </Col>
             </Col>
 
             <Col md={6} className={'pl-0 mt-5 order-sm-3 order-3'}>
               <Col md={10}>
+                <p className={"h2 main-page-heading-text d-sm-none"}>Повседневная практика</p>
                 <img src={blockphoto2} className={"img-fluid"} alt=""/>
               </Col>
             </Col>
 
             <Col md={6} className={"d-flex justify-content-center flex-column align-items-end mt-5 order-4 order-sm-4"}>
               <Col md={10} className={"d-flex justify-content-center flex-column"}>
-                <p className={"h2 main-page-heading-text"}>Повседневная практика</p>
+                <p className={"h2 main-page-heading-text d-none d-sm-block"}>Повседневная практика</p>
                 <p className={"text-muted main-page-text"}>Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. Таким образом реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений.</p>
               </Col>
             </Col>
