@@ -28,8 +28,8 @@ const Example = () => {
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem className="first item">
+          <Nav navbar className={"w-100 d-flex justify-content-center"}>
+            <NavItem className="item">
               <NavLink tag={"p"} className={"mb-0"}>
                 <Link to={"/about"}>О проекте</Link>
               </NavLink>

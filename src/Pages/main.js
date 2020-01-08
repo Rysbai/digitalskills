@@ -14,37 +14,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Spiner from "../Components/spiner";
 
-// const LeftButton = ({ onClick }) => {
-//   return (
-//     <Button
-//       className={"rounded-pill main-page-slider-button slick-arrow slick-prev"}
-//       onClick={onClick}
-//       color={"primary"}
-//     >
-//       <img
-//         className={"position-relative main-page-slider-button__img-left"}
-//         src={arrow}
-//         alt={"arrow"}
-//       />
-//     </Button>
-//   );
-// };
-//
-// const RightButton = ({ onClick }) => {
-//   return (
-//     <Button
-//       className={"rounded-pill main-page-slider-button slick-arrow slick-next"}
-//       onClick={onClick}
-//       color={"primary"}
-//     >
-//       <img
-//         className={"position-relative main-page-slider-button__img-right"}
-//         src={arrow}
-//         alt={"arrow"}
-//       />
-//     </Button>
-//   );
-// };
 
 class Main extends React.Component {
   state = {
@@ -80,54 +49,7 @@ class Main extends React.Component {
   }
 
   render() {
-    // const settings = {
-    //   dots: false,
-    //   infinite: true,
-    //   speed: 500,
-    //   slidesToShow: 2,
-    //   slidesToScroll: 1,
-    //   arrows: true,
-    //   nextArrow: <RightButton />,
-    //   prevArrow: <LeftButton />,
-    //   adaptiveHeight: true,
-    //   slidesPerView: true,
-    //   centerMode: true,
-    //   centerPadding: "40px",
-    //   responsive: [
-    //     {
-    //       breakpoint: 1024,
-    //       settings: {
-    //         slidesToShow: 3,
-    //         slidesToScroll: 3,
-    //         infinite: true
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 600,
-    //       settings: {
-    //         slidesToShow: 2,
-    //         slidesToScroll: 2,
-    //         initialSlide: 2
-    //       }
-    //     },
-    //     {
-    //       breakpoint: 480,
-    //       settings: {
-    //         slidesToShow: 1,
-    //         slidesToScroll: 1,
-    //         arrows: false
-    //       }
-    //     }
-    //   ]
-    // };
 
-    //
-
-    // <Link
-    //   to={"/lessons"}
-    //   className="mainbutton d-flex justify-content-center align-items-center">
-    //   Смотреть все
-    // </Link>
 
     return (
       <div className={"w-100 overflow-hidden"}>

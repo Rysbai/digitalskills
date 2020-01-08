@@ -214,6 +214,10 @@ p[style] {
 	-webkit-box-orient: vertical;
 }
 
+
+
+
+
 @media (max-width: 425px) {
 	.banner2{
 		font-size: 17px !important;
