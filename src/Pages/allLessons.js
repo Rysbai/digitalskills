@@ -105,7 +105,7 @@ const AllLessons = () => {
                     <Col md={4}>
                       <Card key={idx} {...item} />
                     </Col>
-                  )
+                  );
                 })
               ) : (
                 "Нету курсов"
