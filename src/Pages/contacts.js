@@ -149,7 +149,7 @@ const Contacts = () => {
                 <Input
                   type="tel"
                   name="phone-number"
-                  placeholder="Номер телефона"
+                  placeholder="+996"
                   pattern="^\(?\+([9]{2}?[6])\)?[-. ]?([0-9]{3})[-. ]?([0-9]{3})[-. ]?([0-9]{3})$"
                   onChange={e => setPhoneNumber(e.target.value)}
                   required
