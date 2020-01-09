@@ -21,7 +21,7 @@ class Course extends React.Component {
       .then(res => {
         this.setState({
           lesson: res.data
-        });
+        })
         API.getTeacherData(this.state.lesson.teacher_id)
           .then(res => {
             this.setState({
@@ -29,6 +29,9 @@ class Course extends React.Component {
             });
           })
           .catch(e => console.error(e));
+      })
+      .then(() => {
+        document.title = this.state.lesson.name;
       })
       .catch(e => console.error(e));
   }

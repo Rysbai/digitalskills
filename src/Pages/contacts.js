@@ -45,6 +45,8 @@ const Contacts = () => {
     text: textQuestion
   };
 
+  document.title = "Контакты";
+
   const postData = e => {
     e.preventDefault();
     let target = e.target;
