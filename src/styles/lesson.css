@@ -1,7 +1,5 @@
 
-.wrapper{
-  overflow-x: hidden;
-}
+
 .lesson-header{
   min-height: 70px;
 }
@@ -112,12 +110,10 @@ height: auto !important;
 .lesson-header-collapse{
   display: none;
 }
-@media only screen and (max-width: 765px) {
-  .lesson-header-collapse{
-  display: block;
-}
-}
 @media only screen and (max-width: 991px) {
+  .wrapper{
+  overflow-x: hidden;
+}
 
   .lesson-header-title {
     display: none;
@@ -134,6 +130,12 @@ height: auto !important;
     right: 25px;
   }
 }
+@media only screen and (max-width: 765px) {
+  .lesson-header-collapse{
+  display: block;
+}
+}
+
 
 @media only screen and (max-width:600px){
   .lesson-content-block{
