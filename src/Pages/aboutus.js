@@ -1,9 +1,5 @@
 import React, { Component } from "react";
-import {
-  Col,
-  Row,
-  Container,
-} from "reactstrap";
+import { Col, Row, Container } from "reactstrap";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import API from "../API";
