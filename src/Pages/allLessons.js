@@ -16,26 +16,33 @@ import API from "../API";
 import Spiner from "../Components/spiner";
 
 const AllLessons = () => {
+  const [page, setPage] = useState(0);
   const [choice, setChoice] = useState("Все");
   const [choiceID, setChoiceID] = useState(0);
   const [data, setData] = useState([]);
   const [category, setCategory] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
-
+  const count = 3;
   useEffect(() => {
-    API.getCategoryLessons(choiceID)
+    API.getCategoryLessons(choiceID, page, count)
       .then(res => setCategoryData(res.data))
       .catch(e => console.error(e));
   }, [choiceID]);
 
   useEffect(() => {
-    API.getAllLessons()
+    API.getCategoryLessons(choiceID, page, count)
+      .then(res => setCategoryData(res.data))
+      .catch(e => console.error(e));
+  }, [page]);
+
+  useEffect(() => {
+    API.getAllLessons(page, count)
       .then(res => setData(res.data))
       .catch(e => console.error(e));
     API.getCategory()
       .then(res => setCategory(res.data))
       .catch(e => console.error(e));
-  }, []);
+  }, [page]);
 
   let result;
   if (choice === "Все") {
@@ -43,6 +50,30 @@ const AllLessons = () => {
   } else {
     result = categoryData;
   }
+
+  const createPage = () => {
+    // Outer loop to create parent
+    let buttons = [],
+      pages = Math.ceil(result.total / count);
+    for (let i = 0; i < pages; i++) {
+      buttons.push(
+        <Button
+          key={i}
+          className={
+            i === page
+              ? "paginationActiveButton shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3"
+              : "shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"
+          }
+          color={"faded"}
+          onClick={() => setPage(i)}
+        >
+          {i + 1}
+        </Button>
+      );
+    }
+    return buttons;
+  };
+  console.log(result);
   return (
     <div className="wrapper">
       <Header />
@@ -83,6 +114,7 @@ const AllLessons = () => {
                           onClick={e => {
                             setChoice(e.target.innerText);
                             setChoiceID(item.id);
+                            setPage(0);
                           }}
                           className={"dropdown-item-custom"}
                         >
@@ -102,8 +134,8 @@ const AllLessons = () => {
               result.data.length > 0 ? (
                 result.data.map((item, idx) => {
                   return (
-                    <Col md={4}>
-                      <Card key={idx} {...item} />
+                    <Col key={idx} md={4}>
+                      <Card {...item} />
                     </Col>
                   );
                 })
@@ -115,30 +147,7 @@ const AllLessons = () => {
             )}
           </Col>
           <div className={"w-50 mx-auto text-center mb-5"}>
-            <Button
-              className={
-                "text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              1
-            </Button>
-            <Button
-              className={
-                "shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              2
-            </Button>
-            <Button
-              className={
-                "shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              3
-            </Button>
+            {result && result.total > count ? createPage() : null}
           </div>
         </Row>
       </Container>

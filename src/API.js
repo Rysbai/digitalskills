@@ -5,10 +5,13 @@ const http = Axios.create({ baseURL });
 const lang = localStorage.getItem("language");
 
 export default {
-  getAllLessons: () => http.get(`api/course/courses/?lang=${lang}`),
+  getAllLessons: (page, count) =>
+    http.get(`api/course/courses/?lang=${lang}&page=${page}&count=${count}`),
   getCategory: () => http.get(`api/course/categories/?lang=${lang}`),
-  getCategoryLessons: id =>
-    http.get(`api/course/courses/?category_id=${id}&lang=${lang}`),
+  getCategoryLessons: (id, page, count) =>
+    http.get(
+      `api/course/courses/?category_id=${id}&lang=${lang}&page=${page}&count=${count}`
+    ),
   getTeacherData: id => http.get(`api/course/teachers/${id}/?lang=${lang}`),
   getLessonsOfTeacher: id => http.get(`api/course/courses/?teacher_id=${id}`),
   getAllNews: () => http.get(`api/news/?lang=${lang}`),

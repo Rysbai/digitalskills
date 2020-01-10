@@ -122,6 +122,7 @@ body {
     .card_custom_title {
         font-size: 14px;
     }
+
     .card_custom_body-text {
         font-size: 14px;
     }
@@ -133,13 +134,21 @@ body {
     .main-page-heading-text {
         font-size: 20px !important;
     }
+
     .main-page-heading-title {
         font-size: 15px !important;
     }
+
     .main-page-heading-img-logo {
         width: 40px !important;
     }
+
     .main-page-heading-subtitle {
         font-size: 11px !important;
     }
+}
+
+.paginationActiveButton {
+    color: white !important;
+    background-color: #2D5199 !important;
 }
