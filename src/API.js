@@ -14,7 +14,8 @@ export default {
     ),
   getTeacherData: id => http.get(`api/course/teachers/${id}/?lang=${lang}`),
   getLessonsOfTeacher: id => http.get(`api/course/courses/?teacher_id=${id}`),
-  getAllNews: () => http.get(`api/news/?lang=${lang}`),
+  getAllNews: (page, count) =>
+    http.get(`api/news/?lang=${lang}&page=${page}&count=${count}`),
   getOneNews: id => http.get(`api/news/${id}?lang=${lang}`),
   getCourse: id => http.get(`api/course/courses/${id}`),
   allTeachers: () =>

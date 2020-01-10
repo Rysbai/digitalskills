@@ -7,17 +7,41 @@ import API from "../API";
 import Spiner from "../Components/spiner";
 import moment from "moment";
 import { Link } from "react-router-dom";
-import "../styles/news.css"
+import "../styles/news.css";
 
 const AllNews = () => {
   const [data, setData] = useState([]);
+  const [page, setPage] = useState(0);
+  const count = 5;
 
   useEffect(() => {
-    API.getAllNews("ru")
+    API.getAllNews(page, count)
       .then(res => setData(res.data))
       .catch(e => console.error(e));
-  }, []);
+  }, [page]);
 
+  const createPage = () => {
+    // Outer loop to create parent
+    let buttons = [],
+      pages = Math.ceil(data.total / count);
+    for (let i = 0; i < pages; i++) {
+      buttons.push(
+        <Button
+          key={i}
+          className={
+            i === page
+              ? "paginationActiveButton shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3"
+              : "shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"
+          }
+          color={"faded"}
+          onClick={() => setPage(i)}
+        >
+          {i + 1}
+        </Button>
+      );
+    }
+    return buttons;
+  };
   console.log(data.data);
 
   return (
@@ -25,7 +49,13 @@ const AllNews = () => {
       <Header />
       <Container>
         <Row>
-          <p className={"h1 text-uppercase text-lg-left mx-2 text-center mt-5 mb-4 w-100"}>новости</p>
+          <p
+            className={
+              "h1 text-uppercase text-lg-left mx-2 text-center mt-5 mb-4 w-100"
+            }
+          >
+            новости
+          </p>
           {data && data.data ? (
             <Link
               to={`/news/${data.data[0].id}`}
@@ -50,7 +80,9 @@ const AllNews = () => {
                     </p>
 
                     <div className="w-100 d-flex justify-content-between">
-                      <p className="text-muted main-news-views">{data.data[0].views} просмотров</p>
+                      <p className="text-muted main-news-views">
+                        {data.data[0].views} просмотров
+                      </p>
                       <b className="mb-0 text-dark main-news-date">
                         {moment(data.data[0].pub_date).format("Do MMMM YYYY")}
                       </b>
@@ -76,30 +108,7 @@ const AllNews = () => {
             <Spiner />
           )}
           <div className={"w-100 mx-auto text-center mb-5"}>
-            <Button
-              className={
-                "text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              1
-            </Button>
-            <Button
-              className={
-                "shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              2
-            </Button>
-            <Button
-              className={
-                "shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"
-              }
-              color={"faded"}
-            >
-              3
-            </Button>
+            {data && data.total > count ? createPage() : null}
           </div>
         </Row>
       </Container>
