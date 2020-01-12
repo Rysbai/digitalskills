@@ -6,14 +6,17 @@ body {
     font-family: MullerBold;
     color: #2D5199;
 }
+
 .card_custom_title {
     color: #484848;
     font-family: MullerBold;
 }
+
 .card_custom_subtitle-text {
     font-size: 14px;
 }
-.card_custom_body-text span{
+
+.card_custom_body-text span {
     color: #2D5199;
     font-family: MullerMedium;
 }
@@ -22,6 +25,14 @@ body {
     border: 2px solid #2D5199 !important;
     color: #2D5199 !important;
     font-family: MullerMedium !important;
+    width: 190px !important;
+}
+
+.card_custom_button:hover {
+    border: 2px solid #2D5199 !important;
+    background: #2D5199;
+    color: #fff !important;
+    transition: 0.5s;
 }
 
 .dropdown-item-custom {
@@ -41,6 +52,7 @@ body {
     font-family: MullerMedium;
     color: #2D5199;
 }
+
 .teacher-page {
     font-family: MullerBold;
     color: #2D5199;
@@ -86,3 +98,58 @@ body {
 .all-news__body {
     font-size: 18px;
 }
+
+.slick-slide {
+    width: 100px;
+}
+
+.wrapper {
+    min-height: calc(100vh);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.main-page-heading-subtitle {
+    font-size: 24px;
+    opacity: .8;
+}
+
+@media (max-width: 768px) {
+    .card_custom_title {
+        font-size: 14px;
+    }
+
+    .card_custom_body-text {
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .main-page-heading-text {
+        font-size: 20px !important;
+    }
+
+    .main-page-heading-title {
+        font-size: 15px !important;
+    }
+
+    .main-page-heading-img-logo {
+        width: 40px !important;
+    }
+
+    .main-page-heading-subtitle {
+        font-size: 11px !important;
+    }
+}
+
+.paginationActiveButton {
+    color: white !important;
+    background-color: #2D5199 !important;
+}
+

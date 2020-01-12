@@ -1,64 +1,120 @@
-import React,{useState,useEffect} from 'react';
-import {Link} from 'react-router-dom';
-import {Container, Row, Col, Button} from 'reactstrap';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col, Button } from "reactstrap";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import NewsCard from "../Components/news_card";
-import API from '../API';
+import API from "../API";
+import Spiner from "../Components/spiner";
+import moment from "moment";
+import { Link } from "react-router-dom";
+import "../styles/news.css";
 
 const AllNews = () => {
-
-  const [data,setData] = useState([]);
+  const [data, setData] = useState([]);
+  const [page, setPage] = useState(0);
+  const count = 5;
 
   useEffect(() => {
-    API.getAllNews('ru')
+    API.getAllNews(page, count)
       .then(res => setData(res.data))
-      .catch(e => console.error(e))
-  },[]);
+      .catch(e => console.error(e));
+  }, [page]);
+
+  const createPage = () => {
+    // Outer loop to create parent
+    let buttons = [],
+      pages = Math.ceil(data.total / count);
+    for (let i = 0; i < pages; i++) {
+      buttons.push(
+        <Button
+          key={i}
+          className={
+            i === page
+              ? "paginationActiveButton shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3"
+              : "shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"
+          }
+          color={"faded"}
+          onClick={() => setPage(i)}
+        >
+          {i + 1}
+        </Button>
+      );
+    }
+    return buttons;
+  };
+  console.log(data.data);
 
   return (
-    <>
+    <div className="wrapper">
       <Header />
       <Container>
         <Row>
-          <p className={"h1 text-uppercase mt-5 mb-4 w-100"}>новости</p>
-          {/*<div className={"w-100 d-flex mb-5"}>*/}
-          {/*  <Col md={6} className={"pl-0"}>*/}
-          {/*    <img className={"img-fluid w-100"} src={news} alt={news}/>*/}
-          {/*  </Col>*/}
-          {/*  <Col md={6} className={"d-flex justify-content-between flex-column"}>*/}
-          {/*    <p className={"h3 contacts-subtitle"}>15 декабря состоится онлайн митап по электронной коммерции</p>*/}
-          {/*    <p className={"all-news__body"}>*/}
-          {/*      Сегодня мы становимся свидетелями беспрецедентного развития цифровых технологий и их воздействия на*/}
-          {/*      экономический рост, государственное управление, качество услуг, способы ведения бизнеса и образ жизни*/}
-          {/*      людей. Наступает четвертая индустриальная революция, где технологии трансформируют*/}
-          {/*      традиционные сектора экономики*/}
-          {/*    </p>*/}
-          {/*    <div className="w-100 d-flex justify-content-between">*/}
-          {/*      <b>100 просмотров</b>*/}
-          {/*      <p className="mb-0 text-muted">1 декабря 2019</p>*/}
-          {/*    </div>*/}
-          {/*  </Col>*/}
-          {/*</div>*/}
-          {data && data.length ? data.map((item,idx) => {
-            return (
-              <Col key={idx} md={6} className={"mb-4"}>
-                <Link to={`/news/${item.id}`}>
-                  <NewsCard {...item}/>
-                </Link>
-              </Col>
+          <p
+            className={
+              "h1 text-uppercase text-lg-left mx-2 text-center mt-5 mb-4 w-100"
+            }
+          >
+            новости
+          </p>
+          {data && data.data ? (
+            <Link
+              to={`/news/${data.data[0].id}`}
+              className={"text-decoration-none text-dark"}
+            >
+              <div className={"col-12 mx-2 d-flex mb-5  shadow  rounded "}>
+                <Row>
+                  <Col className={"pl-0 col-12 col-lg-6"}>
+                    <img
+                      className={"img-fluid w-100  rounded"}
+                      src={data.data[0].image}
+                      alt="img"
+                    />
+                  </Col>
+                  <Col
+                    className={
+                      "d-flex justify-content-between flex-column py-3 py-lg-5 px-4 col-12 col-lg-6"
+                    }
+                  >
+                    <p className={"h3 contacts-subtitle main-news-subtitle"}>
+                      {data.data[0].title}
+                    </p>
+
+                    <div className="w-100 d-flex justify-content-between">
+                      <p className="text-muted main-news-views">
+                        {data.data[0].views} просмотров
+                      </p>
+                      <b className="mb-0 text-dark main-news-date">
+                        {moment(data.data[0].pub_date).format("Do MMMM YYYY")}
+                      </b>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </Link>
+          ) : (
+            ""
+          )}
+          {data && data.data && data.data.length ? (
+            data.data.map((item, idx) =>
+              idx > 0 ? (
+                <Col key={idx} md={6} className={"mb-4"}>
+                  <NewsCard {...item} />
+                </Col>
+              ) : (
+                ""
+              )
             )
-          }) : <p>Тут пусто</p>}
+          ) : (
+            <Spiner />
+          )}
           <div className={"w-100 mx-auto text-center mb-5"}>
-            <Button className={"text-muted shadow all-lessons-pagination all-lessons-pagination-active rounded-0 mr-3 bg-white"} color={"faded"}>1</Button>
-            <Button className={"shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"} color={"faded"}>2</Button>
-            <Button className={"shadow all-lessons-pagination all-lessons-pagination-inactive rounded-0 mr-3 bg-white"} color={"faded"}>3</Button>
+            {data && data.total > count ? createPage() : null}
           </div>
         </Row>
       </Container>
       <Footer />
-    </>
-  )
+    </div>
+  );
 };
 
 export default AllNews;

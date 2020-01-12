@@ -11,6 +11,9 @@
 	width: 650px;
 	height: 340px;
 }
+.courses-blue-color{
+	color: #2D5199;
+}
 .coursebutton{
 	width: 210px;
 	height: 50px;
@@ -26,6 +29,12 @@
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 27px;	  
+}
+.coursebutton:hover{
+
+	color: #fff;
+	background: #2D5199;
+  transition: 0.5s;	  
 }
 .coursebutton2{
 	width: 210px;
@@ -96,12 +105,66 @@
 	font-size: 24px;
 	line-height: 27px;
 	color: #2D5199;
+	margin-bottom: 50px;
+}
+.teacher-title{
+	font-family: Muller;
+font-weight: bold;
+font-size: 36px;
+line-height: 30px;
+color: #000000;
+}
+.teacher-subtitler{
+	font-family: Muller;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 24px;
+
+color: #848484;
 }
 .teacher-info{
 	color: #000;
-	margin-top: 150px;
 }
 .bio-teacher{
 	width: 500px;
 	text-align: justify;
+}
+.teacher-page-btn{
+height: 50px;
+width: 300px;
+background-color: #2D5199;
+border:none;
+font-family: Muller;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 27px;
+color: #fff;
+}
+.teacher-page-btn:hover{
+color: #2D5199;
+background: rgba(255, 255, 255, 0);
+border: 2px solid #2D5199;
+transition: 0.5s;
+}
+.coursebutton2:hover{
+	text-decoration: none;
+color: #2D5199 !important;
+background: #fff;
+border: 2px solid #2D5199;
+transition: 0.5s;
+}
+ 
+@media only screen and (max-width:770px){
+	.header-course{
+font-size: 30px;
+}
+	.coursebutton ,.coursebutton2{
+		margin: 0 auto;
+	}
+	.course-about{
+	word-break: break-all !important;
+
+	}
 }

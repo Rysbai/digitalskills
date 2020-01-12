@@ -1,43 +1,54 @@
-import React, {Component} from "react";
-import {Link, withRouter} from "react-router-dom";
-import { Card, Col, Row, CardBody, Container, Button, CardTitle, CardText, CardImg } from 'reactstrap';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
-import '../styles/main.css';
-import karta from '../assets/img/kg-07 1.png';
+import React, { Component } from "react";
+import { Col, Row, Container } from "reactstrap";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import API from "../API";
+import HtmlParser from "react-html-parser";
+import "../styles/main.css";
+import map from "../assets/img/kg-07 1.png";
+import Spiner from "./../Components/spiner";
 
-class Aboutus extends React.Component {
-	render(){
-		return(
-			<div>
-			<Header/>
-			<Container>
-			<Row>
-			<Col>
-			<p className={"h1 text-uppercase head-text"}>О ПРОЕКТЕ</p>
-			<p className={'text-about'}>Уважаемые сограждане!</p>
-			<p className={'text-about'}> Сегодня мы становимся свидетелями беспрецедентного развития цифровых технологий 
-			и их воздействия на экономический рост, государственное управление, качество услуг, способы ведения бизнеса 
-			и образ жизни людей. Наступает четвертая индустриальная революция, где технологии трансформируют традиционные
-			 сектора экономики, большие данные становятся новым цифровым золотом и искусственный интеллект значительно 
-			 повышает производительность труда. Перед нами открываются совершенно новые возможности. 
-			 Требованием настоящего времени является оперативная реакция и консолидация 
-			 ресурсов для форсированного развития. Наша страна приняла Национальную стратегию 
-			 развития Кыргызской Республики на 2018-2040 годы, где были обозначены контуры цифровой 
-			 трансформации страны. Данная концепция дополняет и расширяет программу цифровой трансформации,
-			  определяет структуру, систему управления и основы процесса цифровизации страны. 
-			  Для того чтобы получить цифровые дивиденды от цифровизации нашего общества, 
-			  следует немедленно заложить прочный фундамент, который состоит из нецифровых факторов. 
-			  Данные факторы включают в себя такие важные для развития элементы, как строительство современных и 
-			  адаптивных государственных институтов, инвестиции в человеческий капитал, создание гибких механизмов разработки и обновления нормативной правовой базы, поощрение научно-исследовательской деятельности и инноваций в бизнесе, консолидация деловой среды, которые станут локомотивом роста экономики. Цифровая трансформация во всех сферах жизни требует привития в обществе культуры открытых коммуникаций, 
-			обмена знаниями и совместного творчества. Необходимо начать широкомасштабную образовательную и просветительскую работу среди широких слоев населения, особенно в сельской местности, для разъяснения возможностей и преимуществ использования цифровых технологий.</p>
-			</Col>
-			<Col className = "karta"><img src={karta}/></Col>
-			</Row>
-			</Container>
-			<Footer/>
-			</div>
-		)
-	}
-};
+class Aboutus extends Component {
+  state = {
+    data: {}
+  };
+
+  componentDidMount() {
+    API.getDataAboutUs()
+      .then(res => this.setState({ data: res.data }))
+      .catch(e => console.error(e));
+  }
+
+  render() {
+    return (
+      <div className="wrapper">
+        <Header />
+        <Container>
+          <Row>
+            <Col className="col-lg-6 col-12 ">
+              <p
+                className={
+                  "h1 text-uppercase head-text text-lg-left text-center mt-5"
+                }
+              >
+                О ПРОЕКТЕ
+              </p>
+              <p className={"text-about px-4 px-lg-0 mb-lg-5 mb-1"}>
+                {this.state.data && this.state.data.payload ? (
+                  HtmlParser(this.state.data.payload)
+                ) : (
+                  <Spiner />
+                )}
+              </p>
+            </Col>
+            <Col className="map col-lg-6 col-12">
+              <img className="img-fluid" src={map} />
+            </Col>
+          </Row>
+        </Container>
+        <Footer />
+      </div>
+    );
+  }
+}
 export default Aboutus;

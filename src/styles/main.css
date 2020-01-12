@@ -1,17 +1,17 @@
+
 .mainphoto{
-	background-image: url('../assets/img/main.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
+	background: url('../assets/img/main.png') center center;
+	/*background-size: cover;*/
+	background-repeat: no-repeat !important;
 
 }
 .photo2{
 	 background: linear-gradient(rgba(0,0,0,0.5),
          rgba(0,0,0,0.5)),
-         url('../assets/img/photo2.png');
-	background-size: 100%;
+         url('../assets/img/photo2.png') center top / cover;
 	background-repeat: no-repeat;
-	  background-color: rgba(0,0,0,0.5);  
-	  z-index: 1;
+	height: 350px;
+	z-index: 1;
 }
 .footer{
 	background-color: #2D5199;
@@ -57,8 +57,6 @@
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 27px;
-	margin-bottom: 178px;
-	  
 }
 .mainbutton:hover,
 .mainbutton:active {
@@ -90,23 +88,6 @@ color: #2D5199;
 .blockphoto{
 	padding-top: 75px;
 }
-.banner2{
-	margin-top: 200px;
-	margin-bottom: 110px;
-	width: 1035px;
-	font-family: Muller;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 42px;
-	line-height: 42px;
-	color: #FFFFFF;
-	display: flex;
-	align-items: flex-end;
-	padding-top: 270px;
-	padding-bottom: 30px;
-	padding-left: 123px;
-
-}
 .lessons_button{
 	width: 200px;
 	height:50px;
@@ -122,22 +103,27 @@ color: #2D5199;
 	color: #FFFFFF;
 }
 .head-text{
-	margin-top:85px;
 	margin-bottom: 40px!important;
 
 
 }
 .text-about{
-	width: 600px;
-	font-family: Lato-Regular;
+	width: 100%;
+	font-family: Lato-Regular !important;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 	line-height: 170%;
 	color: #525252;
-
 }
-.karta{
+p[style] {
+	font-family: Lato-Regular !important;
+	font-size: 18px !important;
+	text-align: left !important;
+	line-height: 28px !important;
+	width: 100% !important;
+}
+.map{
 	margin-top: 150px;
 }
 .first{
@@ -166,4 +152,97 @@ color: #2D5199;
 .margin2{
 	margin-top: 33px;
 	text-align: center;
+}
+
+.teacher-card-name {
+	font-size: 18px;
+	font-family: MullerBold;
+}
+
+.teacher-card-who {
+	font-size: 14px;
+}
+
+.teacher-card-image {
+	width: 90px;
+}
+
+.main-page-slider-button {
+	width: 50px !important;
+	height: 50px !important;
+	z-index: 1000 !important;
+}
+
+.slick-arrow:after, .slick-arrow:before {
+	display: none;
+}
+
+.main-page-slider-button__img-right {
+	right: 4px;
+}
+
+.main-page-slider-button__img-left {
+	transform: rotate(180deg);
+}
+
+.main-page-slider-button {
+	position: relative;
+	top:-30px;
+}
+
+.main-page-heading-text {
+	font-family: MullerBold;
+	color: #2D5199;
+}
+
+.main-page-text {
+	line-height: 170% !important;
+}
+
+.main-card-button-pos {
+	position: absolute;
+	left: 0;
+	bottom: 20px;
+}
+
+.teacher-card-about-text {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	line-height: 21px;
+	-webkit-line-clamp: 10;
+	-webkit-box-orient: vertical;
+}
+
+
+
+
+
+@media (max-width: 425px) {
+	.banner2{
+		font-size: 17px !important;
+	}
+	.map{
+	margin-top: 25px;
+}
+.text-about{
+	word-break: break-all;
+
+}
+
+	.mainbutton {
+		height: 40px;
+		font-size: 15px;
+		width: 160px;
+	}
+
+}
+
+@media (max-width: 320px) {
+	.banner2{
+		font-size: 13px !important;
+	}
+	.photo2 {
+		height: 150px;
+	}
 }
