@@ -32,7 +32,7 @@ const LessonHeader = props => {
       </NavbarBrand>
       <NavbarToggler onClick={toggle} />
 
-      <Collapse isOpen={isOpen} className="mx-4 my-4 " navbar>
+      <Collapse isOpen={isOpen} className=" my-4 " navbar>
         <div className="lesson-header-collapse">
           {props.sortData.length > 0
             ? props.sortData.map((data, index) => (

@@ -41,7 +41,7 @@ const Lesson = ({ match }) => {
     scrollTop();
   };
   return (
-    <div className="wrapper">
+    <div className="wrapper container-lg-fluid">
       <LessonHeader
         MatchParamsId={match.params.id}
         title={data.length > 0 ? data[0].title : ""}
@@ -50,7 +50,7 @@ const Lesson = ({ match }) => {
         select={select}
       />
       {data.length > 0 ? (
-        <div className="col-12 row mx-1 mt-2 mt-lg-5 ">
+        <div className="col-12 row mx-1 mx-lg-0 mt-2 mt-lg-5 ">
           <div className="col-3 ml-2 lesson-sidebar-wrapper">
             <div className="lesson-sidebar-block">
               {sortData.length > 0
