@@ -1,4 +1,6 @@
-
+html {
+	scroll-behavior: smooth;
+}
 .mainphoto{
 	background: url('../assets/img/main.png') center center;
 	/*background-size: cover;*/
@@ -225,10 +227,7 @@ p[style] {
 	.map{
 	margin-top: 25px;
 }
-.text-about{
-	word-break: break-all;
 
-}
 
 	.mainbutton {
 		height: 40px;

@@ -109,7 +109,7 @@ class Course extends React.Component {
                   <div className="block">
                     <p className="details-course">Детали онлайн урока</p>
                     <p className="DET">
-                      Дата:
+                      Дата:{" "}
                       <span className="date_course">
                       {" "}
                         {moment(start).format("Do MMMM YYYY")}

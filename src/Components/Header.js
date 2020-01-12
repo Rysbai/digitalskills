@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import {
   Collapse,
   Navbar,
@@ -17,6 +17,10 @@ const Example = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  });
 
   return (
     <Navbar className="header" light expand="md">
