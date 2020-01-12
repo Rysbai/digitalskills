@@ -204,7 +204,7 @@ class Main extends React.Component {
               >
                 <p className={"h1"}>Наши уроки</p>
 
-                <div className={"d-inline-block"} style={{ minWidth: "220px" }}>
+                <div className={"d-inline-block"}>
                   <Link to="/lessons">
                     <button className="lessons_button">Все уроки</button>
                   </Link>
