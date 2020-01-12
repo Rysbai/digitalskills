@@ -52,7 +52,6 @@ const AllLessons = () => {
   }
 
   const createPage = () => {
-    // Outer loop to create parent
     let buttons = [],
       pages = Math.ceil(result.total / count);
     for (let i = 0; i < pages; i++) {
@@ -73,7 +72,7 @@ const AllLessons = () => {
     }
     return buttons;
   };
-  console.log(result);
+
   return (
     <div className="wrapper">
       <Header />

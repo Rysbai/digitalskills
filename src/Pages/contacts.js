@@ -72,7 +72,13 @@ const Contacts = () => {
         }
       })
       .catch(error => {
-        console.log("Request failed: ", error);
+        Swal.fire({
+          text: "Проверьте данные!",
+          width: 500,
+          height: 500,
+          showConfirmButton: true,
+          confirmButtonColor: "#32B482"
+        });
       });
   };
 

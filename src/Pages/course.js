@@ -1,7 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import moment from "moment";
@@ -35,7 +34,6 @@ class Course extends React.Component {
   }
 
   render() {
-
     const {
       name,
       category_name,
@@ -49,7 +47,6 @@ class Course extends React.Component {
     return (
       <div className="wrapper">
         <Header />
-
         {this.state.lesson && this.state.lesson.name ? (
           <Container>
             <Row className={"mt-5"}>
@@ -102,9 +99,7 @@ class Course extends React.Component {
                 <h5 className="course-title  text-lg-left text-center">
                   Описание курса
                 </h5>
-                <p className="course-about mt-4 text-left  ">
-                  {description}
-                </p>
+                <p className="course-about mt-4 text-left  ">{description}</p>
               </Col>
               {this.state.lesson.isOnline == true ? (
                 <Col className="col-md-auto col-4 mx-2 mt-5 mx-lg-5">
@@ -113,6 +108,7 @@ class Course extends React.Component {
                     <p className="DET">
                       Дата:
                       <span className="date_course">
+                      {" "}
                         {moment(start).format("Do MMMM YYYY")}
                       </span>
                     </p>
@@ -158,7 +154,7 @@ class Course extends React.Component {
                   {this.state.teacher.about}
                 </p>
                 <p className="course-about text-lg-left text-center">
-                  Язык преподования:{" "}
+                  Язык преподавания:{" "}
                   <b>
                     {this.state.teacher.language === "ru"
                       ? "Русский"
