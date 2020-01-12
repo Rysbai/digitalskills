@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React , { useState, useEffect } from "react";
 import API from "../API";
 import ReactHtmlParser from "react-html-parser";
 import LessonSidebar from "../Components/lesson_sidebar";
@@ -20,8 +20,7 @@ const Lesson = ({ match }) => {
     const newData =
       data.length > 0
         ? data.sort((a, b) => {
-            return a.number - b.number;
-          })
+          return a.number - b.number;})
         : "";
     setSortData(newData);
   }, [data]);
@@ -55,15 +54,15 @@ const Lesson = ({ match }) => {
             <div className="lesson-sidebar-block">
               {sortData.length > 0
                 ? sortData.map((data, index) => (
-                    <LessonSidebar
-                      id={data.id}
-                      title={data.title}
-                      number={data.number}
-                      setSelect={setSelect}
-                      select={select}
-                      index={index}
-                    />
-                  ))
+                  <LessonSidebar
+                    id={data.id}
+                    title={data.title}
+                    number={data.number}
+                    setSelect={setSelect}
+                    select={select}
+                    index={index}
+                  />
+                ))
                 : ""}
             </div>
           </div>

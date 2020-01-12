@@ -26,6 +26,7 @@ body {
     color: #2D5199 !important;
     font-family: MullerMedium !important;
     width: 190px !important;
+    height: 55px;
 }
 
 .card_custom_button:hover {
