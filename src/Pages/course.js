@@ -158,7 +158,7 @@ class Course extends React.Component {
                   {this.state.teacher.about}
                 </p>
                 <p className="course-about text-lg-left text-center">
-                  Язык преподования:{" "}
+                  Язык препадования:{" "}
                   <b>
                     {this.state.teacher.language === "ru"
                       ? "Русский"
