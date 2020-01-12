@@ -30,14 +30,6 @@ class Main extends React.Component {
       )
       .catch(e => console.error(e));
 
-    API.getAllNews()
-      .then(res =>
-        this.setState({
-          news: res.data
-        })
-      )
-      .catch(e => console.error(e));
-
     API.allTeachers()
       .then(res =>
         this.setState({
@@ -225,7 +217,7 @@ class Main extends React.Component {
               {this.state.lessons && this.state.lessons.data ? (
                 this.state.lessons.data.map((item, idx) => {
                   return (
-                    <Col className={"mt-3"} sm={12} md={4}>
+                    <Col className={"mt-3"} sm={12} md={4} key={idx}>
                       <Card key={idx} {...item} />
                     </Col>
                   );
