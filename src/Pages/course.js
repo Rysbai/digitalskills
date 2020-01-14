@@ -17,13 +17,15 @@ class Course extends React.Component {
   };
 
   componentDidMount() {
+    console.log("componentDidMount at course.js");
     API.getCourse(this.props.match.params.id)
       .then(res => {
         this.setState({
           lesson: res.data
-        })
+        });
         API.getTeacherData(this.state.lesson.teacher_id)
           .then(res => {
+            console.log("GET query");
             this.setState({
               teacher: res.data
             });
@@ -93,7 +95,7 @@ class Course extends React.Component {
                 </Row>
               </Col>
               <Col className="my-2" md={6}>
-                <img className="img-fluid" src={image} alt={"image"} />
+                <img className="img-fluid" src={image} alt={"banner"} />
               </Col>
             </Row>
 

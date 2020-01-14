@@ -10,10 +10,11 @@ html {
 .photo2{
 	 background: linear-gradient(rgba(0,0,0,0.5),
          rgba(0,0,0,0.5)),
-         url('../assets/img/photo2.png') center top / cover;
+         url('../assets/img/photo2.png') center center / cover;
 	background-repeat: no-repeat;
 	height: 350px;
 	z-index: 1;
+	background-attachment: fixed !important;
 }
 .footer{
 	background-color: #2D5199;
