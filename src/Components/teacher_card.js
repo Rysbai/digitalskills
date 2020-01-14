@@ -24,7 +24,7 @@ const TeacherCard = ({id,image,name,surname,position,language,about}) => {
           <p>Язык преподования: <b>{language === "ru" ? "Русский" : "Кыргызский"}</b></p>
           <div className={"w-100 d-flex justify-content-center main-card-button-pos"}>
             <Link to={`/teacher/${id}`} className={"mx-auto d-inline-block mb-3"}>
-              <Button color={"faded"} tag={"span"} className={"card_custom_button rounded-0 pl-md-5 pr-md-5 pt-md-3 pb-md-3"}>
+              <Button color={"faded"} tag={"span"} className={"card_custom_button rounded-0 btn btn-faded d-flex justify-content-center align-items-center"}>
                 <b>Подробнее</b>
               </Button>
             </Link>

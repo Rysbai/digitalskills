@@ -15,6 +15,7 @@ const AllNews = () => {
   const count = 5;
 
   useEffect(() => {
+    document.title = "Все новости";
     API.getAllNews(page, count)
       .then(res => setData(res.data))
       .catch(e => console.error(e));

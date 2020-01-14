@@ -30,14 +30,6 @@ class Main extends React.Component {
       )
       .catch(e => console.error(e));
 
-    API.getAllNews()
-      .then(res =>
-        this.setState({
-          news: res.data
-        })
-      )
-      .catch(e => console.error(e));
-
     API.allTeachers()
       .then(res =>
         this.setState({
@@ -100,12 +92,7 @@ class Main extends React.Component {
                   Наша миссия
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений. аким
-                  образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
+                  Предоставить возможность каждому кыргызстанцу приобрести минимальные цифровые навыки, а также определиться с профессиональной ориентацией в области информационных технологий
                 </p>
               </Col>
             </Col>
@@ -127,7 +114,7 @@ class Main extends React.Component {
             <Col md={6} className={"pl-0 mt-5 order-sm-3 order-3"}>
               <Col md={10}>
                 <p className={"h2 main-page-heading-text d-sm-none"}>
-                  Повседневная практика
+                  Цель проекта
                 </p>
                 <img src={blockphoto2} className={"img-fluid"} alt="" />
               </Col>
@@ -144,13 +131,10 @@ class Main extends React.Component {
                 className={"d-flex justify-content-center flex-column"}
               >
                 <p className={"h2 main-page-heading-text d-none d-sm-block"}>
-                  Повседневная практика
+                  Цель проекта
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
+                  Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
                 </p>
               </Col>
             </Col>
@@ -177,7 +161,7 @@ class Main extends React.Component {
               >
                 <p className={"h1"}>Наши уроки</p>
 
-                <div className={"d-inline-block"} style={{ minWidth: "220px" }}>
+                <div className={"d-inline-block"}>
                   <Link to="/lessons">
                     <button className="lessons_button">Все уроки</button>
                   </Link>
@@ -187,7 +171,7 @@ class Main extends React.Component {
               {this.state.lessons && this.state.lessons.data ? (
                 this.state.lessons.data.map((item, idx) => {
                   return (
-                    <Col className={"mt-3"} sm={12} md={4}>
+                    <Col className={"mt-3"} sm={12} md={4} key={idx}>
                       <Card key={idx} {...item} />
                     </Col>
                   );

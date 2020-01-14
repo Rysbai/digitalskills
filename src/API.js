@@ -1,8 +1,8 @@
 import Axios from "axios";
 
-const baseURL = "https://digiskills.kg/";
-const http = Axios.create({ baseURL });
-const lang = localStorage.getItem("language");
+const http = Axios.create({ baseURL: "https://digiskills.kg/"});
+let lang = localStorage.getItem("language");
+lang = lang ? lang : "ru";
 
 export default {
   getAllLessons: (page, count) =>

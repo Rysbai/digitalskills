@@ -24,6 +24,7 @@ const AllLessons = () => {
   const [categoryData, setCategoryData] = useState([]);
   const count = 3;
   useEffect(() => {
+    document.title = "Все курсы";
     API.getCategoryLessons(choiceID, page, count)
       .then(res => setCategoryData(res.data))
       .catch(e => console.error(e));
@@ -52,7 +53,6 @@ const AllLessons = () => {
   }
 
   const createPage = () => {
-    // Outer loop to create parent
     let buttons = [],
       pages = Math.ceil(result.total / count);
     for (let i = 0; i < pages; i++) {
@@ -73,7 +73,7 @@ const AllLessons = () => {
     }
     return buttons;
   };
-  console.log(result);
+
   return (
     <div className="wrapper">
       <Header />
