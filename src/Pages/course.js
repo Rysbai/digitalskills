@@ -31,11 +31,13 @@ class Course extends React.Component {
             });
           })
           .catch(e => console.error(e));
+        
       })
       .then(() => {
         document.title = this.state.lesson.name;
       })
       .catch(e => console.error(e));
+      
   }
 
   render() {
