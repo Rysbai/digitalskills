@@ -21,7 +21,7 @@ const Example = () => {
 
   useEffect(() => {
     window.scrollTo(0,0);
-  },[]);
+  });
 
   const handleChange = (language) => {
     localStorage.setItem('language',language);
