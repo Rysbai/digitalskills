@@ -31,12 +31,26 @@ const Example = () => {
 
   return (
     <Navbar className="header" light expand="md">
-      <Container>
+      <Container fluid>
         <NavbarBrand tag={"div"}>
           <Link to="/">
             <img src={logo} alt={logo} />
           </Link>
         </NavbarBrand>
+
+        <div className={"d-block d-md-none"}>
+          <Button color={"faded"}
+                  className={`header-button shadow-none ${lang === 'ru' ? '' : 'text-muted'}`}
+                  onClick={() => handleChange('ru')}>
+            Рус
+          </Button>
+          <Button color={"faded"}
+                  className={`header-button shadow-none ${lang === 'kg' ? '' : 'text-muted'}`}
+                  onClick={() => handleChange('kg')}>
+            Кырг
+          </Button>
+        </div>
+
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav navbar className={"w-100 d-flex justify-content-center"}>
@@ -62,7 +76,7 @@ const Example = () => {
             </NavItem>
           </Nav>
         </Collapse>
-        <div>
+        <div className={"d-none d-md-block"}>
           <Button color={"faded"}
                   className={`header-button shadow-none ${lang === 'ru' ? '' : 'text-muted'}`}
                   onClick={() => handleChange('ru')}>
