@@ -92,7 +92,10 @@ class Main extends React.Component {
                   Наша миссия
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Предоставить возможность каждому кыргызстанцу приобрести минимальные цифровые навыки, а также определиться с профессиональной ориентацией в области информационных технологий
+                  Предоставить возможность каждому кыргызстанцу приобрести
+                  минимальные цифровые навыки, а также определиться с
+                  профессиональной ориентацией в области информационных
+                  технологий
                 </p>
               </Col>
             </Col>
@@ -134,7 +137,12 @@ class Main extends React.Component {
                   Цель проекта
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
+                  Объединить все имеющиеся разработки государственного и
+                  частного сектора, а также донорских проектов по направлению
+                  «Цифровые навыки и компетенции» для удобства пользования
+                  гражданами. Граждане в свою очередь по технологии «единого
+                  окна» смогут на единой площадке получить требуемую информацию
+                  по интересующей теме в области информационных технологий.
                 </p>
               </Col>
             </Col>
@@ -156,7 +164,7 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-center justify-content-lg-between align-items-center mt-5 flex-wrap"
+                  "d-flex justify-content-center justify-content-lg-between align-items-center my-4 flex-wrap"
                 }
               >
                 <p className={"h1"}>Наши уроки</p>
@@ -187,18 +195,25 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-between align-items-center mt-5 flex-wrap"
+                  "d-flex justify-content-center justify-content-lg-between align-items-center my-4 flex-wrap"
                 }
               >
-                <p className={"h1"}>Преподаватели</p>
+                <p className={"h1"}>преподаватели</p>
+                <div className={"d-inline-block"}>
+                  <Link to="">
+                    <button className="lessons_button">
+                      Все преподаватели
+                    </button>
+                  </Link>
+                </div>
               </Col>
 
               {this.state.teachers.length ? (
                 this.state.teachers.map((item, idx) => {
-                  return <TeacherCard {...item} key={idx} />;
+                  return <TeacherCard {...item} key={idx} />
                 })
               ) : (
-                <p className={"text-center h4"}>Загрузка</p>
+                <Spiner/>
               )}
             </Row>
           </Container>

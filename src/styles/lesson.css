@@ -81,6 +81,7 @@
   text-align: left !important;
   font-family: Muller !important;
   font-size: 16px ! important;
+  overflow:hidden !important;
 
 }
 
@@ -147,4 +148,5 @@
   .lesson-content-block {
     padding: 10px 20px !important;
   }
+ 
 }
