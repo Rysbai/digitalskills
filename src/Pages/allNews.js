@@ -43,7 +43,6 @@ const AllNews = () => {
     }
     return buttons;
   };
-  console.log(data.data);
 
   return (
     <div className="wrapper">
@@ -88,9 +87,9 @@ const AllNews = () => {
                         <p className="text-muted main-news-views">
                           {data.data[0].views} просмотров
                       </p>
-                        <b className="mb-0 text-dark main-news-date">
+                        <p className="mb-0 text-dark main-news-date text-muted">
                           {moment(data.data[0].pub_date).format("Do MMMM YYYY")}
-                        </b>
+                        </p>
                       </div>
                     </Col>
                   </Row>
