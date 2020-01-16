@@ -92,12 +92,7 @@ class Main extends React.Component {
                   Наша миссия
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений. аким
-                  образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
+                  Предоставить возможность каждому кыргызстанцу приобрести минимальные цифровые навыки, а также определиться с профессиональной ориентацией в области информационных технологий
                 </p>
               </Col>
             </Col>
@@ -119,7 +114,7 @@ class Main extends React.Component {
             <Col md={6} className={"pl-0 mt-5 order-sm-3 order-3"}>
               <Col md={10}>
                 <p className={"h2 main-page-heading-text d-sm-none"}>
-                  Повседневная практика
+                  Цель проекта
                 </p>
                 <img src={blockphoto2} className={"img-fluid"} alt="" />
               </Col>
@@ -136,54 +131,16 @@ class Main extends React.Component {
                 className={"d-flex justify-content-center flex-column"}
               >
                 <p className={"h2 main-page-heading-text d-none d-sm-block"}>
-                  Повседневная практика
+                  Цель проекта
                 </p>
                 <p className={"text-muted main-page-text"}>
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
-                  Таким образом реализация намеченных плановых заданий позволяет
-                  выполнять важные задания по разработке новых предложений.
+                  Объединить все имеющиеся разработки государственного и частного сектора, а также донорских проектов по направлению «Цифровые навыки и компетенции» для удобства пользования гражданами. Граждане в свою очередь по технологии «единого окна» смогут на единой площадке получить требуемую информацию по интересующей теме в области информационных технологий.
                 </p>
               </Col>
             </Col>
           </Row>
         </Container>
-        {/*<Col*/}
-        {/*  md={12}*/}
-        {/*  className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}*/}
-        {/*>*/}
-        {/*  <div className="col-4">*/}
-        {/*    <h2 className="headtext ">Наша миссия</h2>*/}
-        {/*    <p className="blocktext">*/}
-        {/*      Предоставить возможность каждому кыргызстанцу приобрести*/}
-        {/*      минимальные цифровые навыки, а также определиться с*/}
-        {/*      профессиональной ориентацией в области информационных*/}
-        {/*      технологий.*/}
-        {/*    </p>*/}
-        {/*  </div>*/}
-        {/*  <div className="col-4">*/}
-        {/*    <img className="blockphoto" src={blockphoto} alt={"image"} />*/}
-        {/*  </div>*/}
-        {/*</Col>*/}
-        {/*<Col*/}
-        {/*  md={12}*/}
-        {/*  className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}*/}
-        {/*>*/}
-        {/*  <div className="col-4">*/}
-        {/*    <img className="blockphoto" src={blockphoto2} alt={"image"} />*/}
-        {/*  </div>*/}
-        {/*  <div className="col-4">*/}
-        {/*    <h2 className="headtext">Цель</h2>*/}
-        {/*    <p className="blocktext ">*/}
-        {/*      Объединить все имеющиеся разработки государственного и частного*/}
-        {/*      сектора, а также донорских проектов по направлению «Цифровые*/}
-        {/*      навыки и компетенции» для удобства пользования гражданами.*/}
-        {/*      Граждане в свою очередь по технологии «единого окна» смогут на*/}
-        {/*      единой площадке получить требуемую информацию по интересующей*/}
-        {/*      теме в области информационных технологий.*/}
-        {/*    </p>*/}
-        {/*  </div>*/}
-        {/*</Col>*/}
+
         <div className="photo2 d-flex align-items-end mt-5">
           <Container>
             <p className={"h1 text-light mb-3 mb-sm-5 banner2"}>
@@ -210,10 +167,7 @@ class Main extends React.Component {
                   </Link>
                 </div>
               </Col>
-              {/*<Col*/}
-              {/*  md={12}*/}
-              {/*  className={"d-flex justify-content-between mt-3 flex-wrap mb-5"}*/}
-              {/*>*/}
+
               {this.state.lessons && this.state.lessons.data ? (
                 this.state.lessons.data.map((item, idx) => {
                   return (
@@ -225,25 +179,9 @@ class Main extends React.Component {
               ) : (
                 <Spiner />
               )}
-              {/*</Col>*/}
             </Row>
           </Container>
-          {/*<Container>*/}
-          {/*      <Row>*/}
-          {/*  <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
-          {/*    <p className={"h1 "}>Новости</p>*/}
 
-          {/*    <div className={"d-inline-block"} style={{minWidth: '220px'}}>*/}
-          {/*						<Link to="/all-news"><button className ="lessons_button">Все новости</button></Link>*/}
-          {/*      </div>*/}
-          {/*      </Col>*/}
-          {/*      <Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
-          {/*				{this.state.news && this.state.news.data ? this.state.news.data.map((item,idx) => {*/}
-          {/*					return <NewsCard key={idx} {...item}/>*/}
-          {/*				}) : <p className={"text-center h4"}>Загрузка</p>}*/}
-          {/*  		</Col>*/}
-          {/*   </Row> */}
-          {/*</Container>*/}
           <Container>
             <Row>
               <Col
@@ -254,7 +192,7 @@ class Main extends React.Component {
               >
                 <p className={"h1"}>Преподаватели</p>
               </Col>
-              {/*<Col md={12} className={"d-flex justify-content-between align-items-center mt-5 flex-wrap"}>*/}
+
               {this.state.teachers.length ? (
                 this.state.teachers.map((item, idx) => {
                   return <TeacherCard {...item} key={idx} />;
@@ -262,7 +200,6 @@ class Main extends React.Component {
               ) : (
                 <p className={"text-center h4"}>Загрузка</p>
               )}
-              {/*</Col>*/}
             </Row>
           </Container>
           <Footer />

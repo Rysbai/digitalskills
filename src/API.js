@@ -1,7 +1,6 @@
 import Axios from "axios";
 
-const baseURL = "https://digiskills.kg/";
-const http = Axios.create({ baseURL });
+const http = Axios.create({ baseURL: "https://digiskills.kg/"});
 let lang = localStorage.getItem("language");
 lang = lang ? lang : "ru";
 

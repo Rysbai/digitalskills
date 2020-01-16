@@ -24,6 +24,7 @@ const AllLessons = () => {
   const [categoryData, setCategoryData] = useState([]);
   const count = 3;
   useEffect(() => {
+    document.title = "Все курсы";
     API.getCategoryLessons(choiceID, page, count)
       .then(res => setCategoryData(res.data))
       .catch(e => console.error(e));

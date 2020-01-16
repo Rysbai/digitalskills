@@ -13,7 +13,9 @@ import Lesson from './Pages/lesson';
 
 function App() {
 
-  localStorage.setItem("language", "ru");
+  if(!localStorage.getItem('language')) {
+    localStorage.setItem("language","ru");
+  }
 
   return (
     <div className="App">
