@@ -30,7 +30,7 @@ class Main extends React.Component {
       )
       .catch(e => console.error(e));
 
-    API.allTeachers()
+    API.allTeachers(0,3)
       .then(res =>
         this.setState({
           teachers: res.data
@@ -40,6 +40,7 @@ class Main extends React.Component {
   }
 
   render() {
+
     return (
       <div className={"w-100 overflow-hidden"}>
         <Header />
@@ -68,7 +69,7 @@ class Main extends React.Component {
                 </p>
                 <Link
                   to={"/lessons"}
-                  className="mainbutton d-flex justify-content-center align-items-center"
+                  className="mainbutton d-flex justify-content-center align-items-center text-decoration-none"
                 >
                   Смотреть все
                 </Link>
@@ -164,7 +165,7 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-center justify-content-lg-between align-items-center mt-5 flex-wrap"
+                  "d-flex justify-content-center justify-content-lg-between align-items-center my-5 flex-wrap"
                 }
               >
                 <p className={"h1"}>Наши уроки</p>
@@ -191,16 +192,16 @@ class Main extends React.Component {
           </Container>
 
           <Container>
-            <Row>
+            <Row className="mb-5">
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-between align-items-center mt-5 flex-wrap"
+                  "d-flex  justify-content-center justify-content-lg-between my-5 flex-wrap"
                 }
               >
-                <p className={"h1"}>преподаватели</p>
+                <p className={"h1"}>Преподаватели</p>
                 <div className={"d-inline-block"}>
-                  <Link to="">
+                  <Link to="/all-teachers">
                     <button className="lessons_button">
                       Все преподаватели
                     </button>
@@ -208,12 +209,12 @@ class Main extends React.Component {
                 </div>
               </Col>
 
-              {this.state.teachers.length ? (
-                this.state.teachers.map((item, idx) => {
+              {this.state.teachers && this.state.teachers.data ? (
+                this.state.teachers.data.map((item, idx) => {
                   return <TeacherCard {...item} key={idx} />;
                 })
               ) : (
-                <p className={"text-center h4"}>Загрузка</p>
+                <Spiner />
               )}
             </Row>
           </Container>

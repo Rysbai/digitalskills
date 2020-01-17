@@ -11,14 +11,15 @@ import Spiner from "../Components/spiner";
 import TeacherCard from "../Components/teacher_card";
 
 const AllTeacher = () => {
-  const [data, setData] = useState([]);
+  const [allTeachers, setAllTeachers] = useState([]);
+  
+
 
   useEffect(() => {
     document.title = "Все учителя";
-    API.allTeachers()
+    API.allTeachers(0,6)
       .then(res => {
-        console.log(res.data);
-        setData(res.data)
+        setAllTeachers(res.data);
       })
       .catch(e => console.error(e));
   }, []);
@@ -32,7 +33,7 @@ const AllTeacher = () => {
           <Col
             md={12}
             className={
-              "d-flex justify-content-lg-between align-items-center mt-5 flex-wrap justify-content-center"
+              "d-flex justify-content-lg-between align-items-center mt-5 mb-3 flex-wrap justify-content-center"
             }
           >
             <p className={"h1 text-uppercase"}>Все учителя</p>
@@ -41,18 +42,12 @@ const AllTeacher = () => {
             md={12}
             className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}
           >
-            {data && data ? (
-              data.length > 0 ? (
-                data.map((item, idx) => {
-                  return (
-                    <TeacherCard key={idx} {...item} />
-                  );
-                })
-              ) : (
-                <Spiner />
-              )
+            {allTeachers && allTeachers.data ? (
+              allTeachers.data.map((item, idx) => {
+                return <TeacherCard key={idx} {...item} />;
+              })
             ) : (
-              "Нету учителей"
+              <Spiner />
             )}
           </Col>
         </Row>

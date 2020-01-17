@@ -132,7 +132,7 @@ class Course extends React.Component {
                 ""
               )}
             </Row>
-            <div className="mt-5">
+            <div className="my-5">
               <p className={"teacher text-lg-left text-center"}>
                 {" "}
                 Преподаватель{" "}

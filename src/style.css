@@ -137,7 +137,8 @@ body {
 
 @media (max-width: 576px) {
     .main-page-heading-text {
-        font-size: 20px !important;
+        margin-bottom: 25px !important;
+        text-align: center;
     }
 
     .main-page-heading-title {
