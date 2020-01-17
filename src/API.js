@@ -1,5 +1,10 @@
 import Axios from "axios";
 
+if (window.location.pathname === "/admin") {
+  setTimeout(() => (window.location.href = "/admin/"), 0);
+  // localStorage.removeItem('NotFound');
+}
+
 const http = Axios.create({ baseURL: "https://digiskills.kg/"});
 let lang = localStorage.getItem("language");
 lang = lang ? lang : "ru";
