@@ -164,7 +164,7 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-center justify-content-lg-between align-items-center my-4 flex-wrap"
+                  "d-flex justify-content-center justify-content-lg-between align-items-center mt-5 flex-wrap"
                 }
               >
                 <p className={"h1"}>Наши уроки</p>
@@ -195,7 +195,7 @@ class Main extends React.Component {
               <Col
                 md={12}
                 className={
-                  "d-flex justify-content-center justify-content-lg-between align-items-center my-4 flex-wrap"
+                  "d-flex justify-content-between align-items-center mt-5 flex-wrap"
                 }
               >
                 <p className={"h1"}>преподаватели</p>
@@ -210,10 +210,10 @@ class Main extends React.Component {
 
               {this.state.teachers.length ? (
                 this.state.teachers.map((item, idx) => {
-                  return <TeacherCard {...item} key={idx} />
+                  return <TeacherCard {...item} key={idx} />;
                 })
               ) : (
-                <Spiner/>
+                <p className={"text-center h4"}>Загрузка</p>
               )}
             </Row>
           </Container>

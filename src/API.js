@@ -28,5 +28,5 @@ export default {
   getLesson: id => http.get(`api/course/programs/?course_id=${id}`),
   getDataAboutUs: () =>
     http.get(`https://digiskills.kg/api/aboutus/?lang=${lang}`),
-  postData: (url, data) => http.post(url, data)
+  postData: (url, data) => http.post(url, data),
 };
