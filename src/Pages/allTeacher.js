@@ -12,7 +12,7 @@ import TeacherCard from "../Components/teacher_card";
 
 const AllTeacher = () => {
   const [allTeachers, setAllTeachers] = useState([]);
-  
+
 
 
   useEffect(() => {
@@ -38,6 +38,12 @@ const AllTeacher = () => {
           >
             <p className={"h1 text-uppercase"}>Все учителя</p>
           </Col>
+          {data.data && data.data.length ?
+            data.data.map((item, idx) => {
+              return (
+                <TeacherCard key={idx} {...item} />
+              );
+            }) : <Spiner/>}
           <Col
             md={12}
             className={"d-flex justify-content-around mt-3 flex-wrap mb-5"}
