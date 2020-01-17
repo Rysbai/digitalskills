@@ -1,11 +1,10 @@
 import Axios from "axios";
 
 if (window.location.pathname === "/admin") {
-  setTimeout(() => (window.location.href = "/admin/"), 0);
-  // localStorage.removeItem('NotFound');
+  window.location.href = "/admin/";
 }
 
-const http = Axios.create({ baseURL: "https://digiskills.kg/"});
+const http = Axios.create({ baseURL: "https://digiskills.kg/" });
 let lang = localStorage.getItem("language");
 lang = lang ? lang : "ru";
 
@@ -23,10 +22,11 @@ export default {
     http.get(`api/news/?lang=${lang}&page=${page}&count=${count}`),
   getOneNews: id => http.get(`api/news/${id}?lang=${lang}`),
   getCourse: id => http.get(`api/course/courses/${id}`),
+  getTeachers: (page, count) => http.get(`api/course/teachers/?lang=${lang}&page=${page}&count=${count}`),
   allTeachers: () =>
-    http.get(`https://digiskills.kg/api/course/teachers/?lang=${lang}`),
+    http.get(`api/course/teachers/?lang=${lang}`),
   getLesson: id => http.get(`api/course/programs/?course_id=${id}`),
   getDataAboutUs: () =>
-    http.get(`https://digiskills.kg/api/aboutus/?lang=${lang}`),
+    http.get(`api/aboutus/?lang=${lang}`),
   postData: (url, data) => http.post(url, data)
 };

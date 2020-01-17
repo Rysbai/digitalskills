@@ -1,20 +1,19 @@
-import React from 'react';
-import {Switch,Route} from 'react-router-dom';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 import AllLessons from "./Pages/allLessons";
 import Main from "./Pages/main";
-import './style.css';
+import "./style.css";
 import News from "./Pages/news";
 import TeacherPage from "./Pages/teacher";
 import Contacts from "./Pages/contacts";
 import Aboutus from "./Pages/aboutus";
 import AllNews from "./Pages/allNews";
 import Course from "./Pages/course";
-import Lesson from './Pages/lesson';
+import Lesson from "./Pages/lesson";
 
 function App() {
-
-  if(!localStorage.getItem('language')) {
-    localStorage.setItem("language","ru");
+  if (!localStorage.getItem("language")) {
+    localStorage.setItem("language", "ru");
   }
 
   return (

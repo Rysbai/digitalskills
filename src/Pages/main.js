@@ -30,7 +30,7 @@ class Main extends React.Component {
       )
       .catch(e => console.error(e));
 
-    API.allTeachers()
+    API.getTeachers(0, 3)
       .then(res =>
         this.setState({
           teachers: res.data
@@ -198,7 +198,7 @@ class Main extends React.Component {
                   "d-flex justify-content-center justify-content-lg-between align-items-center my-4 flex-wrap"
                 }
               >
-                <p className={"h1"}>преподаватели</p>
+                <p className={"h1"}>Преподаватели</p>
                 <div className={"d-inline-block"}>
                   <Link to="">
                     <button className="lessons_button">
@@ -210,10 +210,10 @@ class Main extends React.Component {
 
               {this.state.teachers.length ? (
                 this.state.teachers.map((item, idx) => {
-                  return <TeacherCard {...item} key={idx} />
+                  return <TeacherCard {...item} key={idx} />;
                 })
               ) : (
-                <Spiner/>
+                <Spiner />
               )}
             </Row>
           </Container>
