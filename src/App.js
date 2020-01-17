@@ -9,7 +9,8 @@ import Contacts from "./Pages/contacts";
 import Aboutus from "./Pages/aboutus";
 import AllNews from "./Pages/allNews";
 import Course from "./Pages/course";
-import Lesson from "./Pages/lesson";
+import Lesson from './Pages/lesson';
+import AllTeacher from './Pages/allTeacher';
 
 function App() {
   if (!localStorage.getItem("language")) {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path={"/about"} component={Aboutus} />
         <Route exact path={"/course/:id"} component={Course} />
         <Route exact path={"/lesson/:id"} component={Lesson} />
+        <Route exact path={"/all-teachers"} component={AllTeacher}/>
       </Switch>
     </div>
   );
